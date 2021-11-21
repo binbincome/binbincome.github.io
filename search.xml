@@ -2,6 +2,25 @@
 <search> 
   
   
+    
+    <entry>
+      <title>JWT</title>
+      <link href="/2021/11/21/JWT/"/>
+      <url>/2021/11/21/JWT/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Json-Web-Token"><a href="#Json-Web-Token" class="headerlink" title="Json Web Token"></a>Json Web Token</h1><p>jwt 即 json web token。用于身份校验，当用户登录的时候，服务器会给用户分配一个token，服务不会保存。当用户需要访问服务器的时候，需要带着token，服务通过token来判断用户现在的状态，比如token失效不正确等。</p><h2 id="前后端分离时为何推荐token认证"><a href="#前后端分离时为何推荐token认证" class="headerlink" title="前后端分离时为何推荐token认证?"></a>前后端分离时为何推荐token认证?</h2><ul><li><p>Token无需存储降低服务器成本，session是将用户信息存储在服务器中的，当用户量增大时服务器的压力也会随着增大。</p></li><li><p>防御CSRF跨站伪造请求攻击，session是基于cookie进行用户识别的, cookie如果被截获，用户信息就容易泄露。</p></li><li><p>扩展性强，session需要存储无法共享，当搭建了多个服务器时其他服务器无法获取到session中的验证数据用户无法验证成功。而Token可以实现服务器间共享，这样不管哪里都可以访问到。</p></li><li><p>Token可以减轻服务器的压力，减少频繁的查询数据库。</p></li><li><p>支持跨域访问, 适用于移动平台应用</p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
 </search>

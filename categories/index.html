@@ -45,7 +45,13 @@
 </style>
 
 
-
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>
 <body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -240,7 +246,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                欢迎来到小屋
+                欢迎来到冰冰的小屋！
                 
             </div>
 
@@ -250,10 +256,10 @@
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
-                        strings: ['每一天，每一刻，都是结束，也都是开始!','Every day, every moment, is the end and the beginning.'],
+                        strings: ['每一天，每一刻，都是结束，也都是开始.','Every day, every moment, is the end and the beginning.'],
                         startDelay: 300,
                         typeSpeed: 100,
-                        loop: false,
+                        loop: true,
                         backSpeed: 50,
                         showCursor: true
                     });
@@ -307,11 +313,11 @@
                 </a>
                 
                 
-                <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" title="软件测试: 1">
+                <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" title="软件测试: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #D5F5E3;">软件测试
-                        <span class="tag-length">1</span>
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -358,7 +364,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"前端","max":2},{"name":"后端","max":2},{"name":"软件测试","max":2}],
+            indicator: [{"name":"前端","max":3},{"name":"后端","max":3},{"name":"软件测试","max":3}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -369,7 +375,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1,1,1],
+                    value : [1,1,2],
                     name : '文章分类数量'
                 }
             ]
@@ -448,7 +454,7 @@
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.4k</span>&nbsp;字
+                class="white-color">6.4k</span>&nbsp;字
             
             
             

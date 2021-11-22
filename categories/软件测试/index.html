@@ -45,7 +45,13 @@
 </style>
 
 
-
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>
 <body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -240,7 +246,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                欢迎来到小屋
+                欢迎来到冰冰的小屋！
                 
             </div>
 
@@ -250,10 +256,10 @@
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
-                        strings: ['每一天，每一刻，都是结束，也都是开始!','Every day, every moment, is the end and the beginning.'],
+                        strings: ['每一天，每一刻，都是结束，也都是开始.','Every day, every moment, is the end and the beginning.'],
                         startDelay: 300,
                         typeSpeed: 100,
-                        loop: false,
+                        loop: true,
                         backSpeed: 50,
                         showCursor: true
                     });
@@ -307,11 +313,11 @@
                 </a>
                 
                 
-                <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" title="软件测试: 1">
+                <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" title="软件测试: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
                             style="background-color: #D5F5E3;">软件测试
-                        <span class="tag-length">1</span>
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -326,6 +332,54 @@
 
     <article id="articles" class="container articles">
         <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/11/22/ruan-jian-ce-shi-de-fang-fa-he-ji-zhu-xiang-guan/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="软件测试的方法和技术相关">
+                            
+                            <span class="card-title">软件测试的方法和技术相关</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                软件测试的方法前言软件测试的一些技术和分类划分了解，虽然已经入土了，但是花时间了解的东西一起放出来把，哈哈！
+软件测试分类功能测试 —测试人员用鼠标去手动测试 （测试GUI）,点点点测试
+自动化测试 —用程序测试程序 （测试API），解放双
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-22
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    软件测试
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">
+                            <span class="chip bg-color">软件测试</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -444,7 +498,7 @@
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.4k</span>&nbsp;字
+                class="white-color">6.4k</span>&nbsp;字
             
             
             

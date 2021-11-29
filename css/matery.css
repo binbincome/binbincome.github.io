@@ -1850,6 +1850,64 @@ footer .copy-right {
 #searchIcon {
     font-size: 1.2rem;
 }
+@media screen and (min-width: 1202px) {
+    #searchModal {
+        top: 13%!important;
+        width: 56%!important;
+    }
+}
+#searchModal {
+    min-height: 100px;
+    width: 80%;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 10px;
+}
+body.dark #searchModal {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#searchModal .search-header .title {
+    font-size: 1.1rem;
+    color: #42b983;
+}
+
+.search-result {
+    color: #fff;
+}
+
+#searchResult {
+    margin: -15px 0 10px 10px;
+}
+
+#searchResult .search-result-list {
+    margin-left: -8px;
+    padding-left: 0;
+    color: #666;
+}
+
+.search-result-list .search-result-title {
+    font-size: 1.2rem;
+    color: #42b983;
+}
+
+.search-result-list li {
+    /* border-bottom: 1px solid #e5e5e5; */
+    padding: 15px 0 5px 0;
+}
+
+.search-result-list .search-keyword {
+    margin: 0 2px;
+    padding: 1px 5px 1px 4px;
+    border-radius: 2px;
+    background-color: #f2f2f2;
+    color: #e96900;
+    font-style: normal;
+    white-space: pre-wrap;
+}
+/*搜索层样式
+#searchIcon {
+    font-size: 1.2rem;
+}
 
 #searchModal {
     min-height: 500px;
@@ -1890,6 +1948,7 @@ footer .copy-right {
     font-style: normal;
     white-space: pre-wrap;
 }
+*/
 
 /*回到顶部按钮样式*/
 .top-scroll {
@@ -2137,4 +2196,36 @@ footer .copy-right {
     height: 50px;
     padding: 0;
     margin: 0;
+}
+
+/* 美化ol目录标签 */
+ol{
+    list-style: none;  /* 隐藏原来的 1. 2. 等序号样式 */
+    counter-reset: ol-li;
+  }
+  
+ol li:before {
+    display: block;
+    float: left;
+    width: 19px;   /* 宽度和高度需要根据自己的字体大小进行修正 */
+    height: 19px;
+    line-height: 19px;
+    margin: 4px 12px 0 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #49b1f5;
+    border-radius: 50%;
+    text-align: center;
+    content: counter(ol-li);
+    counter-increment: ol-li;
+    transition: all 1s;
+  }
+ol li:hover::before{
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
 }

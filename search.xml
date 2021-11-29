@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>如何判断一个链表是否有环</title>
+      <link href="/2021/11/29/ru-he-pan-duan-yi-ge-lian-biao-shi-fou-you-huan/"/>
+      <url>/2021/11/29/ru-he-pan-duan-yi-ge-lian-biao-shi-fou-you-huan/</url>
+      
+        <content type="html"><![CDATA[<h2 id="如何判读一个链表是不是有环链表？"><a href="#如何判读一个链表是不是有环链表？" class="headerlink" title="如何判读一个链表是不是有环链表？"></a>如何判读一个链表是不是有环链表？</h2><h3 id="暴力菜鸟版1"><a href="#暴力菜鸟版1" class="headerlink" title="暴力菜鸟版1"></a>暴力菜鸟版1</h3><p>直接遍历这个链表，每进一个新结点就把这个节点和先前已经遍历的节点进行比较，如果新节点和之前遍历过得节点相同，那说明为有环节点，如果没有那么继续，直到尾节点也没有重复，那说明不是有环链表。</p><ul><li>假设链表的节点数量为n，则该解法的时间复杂度为O(n 2 ) 。</li><li>由于并没 有创建额外的存储空间，所以空间复杂度为O(1) 。</li></ul><h3 id="暴力菜鸟版2"><a href="#暴力菜鸟版2" class="headerlink" title="暴力菜鸟版2"></a>暴力菜鸟版2</h3><p>首先创建一个以节点ID为Key的HashSet集合，用来存储曾经遍历过的节点。然后同样从头节点开始，依次遍历单链表中的每一个节点。每遍历 一个新节点，都用新节点和HashSet集合中存储的节点进行比较，如果 发现HashSet中存在与之相同的节点ID，则说明链表有环，如果HashSet 中不存在与新节点相同的节点ID，就把这个新节点ID存入HashSet中， 之后进入下一节点，继续重复刚才的操作。</p><p>这个方法在流程上和方法1类似，本质的区别是使用了HashSet作为额外 的缓存。 </p><ul><li>假设链表的节点数量为n，则该解法的时间复杂度是O(n) 。</li><li>由于使用了 额外的存储空间，所以算法的空间复杂度同样是O(n) 。</li></ul><h3 id="进阶高手版"><a href="#进阶高手版" class="headerlink" title="进阶高手版"></a>进阶高手版</h3><p>首先创建两个指针p1和p2（在Java里就是两个对象引用），让它们同时 指向这个链表的头节点。然后开始一个大循环，在循环体中，让指针p1 每次向后移动1个节点，让指针p2每次向后移动2个节点，然后比较两个 指针指向的节点是否相同。如果相同，则可以判断出链表有环，如果不同，则继续下一次循环</p><p>如果是有环链表就像是在环形跑道中，一个速度快一个速度慢，总会追上得，类似追及问题。</p><ul><li>假设链表的节点数量为n，则该算法的时间复杂度为O(n)。</li><li>除两个指针外，没有使用任何额外的存储空间，所以空间复杂度是O(1)。</li></ul><p>代码实现：</p><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public static boolean isCycle(Node head){Node p1 = head;Node p2 = head;while (p2!Null &amp;&amp; p2.next != NULL) {p1 = p1.next;p2 = p2.next;if (p1 = p2) {return true;}}return false;}private static class Node {int data;Node next;Node(int data) {this.data = data;}};public static void main(String[] args) throws Exception {Node node1 = new Node(5);Node node2 = new Node(3);Node node3 = new Node(7);Node node4 = new Node(2);Node node5 = new Node(6);node1.next = node2;node2.next = node3;node3.next = node4;node4.next = node5;node5.next = node2;System.out.println(isCycle(node1));}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># Python版代码实现class Node:    def _init_(self,data):        self.data = data        self.next = nonedef is_cycle(head):    p1 = headp2 = head    while p2 is not None and p2,next is not None:        p1 = p1.next;p2 = p2.next.next;if p1 = p2:return true;return Falsenode1 = new Node(5);node2 = new Node(3);node3 = new Node(7);node4 = new Node(2);node5 = new Node(6);node1.next = node2;node2.next = node3;node3.next = node4;node4.next = node5;node5.next = node2;print(is_cycle(nodel))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="扩展问题1：如果链表有环，如何求出环的长度？"><a href="#扩展问题1：如果链表有环，如何求出环的长度？" class="headerlink" title="扩展问题1：如果链表有环，如何求出环的长度？"></a>扩展问题1：如果链表有环，如何求出环的长度？</h3><p>当两个指针首次相遇，证明链表有环的时候，让两个指针从相遇点继续循环前进，并统计前进的循环次数，直到两个指针第2次相遇。此时， 统计出来的前进次数就是环长。 因为指针p1每次走1步，指针p2每次走2步，两者的速度差是1步。当两 个指针再次相遇时，p2比p1多走了整整1圈。 </p><p>因此，环长 = 每一次速度差 × 前进次数 = 前进次数。</p><h3 id="扩展问题2：-如果链表有环，如何求出入环节点？"><a href="#扩展问题2：-如果链表有环，如何求出入环节点？" class="headerlink" title="扩展问题2： 如果链表有环，如何求出入环节点？"></a>扩展问题2： 如果链表有环，如何求出入环节点？</h3><p>这个问题难一点点，但是耐心一点相信你能看懂的！</p><p><img src="C:\Users\Super\blog\source_posts\image-20211129180723530-16381804499271.png" alt="image-20211129180723530"></p><p>假设从链表头节点到入环点 的距离是D，</p><p>从入环点到两个指针首次相遇点的距离是S1 ，</p><p>从首次相遇点回到入环点的距离是S2。</p><p>那么，当两个指针首次相遇时，各自所走的距离是多少呢？ </p><p>指针p1一次只走1步，所走的距离是D+S 1。</p><p>指针p2一次走2步，多走了n(n&gt;=1)整圈，所走的距离是D+S1 +n(S1 +S1 )。 </p><p>由于p2的速度是p1的2倍，所以所走距离也是p1的2倍，</p><p>因此： 2(D+S1 ) = D+S1+n(S1+S2 ) 等式</p><p>经过整理得出： D = (n-1)(S1+S2 )+S2 也就是说，从链表头结点到入环点的距离，等于从首次相遇点绕环n-1圈再回到入环点的距离。 </p><p>这样一来，只要把其中一个指针放回到头节点位置，另一个指针保持在首次相遇点，两个指针都是每次向前走1步。那么，它们最终相遇的节点，就是入环节点。</p><p>本文来源自读书笔记：小灰的算法之旅,侵权必删。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>最小栈的实现</title>
+      <link href="/2021/11/29/suan-fa/zui-xiao-zhan-de-shi-xian/"/>
+      <url>/2021/11/29/suan-fa/zui-xiao-zhan-de-shi-xian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="最小栈的实现"><a href="#最小栈的实现" class="headerlink" title="最小栈的实现"></a>最小栈的实现</h1><p><strong>题目：</strong>实现一个栈，该栈带有出栈（pop）、入栈（push）、取最小元素 （getMin）3个方法。要保证这3个方法的时间复杂度都是O(1)。</p><p><strong>解题思路：</strong></p><p>step1：设原栈为栈A，辅组栈为B，当第一个元素进栈A时，同时让新元素也进入栈B，这个唯一元素即原栈A的最小值。</p><p>Step2：每当有新元素进入栈A时，如果新元素比栈A小就同时让新元素也进入栈B，此时栈B的栈顶元素同时也是栈A的最小值。</p><p>Step3：每当栈A有元素出栈时，如果出栈元素是栈A当前最小值，则让栈B的栈顶元素也出栈。此时栈B余下的栈顶元素所指向的，是栈A当中原本第2小的元素，代替刚才的出栈元素成为栈A的当前最小值。</p><p>Step4：当调用getMin方法时，返回栈B的栈顶所存储的值，这也是栈A的最 小值。</p><p>这个解法中进栈、出栈、取最小值的时间复杂度都是O(1)，最坏 情况空间复杂度是O(n)。</p><p>代码实现：</p><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">private Stack&lt;Integer&gt; mainStack = new Stack&lt;Integer&gt;();private Stack&lt;Integer&gt; minStack = new Stack&lt;Integer&gt;();/*** 入栈操作* @param element 入栈的元素*/public void push(int element) {mainStack.push(element);//如果辅助栈为空，或者新元素小于或等于辅助栈栈顶，则将新元素压入辅助栈if (minStack.empty() || element &lt;= minStack.peek()) {minStack.push(element);}}/*** 出栈操作*/public Integer pop() {//如果出栈元素和辅助栈栈顶元素值相等，辅助栈出栈 if (mainStack.peek().equals(minStack.peek())) {minStack.pop(); }return mainStack.pop();}/*** 获取栈的最小元素*/public int getMin() throws Exception { if (mainStack.empty()) { throw new Exception("stack is empty"); } return minStack.peek(); }public static void main(String[] args) throws Exception {MinStack stack = new MinStack();stack.push(4);stack.push(9);stack.push(7);stack.push(3);stack.push(8);stack.push(5);System.out.println(stack.getMin());stack.pop();stack.pop();stack.pop();System.out.println(stack.getMin());}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>软件测试的方法和技术相关</title>
       <link href="/2021/11/22/ruan-jian-ce-shi-de-fang-fa-he-ji-zhu-xiang-guan/"/>
       <url>/2021/11/22/ruan-jian-ce-shi-de-fang-fa-he-ji-zhu-xiang-guan/</url>

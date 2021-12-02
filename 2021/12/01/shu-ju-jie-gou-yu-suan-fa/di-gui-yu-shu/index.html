@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    10 分
                 </div>
                 
 
@@ -617,7 +617,8 @@ int main(void)
     return 0;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="什么是树？"><a href="#什么是树？" class="headerlink" title="什么是树？"></a>什么是树？</h2><p>在实际场景中，数据除了线性结构以外还存在非线性结构，树就是典型的非线性结构，比如人的家谱，书的目录等它们就像树的枝干和根一样。</p>
+<h1 id="树的理论解释"><a href="#树的理论解释" class="headerlink" title="树的理论解释"></a>树的理论解释</h1><p>什么是树？</p>
+<p>在实际场景中，数据除了线性结构以外还存在非线性结构，树就是典型的非线性结构，比如人的家谱，书的目录等它们就像树的枝干和根一样。</p>
 <p>在数据结构中，树的定义如下。 树（tree）是n（n≥0）个节点的有限集。当n=0时，称为空树。在任意一 个非空树中，有如下特点。 </p>
 <ul>
 <li>有且仅有一个特定的称为根的节点。</li>
@@ -640,6 +641,51 @@ int main(void)
 <li><p>数组。</p>
 </li>
 </ol>
+<blockquote>
+<p>按照层级顺序把二叉树的节点放到数组中对应的位置上。如果某一个节点的左孩子或右孩子空缺，则数组的相应位置也空出来。 </p>
+</blockquote>
+<p>为什么空出相应的位置呢？</p>
+<p>因为这样可以更方便地在数组中定位二叉树的孩子节点和父节点。 假设一个父节点的下标是parent，那么它的左孩子节点下标就 是2×parent + 1 ；右孩子节点下标就是2×parent + 2 。 反过来，假设一个左孩子节点的下标是leftChild，那么它的父节点下标就是（leftChild-1）/ 2 。假如节点4在数组中的下标是3，节点4是节点2的左孩子，节点2的下标可以直接通过计算得出。 节点2的下标 = (3-1)/2 = 1 显然，对于一个稀疏的二叉树来说，用数组表示法是非常浪费空间的。 </p>
+<p>什么样的二叉树最适合用数组表示呢？ 二叉堆一种特殊的完全二叉树，就是用数组来存储的</p>
+<p>二叉树都有哪些遍历方式呢？</p>
+<p> 从节点之间位置关系的角度来看，二叉树的遍历分为4种。</p>
+<ul>
+<li>前序遍历。</li>
+<li>中序遍历。</li>
+<li>后序遍历。 </li>
+<li>层序遍历。 </li>
+</ul>
+<p>从更宏观的角度来看，二叉树的遍历归结为两大类。 </p>
+<ul>
+<li><p>深度优先遍历 （前序遍历、中序遍历、后序遍历）。 </p>
+</li>
+<li><p>广度优先遍历 （层序遍历）。</p>
+</li>
+</ul>
+<h1 id="补充：树的层序遍历"><a href="#补充：树的层序遍历" class="headerlink" title="补充：树的层序遍历"></a>补充：树的层序遍历</h1><p>层序遍历，顾名思义，就是二叉树按照从根节点到叶子节点的层次关系，一层一层横向遍历各个节点。由于二叉树同一层次的节点之间是没有直接关联的，所以需要借助队列这种数据结构来辅助工作。</p>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">/**
+* 二叉树层序遍历
+* @param root 二叉树根节点
+*/
+public static void levelOrderTraversal(TreeNode root){
+	Queue&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;();
+	queue.offer(root);
+	while(!queue.isEmpty()){
+		TreeNode node = queue.poll();
+		 System.out.println(node.data);
+ 	if(node.leftChild != null){
+ 		queue.offer(node.leftChild);
+	}
+ 	if(node.rightChild != null){
+ 	queue.offer(node.rightChild);
+ 	}
+  }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
 
                 
             </div>
@@ -1072,7 +1118,7 @@ int main(void)
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.3k</span>&nbsp;字
+                class="white-color">15.8k</span>&nbsp;字
             
             
             

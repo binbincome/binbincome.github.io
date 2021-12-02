@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="最小栈的实现, 冰冰的小屋">
+    <meta name="keywords" content="哈希表和哈希函数, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>最小栈的实现 | 冰冰的小屋</title>
+    <title>哈希表和哈希函数 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">最小栈的实现</h1>
+                    <h1 class="description center-align post-title">哈希表和哈希函数</h1>
                 </div>
             </div>
         </div>
@@ -364,8 +364,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">数据结构与算法</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">数据结构及算法</span>
                             </a>
                         
                     </div>
@@ -376,8 +376,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                数据结构与算法
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/" class="post-category">
+                                数据结构及算法
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-29
+                    2021-12-02
                 </div>
                 
 
@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    496
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -428,66 +428,48 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="最小栈的实现"><a href="#最小栈的实现" class="headerlink" title="最小栈的实现"></a>最小栈的实现</h1><p><strong>题目：</strong>实现一个栈，该栈带有出栈（pop）、入栈（push）、取最小元素 （getMin）3个方法。要保证这3个方法的时间复杂度都是O(1)。</p>
-<p><strong>解题思路：</strong></p>
-<p>step1：设原栈为栈A，辅组栈为B，当第一个元素进栈A时，同时让新元素也进入栈B，这个唯一元素即原栈A的最小值。</p>
-<p>Step2：每当有新元素进入栈A时，如果新元素比栈A小就同时让新元素也进入栈B，此时栈B的栈顶元素同时也是栈A的最小值。</p>
-<p>Step3：每当栈A有元素出栈时，如果出栈元素是栈A当前最小值，则让栈B的栈顶元素也出栈。此时栈B余下的栈顶元素所指向的，是栈A当中原本第2小的元素，代替刚才的出栈元素成为栈A的当前最小值。</p>
-<p>Step4：当调用getMin方法时，返回栈B的栈顶所存储的值，这也是栈A的最 小值。</p>
-<p>这个解法中进栈、出栈、取最小值的时间复杂度都是O(1)，最坏 情况空间复杂度是O(n)。</p>
-<p>代码实现：</p>
-<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">private Stack&lt;Integer&gt; mainStack = new Stack&lt;Integer&gt;();
-private Stack&lt;Integer&gt; minStack = new Stack&lt;Integer&gt;();
-
-/**
-* 入栈操作
-* @param element 入栈的元素
-*/
-public void push(int element) {
-	mainStack.push(element);
-	//如果辅助栈为空，或者新元素小于或等于辅助栈栈顶，则将新元素压入辅助栈
-	if (minStack.empty() || element &lt;= minStack.peek()) {
-		minStack.push(element);
-	}
-}
-
-/**
-* 出栈操作
-*/
-public Integer pop() {
-//如果出栈元素和辅助栈栈顶元素值相等，辅助栈出栈
- if (mainStack.peek().equals(minStack.peek())) {
-	minStack.pop();
- }
-	return mainStack.pop();
-}
-
-/**
-* 获取栈的最小元素
-*/
-public int getMin() throws Exception {
- 	if (mainStack.empty()) {
- 		throw new Exception("stack is empty");
- 	}
-
- 	return minStack.peek();
- }
-
-public static void main(String[] args) throws Exception {
-	MinStack stack = new MinStack();
-	stack.push(4);
-	stack.push(9);
-	stack.push(7);
-	stack.push(3);
-	stack.push(8);
-	stack.push(5);
-	System.out.println(stack.getMin());
-	stack.pop();
-	stack.pop();
-	stack.pop();
-	System.out.println(stack.getMin());
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+                <h1 id="什么是哈希表"><a href="#什么是哈希表" class="headerlink" title="什么是哈希表"></a>什么是哈希表</h1><blockquote>
+<p>哈希表（hash table）也叫作散列表，是存储Key-Value映射的集合。对于某一个Key，散列表可以在接近O(1)的时间内进行读写操作。散列表通过哈希函数实现 Key和数组下标的转换，通过开放寻址法和链表法来解决哈希冲突。散列表这种数据结构提供了键（Key）和值（Value） 的映射关系。只要给出一个Key，就可以高效查找到它所匹配的Value，时间复杂度接近于O(1) 。</p>
+</blockquote>
+<h1 id="什么是哈希函数？"><a href="#什么是哈希函数？" class="headerlink" title="什么是哈希函数？"></a>什么是哈希函数？</h1><blockquote>
+<p>本质上哈希表其实也是数组，数组只能根据下标，像a[0]、a[1]、 a[2]、a[3]、a[4]这样来访问，而散列表的Key则是以字符串类型为 主的。需要一个“中转站”，通过某种方式，把Key和数组下标进行转换。这个中转站就叫作哈希函数。</p>
+</blockquote>
+<h1 id="哈希函数的实现"><a href="#哈希函数的实现" class="headerlink" title="哈希函数的实现"></a>哈希函数的实现</h1><p>在不同的语言中，哈希函数的实现方式是不一样的。以Java的常用集合HashMap为例。 在Java及大多数面向对象的语言中，每一个对象都有属于自己的hashcode，这个hashcode是区分不同对象的重要标识。无论对象自身的 类型是什么，它们的hashcode都是一个整型变量。 既然都是整型变量，想要转化成数组的下标也就不难实现了。最简单的转化方式是什么呢？是按照数组长度进行取模运算。</p>
+<blockquote>
+<p>index = HashCode (Key) % Array.length </p>
+</blockquote>
+<p>实际上，JDK（Java Development Kit，Java语言的软件开发工具包）中 的哈希函数并没有直接采用取模运算，而是利用了位运算的方式来优化性能。不过可以姑且简单理解成取模操作。通过哈希函数，我们可以把字符串或其他类型的Key，转化成数组的下标index。</p>
+<p>如给出一个长度为8的数组，则当 key=001121时，</p>
+<blockquote>
+<p>index = HashCode (“001121”) % Array.length = 1420036703 % 8 = 7 </p>
+</blockquote>
+<p>而当key=this时，</p>
+<blockquote>
+<p>index = HashCode (“this”) % Array.length = 3559070 % 8 = 6</p>
+</blockquote>
+<h1 id="散列表中的读写操作"><a href="#散列表中的读写操作" class="headerlink" title="散列表中的读写操作"></a>散列表中的读写操作</h1><p>写操作</p>
+<ul>
+<li>第1步，通过哈希函数，把Key转化成数组下标5。 </li>
+<li>第2步，如果数组下标5对应的位置没有元素，就把这个Entry填充到数 组下标5的位置</li>
+</ul>
+<p>读操作</p>
+<h1 id="什么是哈希冲突"><a href="#什么是哈希冲突" class="headerlink" title="什么是哈希冲突"></a>什么是哈希冲突</h1><blockquote>
+<p>在散列表写操作时，由于数组的长度是有限的，当插入的Entry越来越多时，不同的 Key通过哈希函数获得的下标有可能是相同的。例如002936这个Key对应的数组下标是2；002947这个Key对应的数组下标也是2。这种情况，就叫作哈希冲突 </p>
+</blockquote>
+<h1 id="解决哈希冲突的方法"><a href="#解决哈希冲突的方法" class="headerlink" title="解决哈希冲突的方法"></a>解决哈希冲突的方法</h1><ul>
+<li><p>开放寻址法，</p>
+<p>开放寻址法的原理很简单，当一个Key通过哈希函数获得对应的数组下 标已被占用时，我们可以“另谋高就”，寻找下一个空档位置。</p>
+</li>
+<li><p>链表法。 </p>
+<p>Java的集合类HashMap当中。 HashMap数组的每一个元素不仅是一个Entry对象，还是一个链表的头节 点。每一个Entry对象通过next指针指向它的下一个Entry节点。当新来的 Entry映射到与之冲突的数组位置时，需要插入到对应的链表中</p>
+</li>
+</ul>
+<p>链表法比较重要，所以讲讲链表法实现步骤如下</p>
+<ul>
+<li>第1步，通过哈希函数，把Key转化成数组下标2。</li>
+<li> 第2步，找到数组下标2所对应的元素，如果这个元素的Key是002936， 那么就找到了；如果这个Key不是002936也没关系，由于数组的每个元素都与一个链表对应，可以顺着链表慢慢往下找，看看能否找到与 Key相匹配的节点。</li>
+</ul>
+<p>注意：关于HashMap的实现，JDK 8和以前的版本有着很大的 不同。当多个Entry被Hash到同一个数组下标位置时，为了提升插入和查找的效率，HashMap会把Entry的链表转化为红黑树这种数据结构。由于散列表的具体实现代码比较复杂，所以有兴趣自己去看看源码吧嘿嘿。</p>
 
                 
             </div>
@@ -514,7 +496,7 @@ public static void main(String[] args) throws Exception {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/11/29/shu-ju-jie-gou-yu-suan-fa/zui-xiao-zhan-de-shi-xian/">https://binbincome.github.io/2021/11/29/shu-ju-jie-gou-yu-suan-fa/zui-xiao-zhan-de-shi-xian/</a>
+                    <a href="https://binbincome.github.io/2021/12/02/shu-ju-jie-gou-yu-suan-fa/ha-xi-biao-he-ha-xi-han-shu/">https://binbincome.github.io/2021/12/02/shu-ju-jie-gou-yu-suan-fa/ha-xi-biao-he-ha-xi-han-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -552,8 +534,8 @@ public static void main(String[] args) throws Exception {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">数据结构与算法</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">数据结构及算法</span>
                                 </a>
                             
                         </div>
@@ -597,17 +579,18 @@ public static void main(String[] args) throws Exception {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/11/29/shu-ju-jie-gou-yu-suan-fa/ru-he-pan-duan-yi-ge-lian-biao-shi-fou-you-huan/">
+                <a href="/2021/12/02/shu-ju-jie-gou-yu-suan-fa/ha-xi-biao-he-ha-xi-han-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="如何判断一个链表是否有环">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="哈希表和哈希函数">
                         
-                        <span class="card-title">如何判断一个链表是否有环</span>
+                        <span class="card-title">哈希表和哈希函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -617,26 +600,27 @@ public static void main(String[] args) throws Exception {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构与算法
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构及算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构及算法</span>
                     </a>
                     
                 </div>
@@ -650,13 +634,13 @@ public static void main(String[] args) throws Exception {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/22/ruan-jian-ce-shi/ruan-jian-ce-shi-de-fang-fa-he-ji-zhu-xiang-guan/">
+                <a href="/2021/12/01/shu-ju-jie-gou-yu-suan-fa/mou-pao-pai-xu-suan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="软件测试的方法和技术相关">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="冒泡排序算法">
                         
-                        <span class="card-title">软件测试的方法和技术相关</span>
+                        <span class="card-title">冒泡排序算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -667,14 +651,14 @@ public static void main(String[] args) throws Exception {
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" class="post-category">
-                                    软件测试
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构及算法
                                 </a>
                             
                             
@@ -684,8 +668,8 @@ public static void main(String[] args) throws Exception {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">
-                        <span class="chip bg-color">软件测试</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构及算法</span>
                     </a>
                     
                 </div>

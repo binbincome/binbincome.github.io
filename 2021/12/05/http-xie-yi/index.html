@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Django配置MySQL的设置, 冰冰的小屋">
+    <meta name="keywords" content="Http协议, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Django配置MySQL的设置 | 冰冰的小屋</title>
+    <title>Http协议 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Django配置MySQL的设置</h1>
+                    <h1 class="description center-align post-title">Http协议</h1>
                 </div>
             </div>
         </div>
@@ -364,8 +364,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Django/">
-                                <span class="chip bg-color">Django</span>
+                            <a href="/tags/Http%E5%8D%8F%E8%AE%AE/">
+                                <span class="chip bg-color">Http协议</span>
                             </a>
                         
                     </div>
@@ -376,8 +376,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                后端
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="post-category">
+                                网络知识
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-22
+                    2021-12-05
                 </div>
                 
 
@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    132
+                    856
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -428,27 +428,121 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Django配置MySQL的设置"><a href="#Django配置MySQL的设置" class="headerlink" title="Django配置MySQL的设置"></a>Django配置MySQL的设置</h1><p>在项目中的settings.py文件中，将原先的sqllite数据库注释。</p>
-<p>然后添加</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"> <span class="token number">1</span> DATABASES <span class="token operator">=</span> <span class="token punctuation">{</span>
- <span class="token number">2</span>     <span class="token string">'default'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
- <span class="token number">3</span>         <span class="token string">'ENGINE'</span><span class="token punctuation">:</span> <span class="token string">'django.db.backends.mysql'</span><span class="token punctuation">,</span> <span class="token comment">#数据库引擎</span>
- <span class="token number">4</span>         <span class="token string">'NAME'</span><span class="token punctuation">:</span> <span class="token string">'test'</span><span class="token punctuation">,</span>                       <span class="token comment">#数据库名</span>
- <span class="token number">5</span>         <span class="token string">'USER'</span><span class="token punctuation">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>                       <span class="token comment">#用户名</span>
- <span class="token number">6</span>         <span class="token string">'PASSWORD'</span><span class="token punctuation">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>                   <span class="token comment">#密码</span>
- <span class="token number">7</span>         <span class="token string">'HOST'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>                           <span class="token comment">#数据库主机，默认为localhost</span>
- <span class="token number">8</span>         <span class="token string">'PORT'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>                           <span class="token comment">#数据库端口，MySQL默认为3306</span>
- <span class="token number">9</span>         <span class="token string">'OPTIONS'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-<span class="token number">10</span>             <span class="token string">'autocommit'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
-<span class="token number">11</span>         <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token number">12</span>     <span class="token punctuation">}</span>
-<span class="token number">13</span> <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>并且将数据库名字添加到setting.py文件中的installed_apps下</p>
-<p>在项目根目录下中的__init__.py文件中添加代码：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pymysql
-pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
+                <ul>
+<li>底层知识永不过时！冲！</li>
+<li>理解Http协议，动手试，</li>
+<li>PHP+socket发http协议</li>
+<li>PHP批量发帖，防盗链；</li>
+</ul>
+<h2 id="HTTP协议概念和工作流程"><a href="#HTTP协议概念和工作流程" class="headerlink" title="HTTP协议概念和工作流程"></a>HTTP协议概念和工作流程</h2><p>计算机中的协议就像生活中的协议一样，一式双份，双方都遵循这个规范！计算机能全世界互通计算机协议功不可没。类似的还有ftp、http、stmp、pop、tcp/ip等协议。</p>
+<p>当你打开一个页面时，客户端就发送请求和服务器建立连接；</p>
+<p>服务器就沿着连接，返回响应信息；</p>
+<p>客户端收到响应的html代码解析出图片和文字组成页面呈现出来</p>
+<h2 id="http协议请求方法"><a href="#http协议请求方法" class="headerlink" title="http协议请求方法"></a>http协议请求方法</h2><table>
+<thead>
+<tr>
+<th>1</th>
+<th>GET</th>
+<th>请求指定的页面信息，并返回实体主体。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>HEAD</td>
+<td>类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头</td>
+</tr>
+<tr>
+<td>3</td>
+<td>POST</td>
+<td>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和/或已有资源的修改。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PUT</td>
+<td>从客户端向服务器传送的数据取代指定的文档的内容。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>DELETE</td>
+<td>请求服务器删除指定的页面。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>CONNECT</td>
+<td>HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>OPTIONS</td>
+<td>允许客户端查看服务器的性能。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>TRACE</td>
+<td>回显服务器收到的请求，主要用于测试或诊断。</td>
+</tr>
+<tr>
+<td>9</td>
+<td>PATCH</td>
+<td>是对 PUT 方法的补充，用来对已知资源进行局部更新 。</td>
+</tr>
+</tbody></table>
+<h2 id="cmd发起请求："><a href="#cmd发起请求：" class="headerlink" title="cmd发起请求："></a>cmd发起请求：</h2><ul>
+<li>ipconfig查看ip</li>
+<li>telnet localhost 80  //连接本地端口</li>
+<li>ctrl+】打开回显</li>
+<li>输入客户端请求消息</li>
+<li>得到服务器响应消息</li>
+</ul>
+<h3 id="请求消息："><a href="#请求消息：" class="headerlink" title="请求消息："></a>请求消息：</h3><p><strong>请求行（request line）、请求头部（header）、空行和请求数据四个部分组成</strong></p>
+<blockquote>
+<p>请求行=请求方法+请求路径+协议版本</p>
+<p>请求头=key+value</p>
+<p>空行                       //这个千万不能省略，这是用来区分请求消息和请求数据的，没有请求数据时可以为空</p>
+<p>请求数据                //也可以为空</p>
+</blockquote>
+<p>例子如下：</p>
+<blockquote>
+<pre class="line-numbers language-none"><code class="language-none">GET /hello.txt HTTP/1.1    		
+User-Agent: curl/7.16.3 libcurl/7.16.3 OpenSSL/0.9.7l zlib/1.2.3
+Host: www.example.com
+Accept-Language: en, mi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h3 id="响应消息："><a href="#响应消息：" class="headerlink" title="响应消息："></a>响应消息：</h3><p><strong>状态行、消息报头、空行和响应正文</strong></p>
+<blockquote>
+<p>状态行 = 协议版本+状态码+状态</p>
+<p>消息报头=key+value</p>
+<p>空行</p>
+<p>响应正文</p>
+</blockquote>
+<p>例子如下：</p>
+<blockquote>
+<pre class="line-numbers language-none"><code class="language-none">HTTP/1.1 200 OK
+Date: Mon, 27 Jul 2009 12:28:53 GMT
+Server: Apache
+Last-Modified: Wed, 22 Jul 2009 19:15:56 GMT
+ETag: "34aa387-d-1568eb00"
+Accept-Ranges: bytes
+Content-Length: 51
+Vary: Accept-Encoding
+Content-Type: text/plain<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h2 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h2><p>当浏览者访问一个网页时，浏览者的浏览器会向网页所在服务器发出请求。当浏览器接收并显示网页前，此网页所在的服务器会返回一个包含 HTTP 状态码的信息头（server header）用以响应浏览器的请求。</p>
+<p>HTTP 状态码的英文为 <strong>HTTP Status Code</strong>。。</p>
+<p>下面是常见的 HTTP 状态码：</p>
+<ul>
+<li>200 - 请求成功</li>
+<li>301 - 资源（网页等）被永久转移到其它URL</li>
+<li>404 - 请求的资源（网页等）不存在</li>
+<li>500 - 内部服务器错误</li>
+</ul>
+<p><strong>程序员最想看到的：200-OK。</strong></p>
+<p><strong>程序员不想看到的：500-Internal-Server-Error</strong></p>
+<p>本文学习引用自：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/http/http-tutorial.html">https://www.runoob.com/http/http-tutorial.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1js411g7Fw">https://www.bilibili.com/video/BV1js411g7Fw</a></li>
+</ul>
 
                 
             </div>
@@ -465,7 +559,7 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Binbin</a>
+                    <a href="/about" rel="external nofollow noreferrer">冰冰的小屋</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -475,7 +569,7 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/11/22/django-pei-zhi-mysql-de-she-zhi/">https://binbincome.github.io/2021/11/22/django-pei-zhi-mysql-de-she-zhi/</a>
+                    <a href="https://binbincome.github.io/2021/12/05/http-xie-yi/">https://binbincome.github.io/2021/12/05/http-xie-yi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -488,7 +582,7 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Binbin</a>
+                    <a href="/about" target="_blank">冰冰的小屋</a>
                     !
                 </span>
             </div>
@@ -513,8 +607,8 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Django/">
-                                    <span class="chip bg-color">Django</span>
+                                <a href="/tags/Http%E5%8D%8F%E8%AE%AE/">
+                                    <span class="chip bg-color">Http协议</span>
                                 </a>
                             
                         </div>
@@ -562,13 +656,13 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/22/ruan-jian-ce-shi/ruan-jian-ce-shi-fang-xiang-tan-suo/">
+                <a href="/2021/12/05/liu-lan-qi-shi-zen-me-yun-zuo-de/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="软件测试方向探索">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="浏览器是怎么运作的">
                         
-                        <span class="card-title">软件测试方向探索</span>
+                        <span class="card-title">浏览器是怎么运作的</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -579,27 +673,15 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-05
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" class="post-category">
-                                    软件测试
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            冰冰的小屋
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">
-                        <span class="chip bg-color">软件测试</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -611,13 +693,13 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/22/ruan-jian-ce-shi/di-yi-pian-wen-zhang-ce-shi/">
+                <a href="/2021/12/05/shi-me-shi-yu-ming/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="第一篇文章测试">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="什么是域名？">
                         
-                        <span class="card-title">第一篇文章测试</span>
+                        <span class="card-title">什么是域名？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -628,14 +710,14 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    网络知识
                                 </a>
                             
                             
@@ -645,8 +727,8 @@ pymysql<span class="token punctuation">.</span>install_as_MySQLdb<span class="to
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/%E5%9F%9F%E5%90%8D/">
+                        <span class="chip bg-color">域名</span>
                     </a>
                     
                 </div>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="揭秘阿里云服务器, 冰冰的小屋">
+    <meta name="keywords" content="二叉堆和堆排序算法, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>揭秘阿里云服务器 | 冰冰的小屋</title>
+    <title>二叉堆和堆排序算法 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">揭秘阿里云服务器</h1>
+                    <h1 class="description center-align post-title">二叉堆和堆排序算法</h1>
                 </div>
             </div>
         </div>
@@ -364,8 +364,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                                <span class="chip bg-color">云服务器</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
                             </a>
                         
                     </div>
@@ -376,8 +376,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="post-category">
-                                网络知识
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                数据结构与算法
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-05
+                    2021-12-07
                 </div>
                 
 
@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    71
+                    878
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -428,15 +428,21 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="阿里云服务器（ECS）"><a href="#阿里云服务器（ECS）" class="headerlink" title="阿里云服务器（ECS）"></a>阿里云服务器（ECS）</h1><p>知识点；</p>
-<ul>
-<li>阿里云服务器的简介</li>
-<li>阿里云服务器的使用</li>
-<li>云服务器安装JDK、Tomcat等软件</li>
-<li>部署项目</li>
-</ul>
-<p>等买了服务器再来学这个视频吧！</p>
-<p>揭秘阿里云服务器：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Rt411u7k4">https://www.bilibili.com/video/BV1Rt411u7k4</a></p>
+                <h1 id="二叉堆和堆排序算法"><a href="#二叉堆和堆排序算法" class="headerlink" title="二叉堆和堆排序算法"></a>二叉堆和堆排序算法</h1><p>什么是二叉堆？ 二叉堆本质上是一种完全二叉树，它分为两个类型。 1. 最大堆。 2. 最小堆。 什么是最大堆呢？最大堆的任何一个父节点的值，都大于或等于 它 左、右孩子节点的值</p>
+<p>什么是最小堆呢？最小堆的任何一个父节点的值，都小于或等于它左、 右孩子节点的值。</p>
+<p>二叉堆的根节点叫作堆顶 。 最大堆和最小堆的特点决定了：最大堆的堆顶是整个堆中的最大元素 ；最小堆的堆顶是整个堆中的最小元素 。</p>
+<ol>
+<li><h2 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h2></li>
+</ol>
+<p>当二叉堆插入节点时，插入位置是完全二叉树的最后一个位置。例如插 入一个新节点，值是 0。 这时，新节点的父节点5比0大，显然不符合最小堆的性质。于是让新节 点“上浮”，和父节点交换位置。 继续用节点0和父节点3做比较，因为0小于3，则让新节点继续“上浮”。 继续比较，最终新节点0“上浮”到了堆顶位置。 </p>
+<ol start="2">
+<li><h2 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h2><p>二叉堆删除节点的过程和插入节点的过程正好相反，所删除的是处于堆 顶的节点。例如删除最小堆的堆顶节点1。 这时，为了继续维持完全二叉树的结构，我们把堆的最后一个节点10临 时补到原本堆顶的位置。 接下来，让暂处堆顶位置的节点10和它的左、右孩子进行比较，如果 左、右孩子节点中最小的一个（显然是节点2）比节点10小，那么让节 点10“下沉”。 继续让节点10和它的左、右孩子做比较，左、右孩子中最小的是节点 7，由于10大于7，让节点10继续“下沉”。 这样一来，二叉堆重新得到了调整。</p>
+</li>
+<li><h2 id="构建二叉堆"><a href="#构建二叉堆" class="headerlink" title="构建二叉堆"></a>构建二叉堆</h2><p>构建二叉堆，也就是把一个无序的完全二叉树调整为二叉堆，本质就是 让所有非叶子节点依次“下沉” 。 下面举一个无序完全二叉树的例子。 首先，从最后一个非叶子节点开始，也就是从节点10开始。如果节点10 大于它左、右孩子节点中最小的一个，则节点10“下沉”。 接下来轮到节点3，如果节点3大于它左、右孩子节点中最小的一个，则 节点3“下沉”。 然后轮到节点1，如果节点1大于它左、右孩子节点中最小的一个，则节 点1“下沉”。事实上节点1小于它的左、右孩子，所以不用改变。 接下来轮到节点7，如果节点7大于它左、右孩子节点中最小的一个，则 节点7“下沉”。 节点7继续比较，继续“下沉”。 经过上述几轮比较和“下沉”操作，最终每一节点都小于它的左、右孩子 节点，一个无序的完全二叉树就被构建成了一个最小堆。</p>
+</li>
+</ol>
+<p>二叉堆虽然是一个完全二叉树，但它的存储方式并不是链式存储，而是顺序存储。换句话说，二叉 堆的所有节点都存储在数组中</p>
+<p>假设父节点的下标是parent，那么它的左孩子下标就是 2×parent+1 ；右 孩子下标就是2×parent+2 。</p>
 
                 
             </div>
@@ -463,7 +469,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/12/05/jie-mi-a-li-yun-fu-wu-qi/">https://binbincome.github.io/2021/12/05/jie-mi-a-li-yun-fu-wu-qi/</a>
+                    <a href="https://binbincome.github.io/2021/12/07/shu-ju-jie-gou-yu-suan-fa/er-cha-dui-he-dui-pai-xu-suan-fa/">https://binbincome.github.io/2021/12/07/shu-ju-jie-gou-yu-suan-fa/er-cha-dui-he-dui-pai-xu-suan-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -501,8 +507,8 @@ if (windowWidth > 768) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                                    <span class="chip bg-color">云服务器</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
                                 </a>
                             
                         </div>
@@ -550,13 +556,13 @@ if (windowWidth > 768) {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/12/05/http-xie-yi/">
+                <a href="/2021/12/07/shu-ju-jie-gou-yu-suan-fa/shu-ju-jie-gou-xi-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Http协议">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="数据结构习题">
                         
-                        <span class="card-title">Http协议</span>
+                        <span class="card-title">数据结构习题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -567,8 +573,57 @@ if (windowWidth > 768) {
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%B9%A0%E9%A2%98/">
+                        <span class="chip bg-color">习题</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/12/05/qian-duan-kai-fa/dns-ji-qi-ji-ben-gong-zuo-yuan-li/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="DNS及其基本工作原理">
+                        
+                        <span class="card-title">DNS及其基本工作原理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -584,57 +639,8 @@ if (windowWidth > 768) {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Http%E5%8D%8F%E8%AE%AE/">
-                        <span class="chip bg-color">Http协议</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/12/04/linux/linux-xue-xi-01/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Linux学习01">
-                        
-                        <span class="card-title">Linux学习01</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-04
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/DNS/">
+                        <span class="chip bg-color">DNS</span>
                     </a>
                     
                 </div>
@@ -869,7 +875,7 @@ if (windowWidth > 768) {
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.4k</span>&nbsp;字
+                class="white-color">22.5k</span>&nbsp;字
             
             
             

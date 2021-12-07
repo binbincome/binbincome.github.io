@@ -4,9 +4,59 @@
   
     
     <entry>
+      <title>数据结构习题</title>
+      <link href="/2021/12/07/shu-ju-jie-gou-yu-suan-fa/shu-ju-jie-gou-xi-ti/"/>
+      <url>/2021/12/07/shu-ju-jie-gou-yu-suan-fa/shu-ju-jie-gou-xi-ti/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><ol><li><p>可以用 <strong>抽象数据类型</strong>定义一个完整的数据结构；</p><p>抽象数据类型（ADT）= 数据对象+数据关系+基本操作集</p></li><li><p>树是 <strong>非线性数据结构</strong>；</p><p>集合结构、树形结构、图形结构都是非线性的；</p><p>线性结构：N个数据的有序集合</p></li><li><p>属于逻辑结构的是 <strong>有序表</strong>；</p><p>有序表指关键字有序的线性表 ，可以链式也可以顺序，仅描述元素之间的关系</p></li><li><p>与数据的存储结构无关的是 <strong>栈</strong>；</p><p>数据结构三要素：存储结构（顺序存储、链接存储、索引存储、散列存储）；逻辑结构（线性表，队列，栈）；数据的运算</p><p>循环队列是一种用顺序表表示的特殊队列</p></li><li><p>数据的逻辑结构独立于其存储结构；</p></li><li><p>在存储数据时不仅要存储数据的值，还要 <strong>存储数据元素之间的关系</strong></p><p>储存数据时无需存储操作方法，存储数据结构时才需如此，其类型隐含于数据元素之中。</p></li><li><p>链式存储设计时，结点内的存储单元地址<strong>一定连续</strong></p><p>各个不同节点的存储空间可以不连续，但节点内的存储单元地址则必须连续；</p></li><li><p>对于两种不同的数据结构，逻辑结构或物理结构不一定相同。</p><p>例如：二叉树和二叉排序树是两种不同的数据结构，两者均可以使用二叉树的逻辑结构和物理结构，但是建立树、插入节点、删除节点等操作是不同的；</p></li><li><p>举例对相同的逻辑结构，同一种运算在不同存储方式实现，其运算效率不同；</p><p>线性表即可以用顺序存储方式、也可以用链式存储方式；</p><p>在顺序存储方式下，插入和删除时间复杂度为O（1）；</p><p>在链式存储方式下，插入和删除时间复杂度为O（1）；</p></li><li><p>程序是一组计算机能识别和执行的指令，算法是在有限时间内的解决问题完整的准确的一系列清晰指令。程序是算法在计算机上的特定的实现，程序不一定满足有穷性，而算法是有穷的确定的可行的输入输出</p></li><li><p>算法的时间复杂度是O（n**2），该算法执行时间和n方成正比；</p></li><li><p>```<br> void fun(int n){</p><pre><code> int i=1; while(i&lt;n){     i=i*2; }</code></pre><p> }<br>//求其时间复杂度<br>log2（n）；</p><pre class="line-numbers language-none"><code class="language-none">    计算时间复杂度方法    - 找出最深层循环内的语句    - 找出问题规模并确定关于n的函数式13. ```    int fun(int n){    if  (n&lt;=1) return 1;    return n*fun(n-1);    }    //求其时间复杂度    O（n）；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li></li><li></li><li></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 习题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>二叉堆和堆排序算法</title>
+      <link href="/2021/12/07/shu-ju-jie-gou-yu-suan-fa/er-cha-dui-he-dui-pai-xu-suan-fa/"/>
+      <url>/2021/12/07/shu-ju-jie-gou-yu-suan-fa/er-cha-dui-he-dui-pai-xu-suan-fa/</url>
+      
+        <content type="html"><![CDATA[<h1 id="二叉堆和堆排序算法"><a href="#二叉堆和堆排序算法" class="headerlink" title="二叉堆和堆排序算法"></a>二叉堆和堆排序算法</h1><p>什么是二叉堆？ 二叉堆本质上是一种完全二叉树，它分为两个类型。 1. 最大堆。 2. 最小堆。 什么是最大堆呢？最大堆的任何一个父节点的值，都大于或等于 它 左、右孩子节点的值</p><p>什么是最小堆呢？最小堆的任何一个父节点的值，都小于或等于它左、 右孩子节点的值。</p><p>二叉堆的根节点叫作堆顶 。 最大堆和最小堆的特点决定了：最大堆的堆顶是整个堆中的最大元素 ；最小堆的堆顶是整个堆中的最小元素 。</p><ol><li><h2 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h2></li></ol><p>当二叉堆插入节点时，插入位置是完全二叉树的最后一个位置。例如插 入一个新节点，值是 0。 这时，新节点的父节点5比0大，显然不符合最小堆的性质。于是让新节 点“上浮”，和父节点交换位置。 继续用节点0和父节点3做比较，因为0小于3，则让新节点继续“上浮”。 继续比较，最终新节点0“上浮”到了堆顶位置。 </p><ol start="2"><li><h2 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h2><p>二叉堆删除节点的过程和插入节点的过程正好相反，所删除的是处于堆 顶的节点。例如删除最小堆的堆顶节点1。 这时，为了继续维持完全二叉树的结构，我们把堆的最后一个节点10临 时补到原本堆顶的位置。 接下来，让暂处堆顶位置的节点10和它的左、右孩子进行比较，如果 左、右孩子节点中最小的一个（显然是节点2）比节点10小，那么让节 点10“下沉”。 继续让节点10和它的左、右孩子做比较，左、右孩子中最小的是节点 7，由于10大于7，让节点10继续“下沉”。 这样一来，二叉堆重新得到了调整。</p></li><li><h2 id="构建二叉堆"><a href="#构建二叉堆" class="headerlink" title="构建二叉堆"></a>构建二叉堆</h2><p>构建二叉堆，也就是把一个无序的完全二叉树调整为二叉堆，本质就是 让所有非叶子节点依次“下沉” 。 下面举一个无序完全二叉树的例子。 首先，从最后一个非叶子节点开始，也就是从节点10开始。如果节点10 大于它左、右孩子节点中最小的一个，则节点10“下沉”。 接下来轮到节点3，如果节点3大于它左、右孩子节点中最小的一个，则 节点3“下沉”。 然后轮到节点1，如果节点1大于它左、右孩子节点中最小的一个，则节 点1“下沉”。事实上节点1小于它的左、右孩子，所以不用改变。 接下来轮到节点7，如果节点7大于它左、右孩子节点中最小的一个，则 节点7“下沉”。 节点7继续比较，继续“下沉”。 经过上述几轮比较和“下沉”操作，最终每一节点都小于它的左、右孩子 节点，一个无序的完全二叉树就被构建成了一个最小堆。</p></li></ol><p>二叉堆虽然是一个完全二叉树，但它的存储方式并不是链式存储，而是顺序存储。换句话说，二叉 堆的所有节点都存储在数组中</p><p>假设父节点的下标是parent，那么它的左孩子下标就是 2×parent+1 ；右 孩子下标就是2×parent+2 。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>DNS及其基本工作原理</title>
-      <link href="/2021/12/05/dns-ji-qi-ji-ben-gong-zuo-yuan-li/"/>
-      <url>/2021/12/05/dns-ji-qi-ji-ben-gong-zuo-yuan-li/</url>
+      <link href="/2021/12/05/qian-duan-kai-fa/dns-ji-qi-ji-ben-gong-zuo-yuan-li/"/>
+      <url>/2021/12/05/qian-duan-kai-fa/dns-ji-qi-ji-ben-gong-zuo-yuan-li/</url>
       
         <content type="html"><![CDATA[<h1 id="什么是DNS？"><a href="#什么是DNS？" class="headerlink" title="什么是DNS？"></a>什么是DNS？</h1><p>计算机在网络通讯时只能识别“192.168.1.1”之类的<strong>IP地址</strong>，而不能识别域名。记忆一串数字显然比有意义的英文字母简单，<strong>域名</strong>其实就是“<a href="http://www.zhihu.com”之类的.我们在平常访问网站时输入网站域名就能看见所需的页面是因为有一个叫做“**dns服务器**”的在替我们解析成了相应的ip地址,然后对应的服务器返回所需的信息./">www.zhihu.com”之类的。我们在平常访问网站时输入网站域名就能看见所需的页面是因为有一个叫做“**DNS服务器**”的在替我们解析成了相应的IP地址，然后对应的服务器返回所需的信息。</a></p><p>浏览时输入的是域名，域名和IP是绑定的，DNS服务器把英文的域名翻译成IP地址的过程被称为<strong>DNS域名解析</strong>；</p><p>顶级域名：test.com</p><p>二级域名：test.cn.com</p><p>三级域名：test.mail.cn.com</p><p>.com是一个域，表示一个区域或者说一个范围</p><h1 id="公网IP和私网IP"><a href="#公网IP和私网IP" class="headerlink" title="公网IP和私网IP"></a>公网IP和私网IP</h1><ul><li>全球需要上网的设备数量远远大于IP地址数量，因此IP地址不够用（指IPv4地址，IPv6地址够用）</li><li>所以在一个单位内部，需要使用私有IP地址组建网络，私有IP不能直接访问互联网，需要使用NAT地址转换网络技术才能访问互联网</li><li>简单说：要想让全世界的人都能访问你的服务器，你需要为服务器配置一个公网IP，如果没有，就需要使用NAT等网络技术</li></ul><pre class="line-numbers language-none"><code class="language-none">ipconfig -all//查看本机IP、子网掩码、等信息<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="子网掩码和网关"><a href="#子网掩码和网关" class="headerlink" title="子网掩码和网关"></a>子网掩码和网关</h1><blockquote><p>用来判断两台电脑之间是否能够直接通信</p></blockquote><ul><li>IP地址以“<strong>网络号</strong>”来判定两个主机是否处于同一个网络</li><li>我们把网络号相同的主机称之为本地网络主机，网络号不相同的主机称之为远程网络主机</li><li>本地网络中的主机可以直接相互通信，远程网络中的主机要相互通信必须通过网关（Gateway）来传递转发数据</li></ul><h1 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h1><ul><li>一台拥有IP地址的主机可以提供许多服务，比如Web服务，FTP服务、SMTP服务等（每一个服务都对应一个应用程序）</li><li>那么，主机是怎样区分不同的网络服务呢？显然不能只靠IP地址，因为IP地址与网络服务的关系是一对多的关系。实际上是通过”IP地址+端口号”来区分不同的服务的</li><li>端口实行先占先得的规则，某个端口被占用了，其他应用程序就不能再重复占用，只能换端口</li></ul><h3 id="端口的分类和范围"><a href="#端口的分类和范围" class="headerlink" title="端口的分类和范围"></a>端口的分类和范围</h3><ul><li>常见端口分为TCP端口和UDP端口（TCP和UPD是不同的协议，详情请自行百度），每个都有65535个端口可供使用</li><li>TCP端口常见的包括FTP服务的21端口，Telent服务的23端口，SMTP服务的25端口，以及HTTP服务的80端口等</li><li>UDP端口常见的有DNS服务的53端口，SNMP（简单网络管理协议）服务的161端口，QQ使用的8000和4000端口等等</li></ul><h3 id="常见端口"><a href="#常见端口" class="headerlink" title="常见端口"></a>常见端口</h3><ul><li>20　ftp文件传输协议(默认数据口)　</li><li>21　ftp文件传输协议(控制)</li><li>22　Linux的SSH远程登录协议</li><li>80　http全球信息网超文本传输协议</li></ul><h3 id="查看端口命令"><a href="#查看端口命令" class="headerlink" title="查看端口命令"></a>查看端口命令</h3><p>可以使用Netstat命令：开始-&gt;运行，键入”cmd”并回车，打开命令提示符窗口。在命令提示符状态下键入</p><blockquote><p>netstat -a -n</p></blockquote><p>按下回车键后就可以看到以数字形式显示的 TCP和UDP连接的端口号及状态。</p><h1 id="DNS的解析过程（重点）"><a href="#DNS的解析过程（重点）" class="headerlink" title="DNS的解析过程（重点）"></a>DNS的解析过程（重点）</h1><blockquote><p><strong>DNS解析，</strong>又叫<strong>域名解析</strong>就是将域名解析为IP地址的过程。</p></blockquote><p>IP地址标志着网络中一个节点的位置，域名则是为了IP地址更容易被记住而设置的一个代称，域名解析由**<a href="https://www.zhihu.com/search?q=%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1820951002%7D">域名系统</a>（Domain Name System，简称DNS）<strong>来完成，可以把它看作是一个</strong>保存了域名和IP地址对应关系的数据库**。</p><ol><li>DNS解析是一个递归查找的过程，在用户访问“xxx.com”时，先向TCP/IP中设置的首选DNS服务器查询域名对应的IP地址（根据本地网络设置的不同而不同，这个DNS服务器又叫本地服务器），如果本地DNS服务器中恰好负责管理该记录或者缓存有该记录，则将结果IP地址返回给用户，域名解析结束。</li><li>如果本地DNS服务器中没有记录，则本地DNS服务器把请求转发给根DNS服务器，根DNS服务器会判断该地址的顶级域名（即“.com”）由哪台顶级<a href="https://www.zhihu.com/search?q=%E5%9F%9F%E5%90%8DDNS&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1820951002%7D">域名DNS</a>服务器负责，并将请求转发给对应的顶级域名DNS服务器。顶级<a href="https://www.zhihu.com/search?q=%E5%9F%9F%E5%90%8DDN&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1820951002%7D">域名DN</a>S服务器如果存有记录，则将其解析，如果不存有对应记录则继续转发给下一级的DNS服务器。最后找到对应IP地址返回给用户，域名解析结束。</li></ol><h1 id="个人理解："><a href="#个人理解：" class="headerlink" title="个人理解："></a>个人理解：</h1><p>用户通过计算机发起访问某域名时，</p><p>首先<strong>对DNS服务器发起请求</strong>：通过计算机所设置的DNS服务器通过私网IP被路由器NAT协议转换成的公网IP发起请求（可能还会有下一级的转换根据局域网的不同而不同，为了简单描述忽略部分过程。如果设置的是自动的话，就默认是路由器的DNS服务器）</p><p>DNS服务器根据域名先通过cache缓存在本地的记录查看是否存在对应IP，如果存在即返回IP地址，如果不存在就会向根服务器发送请求（根服务器储存着所有的顶级域名的IP地址，为了分担服务器压力一共有13台，后来随着任播等技术的出现,一切迎刃而解）根服务器返回给DNS服务器对应的顶级域名的IP地址，DNS服务器对顶级域名的服务器发起请求，顶级域名的服务器接受到请求后返回对应请求的域名的IP地址。到此域名解析结束！</p><h1 id="CDN加速"><a href="#CDN加速" class="headerlink" title="CDN加速"></a>CDN加速</h1><p>内容分发网络（Content Delivery Network，简称CDN）就使用DNS解析将用户的请求分配到了离用户最近的边缘节点上，进而提升了用户访问静态资源的速度。</p><p>在使用内容分发网络时，需要使用CNAME将源站域名指向CDN服务商指定的域名，而后者的解析由CDN服务商的DNS服务器负责。于是源站域名的最终解析权就交到了CDN服务商提供的DNS服务器手中。</p><p>CDN服务商的DNS服务器并不会简单地给出一个固定的IP地址，而是会根据用户请求的源IP等信息，寻找出一个距离当前用户最近的<a href="https://www.zhihu.com/search?q=CDN%E8%8A%82%E7%82%B9&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1820951002%7D">CDN节点</a>的IP后返回给用户。这样，用户解析源站的域名，拿到的却是CDN节点的地址。</p><p>之后，用户请求便前往该CDN节点获取内容。接下来CDN节点则会分析用户请求，如果是<a href="https://www.zhihu.com/search?q=%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1820951002%7D">静态资源</a>请求则由CDN节点直接返回，如果是<a href="https://www.zhihu.com/search?q=%E5%8A%A8%E6%80%81%E8%B5%84%E6%BA%90&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1820951002%7D">动态资源</a>请求则由CDN节点转发给源站处理。</p><p>经过CDN服务商的处理，网络上众多的指向源站的请求实际已经被分散到了不同的CDN节点上。而对于用户而言，这一切是无法感知的，他们总感觉自己在访问同一个域名。</p>]]></content>
       
@@ -30,12 +80,24 @@
     
     <entry>
       <title>浏览器是怎么运作的</title>
-      <link href="/2021/12/05/liu-lan-qi-shi-zen-me-yun-zuo-de/"/>
-      <url>/2021/12/05/liu-lan-qi-shi-zen-me-yun-zuo-de/</url>
+      <link href="/2021/12/05/qian-duan-kai-fa/liu-lan-qi-shi-zen-me-yun-zuo-de/"/>
+      <url>/2021/12/05/qian-duan-kai-fa/liu-lan-qi-shi-zen-me-yun-zuo-de/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p><strong>浏览器是运行在操作系统的应用程序</strong></p><h1 id="浏览器是个多进程结构，"><a href="#浏览器是个多进程结构，" class="headerlink" title="浏览器是个多进程结构，"></a>浏览器是个多进程结构，</h1><p>\1. 浏览器进程:控制除标签页外的用户界面，包括地址，书签，后退，前进按钮等，以及负责与浏览器其他进程负责协调工作2.<br>\2. 缓存进程<br>\3. 网络进程 发起网络请求<br>\4. 渲染器进程  渲染Tab 有可能会为每个标签页是一个渲染进程<br>\5. GPU进程 渲染<br>\6. 插件进程  内置插件</p><h2 id="渲染进程"><a href="#渲染进程" class="headerlink" title="渲染进程"></a>渲染进程</h2><ol><li><p>浏览器通过网络请求后获取html数据，通过tcp传给渲染器进程</p></li><li><p>DOM - 主线程将html解析构造DOM树</p></li><li><p>style - 样式计算</p></li><li><p>layoutTree - dom+style 根据dom树和样式生成layoutTree</p></li><li><p>paint -绘制 通过遍历 Layout Tree生成绘制顺序表</p></li><li><p>laryer - 布局 然后根据主进程将layoutTree 和绘制信息表传给合成器线程</p></li><li><p>合成器线程 - 将得到的信息分图层分成更小的图块</p></li><li><p>栅格线程  -  将更小的图块进行栅格化raster，返还给合成器线程draw quads图块信息 存储在GPU中</p></li><li><p>frame 合成器将栅格线程返回的图块合成帧交给浏览器进程</p></li><li><p>浏览器进程 收到一帧的图像后传给GPU进行渲染</p></li></ol><h2 id="重排："><a href="#重排：" class="headerlink" title="重排："></a>重排：</h2><p>当改变dom的属性时，会重新进行样式计算，会重新布局和绘制<br>重绘：<br>当改变颜色时，只会发生样式计算和绘制(layer)<br>requestAnimationFrame()<br>会将主线程的任务分散到每一帧的间隔，从而不影响动画的流程<br>Fiber<br>react利用浏览器的空闲时间做优化<br>Transform<br>会直接运行合成器线程，所以不会感染主线程的渲染<br>在移动端使用3d转换可以优化性能（如果设备有3d加速引擎 GPU 可以提高性能 , 2d转换是无法调用GPU，2G是靠的CPU）</p>]]></content>
       
       
+      <categories>
+          
+          <category> 网络知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网络知识 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -43,8 +105,8 @@
     
     <entry>
       <title>Http协议</title>
-      <link href="/2021/12/05/http-xie-yi/"/>
-      <url>/2021/12/05/http-xie-yi/</url>
+      <link href="/2021/12/05/qian-duan-kai-fa/http-xie-yi/"/>
+      <url>/2021/12/05/qian-duan-kai-fa/http-xie-yi/</url>
       
         <content type="html"><![CDATA[<ul><li>底层知识永不过时！冲！</li><li>理解Http协议，动手试，</li><li>PHP+socket发http协议</li><li>PHP批量发帖，防盗链；</li></ul><h2 id="HTTP协议概念和工作流程"><a href="#HTTP协议概念和工作流程" class="headerlink" title="HTTP协议概念和工作流程"></a>HTTP协议概念和工作流程</h2><p>计算机中的协议就像生活中的协议一样，一式双份，双方都遵循这个规范！计算机能全世界互通计算机协议功不可没。类似的还有ftp、http、stmp、pop、tcp/ip等协议。</p><p>当你打开一个页面时，客户端就发送请求和服务器建立连接；</p><p>服务器就沿着连接，返回响应信息；</p><p>客户端收到响应的html代码解析出图片和文字组成页面呈现出来</p><h2 id="http协议请求方法"><a href="#http协议请求方法" class="headerlink" title="http协议请求方法"></a>http协议请求方法</h2><table><thead><tr><th>1</th><th>GET</th><th>请求指定的页面信息，并返回实体主体。</th></tr></thead><tbody><tr><td>2</td><td>HEAD</td><td>类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头</td></tr><tr><td>3</td><td>POST</td><td>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和/或已有资源的修改。</td></tr><tr><td>4</td><td>PUT</td><td>从客户端向服务器传送的数据取代指定的文档的内容。</td></tr><tr><td>5</td><td>DELETE</td><td>请求服务器删除指定的页面。</td></tr><tr><td>6</td><td>CONNECT</td><td>HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td></tr><tr><td>7</td><td>OPTIONS</td><td>允许客户端查看服务器的性能。</td></tr><tr><td>8</td><td>TRACE</td><td>回显服务器收到的请求，主要用于测试或诊断。</td></tr><tr><td>9</td><td>PATCH</td><td>是对 PUT 方法的补充，用来对已知资源进行局部更新 。</td></tr></tbody></table><h2 id="cmd发起请求："><a href="#cmd发起请求：" class="headerlink" title="cmd发起请求："></a>cmd发起请求：</h2><ul><li>ipconfig查看ip</li><li>telnet localhost 80  //连接本地端口</li><li>ctrl+】打开回显</li><li>输入客户端请求消息</li><li>得到服务器响应消息</li></ul><h3 id="请求消息："><a href="#请求消息：" class="headerlink" title="请求消息："></a>请求消息：</h3><p><strong>请求行（request line）、请求头部（header）、空行和请求数据四个部分组成</strong></p><blockquote><p>请求行=请求方法+请求路径+协议版本</p><p>请求头=key+value</p><p>空行                       //这个千万不能省略，这是用来区分请求消息和请求数据的，没有请求数据时可以为空</p><p>请求数据                //也可以为空</p></blockquote><p>例子如下：</p><blockquote><pre class="line-numbers language-none"><code class="language-none">GET /hello.txt HTTP/1.1    User-Agent: curl/7.16.3 libcurl/7.16.3 OpenSSL/0.9.7l zlib/1.2.3Host: www.example.comAccept-Language: en, mi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></blockquote><h3 id="响应消息："><a href="#响应消息：" class="headerlink" title="响应消息："></a>响应消息：</h3><p><strong>状态行、消息报头、空行和响应正文</strong></p><blockquote><p>状态行 = 协议版本+状态码+状态</p><p>消息报头=key+value</p><p>空行</p><p>响应正文</p></blockquote><p>例子如下：</p><blockquote><pre class="line-numbers language-none"><code class="language-none">HTTP/1.1 200 OKDate: Mon, 27 Jul 2009 12:28:53 GMTServer: ApacheLast-Modified: Wed, 22 Jul 2009 19:15:56 GMTETag: "34aa387-d-1568eb00"Accept-Ranges: bytesContent-Length: 51Vary: Accept-EncodingContent-Type: text/plain<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></blockquote><h2 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h2><p>当浏览者访问一个网页时，浏览者的浏览器会向网页所在服务器发出请求。当浏览器接收并显示网页前，此网页所在的服务器会返回一个包含 HTTP 状态码的信息头（server header）用以响应浏览器的请求。</p><p>HTTP 状态码的英文为 <strong>HTTP Status Code</strong>。。</p><p>下面是常见的 HTTP 状态码：</p><ul><li>200 - 请求成功</li><li>301 - 资源（网页等）被永久转移到其它URL</li><li>404 - 请求的资源（网页等）不存在</li><li>500 - 内部服务器错误</li></ul><p><strong>程序员最想看到的：200-OK。</strong></p><p><strong>程序员不想看到的：500-Internal-Server-Error</strong></p><p>本文学习引用自：</p><ul><li><a href="https://www.runoob.com/http/http-tutorial.html">https://www.runoob.com/http/http-tutorial.html</a></li><li><a href="https://www.bilibili.com/video/BV1js411g7Fw">https://www.bilibili.com/video/BV1js411g7Fw</a></li></ul>]]></content>
       
@@ -68,8 +130,8 @@
     
     <entry>
       <title>揭秘阿里云服务器</title>
-      <link href="/2021/12/05/jie-mi-a-li-yun-fu-wu-qi/"/>
-      <url>/2021/12/05/jie-mi-a-li-yun-fu-wu-qi/</url>
+      <link href="/2021/12/05/qian-duan-kai-fa/jie-mi-a-li-yun-fu-wu-qi/"/>
+      <url>/2021/12/05/qian-duan-kai-fa/jie-mi-a-li-yun-fu-wu-qi/</url>
       
         <content type="html"><![CDATA[<h1 id="阿里云服务器（ECS）"><a href="#阿里云服务器（ECS）" class="headerlink" title="阿里云服务器（ECS）"></a>阿里云服务器（ECS）</h1><p>知识点；</p><ul><li>阿里云服务器的简介</li><li>阿里云服务器的使用</li><li>云服务器安装JDK、Tomcat等软件</li><li>部署项目</li></ul><p>等买了服务器再来学这个视频吧！</p><p>揭秘阿里云服务器：<a href="https://www.bilibili.com/video/BV1Rt411u7k4">https://www.bilibili.com/video/BV1Rt411u7k4</a></p>]]></content>
       
@@ -368,8 +430,8 @@
     
     <entry>
       <title>JWT</title>
-      <link href="/2021/11/21/jsonwebtoken/"/>
-      <url>/2021/11/21/jsonwebtoken/</url>
+      <link href="/2021/11/21/qian-duan-kai-fa/jsonwebtoken/"/>
+      <url>/2021/11/21/qian-duan-kai-fa/jsonwebtoken/</url>
       
         <content type="html"><![CDATA[<h1 id="Json-Web-Token"><a href="#Json-Web-Token" class="headerlink" title="Json Web Token"></a>Json Web Token</h1><p>jwt 即 json web token。用于身份校验，当用户登录的时候，服务器会给用户分配一个token，服务不会保存。当用户需要访问服务器的时候，需要带着token，服务通过token来判断用户现在的状态，比如token失效不正确等。</p><h2 id="前后端分离时为何推荐token认证"><a href="#前后端分离时为何推荐token认证" class="headerlink" title="前后端分离时为何推荐token认证?"></a>前后端分离时为何推荐token认证?</h2><ul><li><p>Token无需存储降低服务器成本，session是将用户信息存储在服务器中的，当用户量增大时服务器的压力也会随着增大。</p></li><li><p>防御CSRF跨站伪造请求攻击，session是基于cookie进行用户识别的, cookie如果被截获，用户信息就容易泄露。</p></li><li><p>扩展性强，session需要存储无法共享，当搭建了多个服务器时其他服务器无法获取到session中的验证数据用户无法验证成功。而Token可以实现服务器间共享，这样不管哪里都可以访问到。</p></li><li><p>Token可以减轻服务器的压力，减少频繁的查询数据库。</p></li><li><p>支持跨域访问, 适用于移动平台应用</p></li></ul>]]></content>
       

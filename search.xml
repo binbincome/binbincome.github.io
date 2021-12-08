@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>SEO</title>
+      <link href="/2021/12/08/qian-duan-kai-fa/seo/"/>
+      <url>/2021/12/08/qian-duan-kai-fa/seo/</url>
+      
+        <content type="html"><![CDATA[<h2 id="SEO（搜索引擎优化）"><a href="#SEO（搜索引擎优化）" class="headerlink" title="SEO（搜索引擎优化）"></a>SEO（搜索引擎优化）</h2><p>网站排名分广告排前和免费排前，免费排前由百度的计算规则出你的网站的分数，分高者排前；</p><p>首先百度服务器派出蜘蛛来到你的网站进行来访抓取完成页面的收录，之后进行算法计算排名</p><h2 id="什么是蜘蛛？"><a href="#什么是蜘蛛？" class="headerlink" title="什么是蜘蛛？"></a>什么是蜘蛛？</h2><p>其实就是数据抓取的一串代码，各大搜索引擎都有，比如百度叫百度蜘蛛（baiduspider），必应叫必应蜘蛛，谷歌叫机器人；也就是爬虫；</p><p>爬虫到达你的网站会先模拟普通用户等操作，如果你的页面需要登录就很难被收录，最后带着数据返回，返回过程中进行初始计算，如果分数较低，之后往你这个网站的爬虫就会少，展示就会很低；</p><h2 id="网站爬虫管理规则"><a href="#网站爬虫管理规则" class="headerlink" title="网站爬虫管理规则"></a>网站爬虫管理规则</h2><p>链接尽可能为英文；</p><p>网站识别回访，其通俗的来说就是网站打开速度；</p><p>有效收录：收录越高，排行越高；</p><p>关键词，英文名叫Keywords，简单来说就是你这个网站希望别人通过什么词语搜索到你；</p><p>内容有价值：内容满足用户需要，内容优化文章关键字布局、关键字密度、内链、标题优化、描述、结构化数据等</p><h2 id="什么是内链和外链？"><a href="#什么是内链和外链？" class="headerlink" title="什么是内链和外链？"></a>什么是内链和外链？</h2><p>内链就是阅读文章时可以点击的链接或者说把网站串联起来的内部链接；</p><p>外链就是别人的文章里放的你的链接，然后点进来；</p><p>内链建设要有条理，顺其自然，外链就像如果你觉得本文对你有用，然后在写文章的时候插入了我的学习笔记的网址，那么就算是帮我做了一条自然外链，这种链接的效果是非常好的。如果有权威的网站也引用了你文章，并且留下了链接，那么可以算是起飞的效果了。</p><p>SEO各种工具：</p><ol><li><a href="https://soovle.com/">Soovle</a> 关键词分析，免费，可以给你自动生成多个网站用户的搜索相关词语。</li><li><a href="https://kwfinder.com/">KWFinder</a> 关键词分析，付费，可免费试用。</li><li><a href="https://moz.com/products/pro">MOZ</a> 多种SEO工具，付费，30天免费试用。</li><li><a href="https://ahrefs.com/zh/">ahrefs</a> 多种SEO工具，带中文，支持7天试用，很多人用这个。</li><li><a href="https://zh.semrush.com/">Semrush</a> 多种SEO工具，免费账号有限制，支持中文。</li><li><a href="https://answerthepublic.com/">Answerthepublic</a> 通过关键词分析用户经常搜索和提问的句子，带Pro版本。</li><li><a href="https://blog.naibabiji.com/files/wordpress-plugins/smart-keywords-tool.html">Smart Keywords Tool</a> 关键词挖掘插件，直接安装到WordPress网站上使用，带Pro版本。</li><li><a href="https://blog.naibabiji.com/files/baidu-tui-song.html">多合一搜索自动推送管理插件</a>，自动帮你通知百度、Google、Bing过来抓取你的文章，实现快速收录。</li></ol><p>请记住，<strong>SEO工具只是辅助，关键还是网站内容和基础的SEO优化。</strong></p><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><blockquote><p>Google SEO的方法要跟着Google的规则不断学习和调整，搜索引擎每天都在进步，可能一些过时的教程已经并不实用了。如果你没精力去研究最新的Google SEO技巧，那么只需要记住你的内容是满足用户需求的，有价值的。那么不管规则怎么改动，你都不会受到太大的影响。</p></blockquote><p>最初建立博客是想记录自己的学习笔记，锻炼自己的知识总结能力，也便于复习和提升，后来觉得这反而给我一种激励打卡，督促着我去学习，SEO我没有做，也没有必要，这个网站就像是我一个人的小屋，一个人的孤岛，有人路过，愿意驻足也好不愿意也罢，我在这里书写着独属于我自己的故事，留下着专属于我的青春痕迹！</p><p>本文中参考来源：</p><ul><li><p>SEO学习教程：<a href="https://gitee.com/link?target=https://www.bilibili.com/video/BV1fE411J7ya">https://www.bilibili.com/video/BV1fE411J7ya</a></p></li><li><p><a href="https://blog.naibabiji.com/google-seo">Google SEO教程，谷歌搜索引擎优化新手入门指南 - 奶爸建站笔记 (naibabiji.com)</a></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SEO </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据结构习题</title>
       <link href="/2021/12/07/shu-ju-jie-gou-yu-suan-fa/shu-ju-jie-gou-xi-ti/"/>
       <url>/2021/12/07/shu-ju-jie-gou-yu-suan-fa/shu-ju-jie-gou-xi-ti/</url>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="二叉堆和堆排序算法, 冰冰的小屋">
+    <meta name="keywords" content="操作系统01, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>二叉堆和堆排序算法 | 冰冰的小屋</title>
+    <title>操作系统01 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">二叉堆和堆排序算法</h1>
+                    <h1 class="description center-align post-title">操作系统01</h1>
                 </div>
             </div>
         </div>
@@ -364,8 +364,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BA%8C%E5%8F%89%E5%A0%86%E5%92%8C%E5%A0%86%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">二叉堆和堆排序算法</span>
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">操作系统</span>
                             </a>
                         
                     </div>
@@ -376,8 +376,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                数据结构与算法
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                计算机基础
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-07
+                    2021-12-09
                 </div>
                 
 
@@ -398,7 +398,7 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.3k
                 </div>
                 
 
@@ -428,64 +428,60 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="二叉堆"><a href="#二叉堆" class="headerlink" title="二叉堆"></a>二叉堆</h1><p>什么是二叉堆？ 二叉堆本质上是一种完全二叉树，它分为两个类型。 1. 最大堆。 2. 最小堆。 </p>
-<p>什么是最大堆呢？最大堆的任何一个父节点的值，都大于或等于 它 左、右孩子节点的值</p>
-<p>什么是最小堆呢？最小堆的任何一个父节点的值，都小于或等于它左、 右孩子节点的值。</p>
-<p>二叉堆的根节点叫作堆顶 。 最大堆和最小堆的特点决定了：最大堆的堆顶是整个堆中的最大元素 ；最小堆的堆顶是整个堆中的最小元素 。</p>
-<h2 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h2><p>当二叉堆插入节点时，插入位置是完全二叉树的最后一个位置。例如插 入一个新节点，值是 0。 这时，新节点的父节点5比0大，显然不符合最小堆的性质。于是让新节 点“上浮”，和父节点交换位置。 继续用节点0和父节点3做比较，因为0小于3，则让新节点继续“上浮”。 继续比较，最终新节点0“上浮”到了堆顶位置。 </p>
-<h2 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h2><p>二叉堆删除节点的过程和插入节点的过程正好相反，所删除的是处于堆 顶的节点。例如删除最小堆的堆顶节点1。 这时，为了继续维持完全二叉树的结构，我们把堆的最后一个节点10临 时补到原本堆顶的位置。 接下来，让暂处堆顶位置的节点10和它的左、右孩子进行比较，如果 左、右孩子节点中最小的一个（显然是节点2）比节点10小，那么让节 点10“下沉”。 继续让节点10和它的左、右孩子做比较，左、右孩子中最小的是节点 7，由于10大于7，让节点10继续“下沉”。 这样一来，二叉堆重新得到了调整。</p>
-<h2 id="构建二叉堆"><a href="#构建二叉堆" class="headerlink" title="构建二叉堆"></a>构建二叉堆</h2><p>构建二叉堆，也就是把一个无序的完全二叉树调整为二叉堆，本质就是 让所有非叶子节点依次“下沉” 。 下面举一个无序完全二叉树的例子。 首先，从最后一个非叶子节点开始，也就是从节点10开始。如果节点10 大于它左、右孩子节点中最小的一个，则节点10“下沉”。 接下来轮到节点3，如果节点3大于它左、右孩子节点中最小的一个，则 节点3“下沉”。 然后轮到节点1，如果节点1大于它左、右孩子节点中最小的一个，则节 点1“下沉”。事实上节点1小于它的左、右孩子，所以不用改变。 接下来轮到节点7，如果节点7大于它左、右孩子节点中最小的一个，则 节点7“下沉”。 节点7继续比较，继续“下沉”。 经过上述几轮比较和“下沉”操作，最终每一节点都小于它的左、右孩子 节点，一个无序的完全二叉树就被构建成了一个最小堆。</p>
-<p>二叉堆虽然是一个完全二叉树，但它的存储方式并不是链式存储，而是顺序存储。换句话说，二叉 堆的所有节点都存储在数组中</p>
-<p>假设父节点的下标是parent，那么它的左孩子下标就是 2×parent+1 ；右 孩子下标就是2×parent+2 。</p>
-<h1 id="堆排序算法"><a href="#堆排序算法" class="headerlink" title="堆排序算法"></a>堆排序算法</h1><ol>
-<li><p>把无序数组构建成二叉堆。需要从小到大排序，则构建成最大堆；需要从大到小排序，则构建成最小堆。 </p>
+                <h1 id="操作系统01"><a href="#操作系统01" class="headerlink" title="操作系统01"></a>操作系统01</h1><blockquote>
+<p>不懂计算机系统也能写程序，这是不争的事实。但是我们<strong>学习操作系统并非是为了去创造一个操作系统，而是为了理解操作系统之后写出更好的程序</strong>。</p>
+</blockquote>
+<h1 id="什么是操作系统？"><a href="#什么是操作系统？" class="headerlink" title="什么是操作系统？"></a>什么是操作系统？</h1><p>操作系统本质上是运行在计算机上的程序，它是硬件和软件沟通的桥梁，其主要功能有：</p>
+<ul>
+<li><strong>对计算机硬件资源进行管理、分配和调度</strong></li>
+<li><strong>为用户提供一个友好、清晰且简单的操作界面</strong>（专业的叫法是 <strong>壳 Shell</strong>）</li>
+</ul>
+<h2 id="处理器"><a href="#处理器" class="headerlink" title="处理器"></a>处理器</h2><p>处理器就是CPU，<strong>一个程序需要放入内存并给它分配 CPU 才能执行</strong>。</p>
+<h2 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h2><h2 id="I-O设备"><a href="#I-O设备" class="headerlink" title="I/O设备"></a>I/O设备</h2><h1 id="操作系统的4个特征"><a href="#操作系统的4个特征" class="headerlink" title="操作系统的4个特征"></a>操作系统的4个特征</h1><p>并发、共享、虚例、异步</p>
+<h2 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h2><p>其中并发、共享是操作系统最基本的特征，没有这两个就谈不上、虚例和共享</p>
+<ul>
+<li><p><strong>并发</strong>：并发是指宏观上在<strong>一段时间内</strong>能同时运行多个程序。当然，这些程序宏观上是同时发生的，但微观上是交替发生的。操作系统通过引入进程和线程，使得程序能够并发运行。</p>
 </li>
-<li><p>循环删除堆顶元素，替换到二叉堆的末尾，调整堆产生新的堆顶</p>
+<li><p><strong>并行</strong>：并行则指<strong>同一时刻</strong>能运行多个指令，指两个或多个事件在<strong>同一时刻同时发生</strong>。并行需要硬件支持，如多流水线、多核处理器或者分布式计算系统。</p>
 </li>
-</ol>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># -*- coding: utf-8 -*-</span>
-<span class="token triple-quoted-string string">"""
-Created on Wed Dec  8 21:38:45 2021
-
-@author: Binbincome
-"""</span>
-
-<span class="token keyword">def</span> <span class="token function">heap_sort</span><span class="token punctuation">(</span>array<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment"># 1.无序数组构建成最大堆</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        down_adjust<span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token punctuation">,</span> array<span class="token punctuation">)</span>
-    <span class="token comment"># 2.循环交换集合尾部到堆顶，并调节堆产生新得堆顶</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment"># 最后一个元素和第一个元素进行交换</span>
-        temp <span class="token operator">=</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-        array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp
-        <span class="token comment"># 下沉调整最大堆</span>
-        down_adjust<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> array<span class="token punctuation">)</span>      
-
-<span class="token keyword">def</span> <span class="token function">down_adjust</span><span class="token punctuation">(</span>parent_index<span class="token punctuation">,</span> length<span class="token punctuation">,</span> array<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment"># temp保存父节点得值，最后赋值</span>
-    temp <span class="token operator">=</span> array<span class="token punctuation">[</span>parent_index<span class="token punctuation">]</span>
-    child_index <span class="token operator">=</span> <span class="token number">2</span><span class="token operator">*</span>parent_index<span class="token operator">+</span><span class="token number">1</span>
-    <span class="token keyword">while</span> child_index<span class="token operator">&lt;</span>length<span class="token punctuation">:</span>
-        <span class="token comment"># 如果有右孩子，且右大于左，定位到右</span>
-        <span class="token keyword">if</span> child_index<span class="token operator">+</span><span class="token number">1</span><span class="token operator">&lt;</span>length <span class="token keyword">and</span> array<span class="token punctuation">[</span>child_index<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">&gt;</span>array<span class="token punctuation">[</span>child_index<span class="token punctuation">]</span><span class="token punctuation">:</span>
-            child_index<span class="token operator">+=</span><span class="token number">1</span>
-        <span class="token comment"># 如果父节点值大于等于任何一个孩子得值就直接跳出</span>
-        <span class="token keyword">if</span> temp <span class="token operator">&gt;=</span> array<span class="token punctuation">[</span>child_index<span class="token punctuation">]</span><span class="token punctuation">:</span>
-            <span class="token keyword">break</span>
-        <span class="token comment"># 无需真正交换，单向赋值即可    </span>
-        array<span class="token punctuation">[</span>parent_index<span class="token punctuation">]</span><span class="token operator">=</span>array<span class="token punctuation">[</span>child_index<span class="token punctuation">]</span>
-        parent_index <span class="token operator">=</span> child_index
-        child_index <span class="token operator">=</span> <span class="token number">2</span><span class="token operator">*</span>child_index<span class="token operator">+</span><span class="token number">2</span>        
-    array<span class="token punctuation">[</span>parent_index<span class="token punctuation">]</span> <span class="token operator">=</span> temp
-    
-
-my_array <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">65</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">74</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-heap_sort<span class="token punctuation">(</span>my_array<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>my_array<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>整体时间复杂度为O(nlog(n))</p>
+</ul>
+<p>并发、并行和CPU之间的关系</p>
+<ul>
+<li><strong>单核 CPU</strong>同一时刻只能执行一个程序，各个程序只能<strong>并发</strong>地执行 ；</li>
+<li><strong>多核 CPU</strong>同一时刻可以同时执行多个程序，多个程序可以<strong>并行</strong>地执行。</li>
+</ul>
+<h2 id="共享"><a href="#共享" class="headerlink" title="共享"></a>共享</h2><p>共享即<strong>资源共享</strong>，是指系统中的资源可供内存中多个<strong>并发</strong>执行的进程共同使用。</p>
+<p>主要有两种共享方式：</p>
+<p>1）<strong>互斥共享</strong></p>
+<p>所谓互斥共享，就是说虽然这个资源是共享的，所有进程都能够使用，但是<strong>同一个资源在某一时刻只允许一个进程访问</strong>，也称为互斥访问。</p>
+<p>举个互斥共享的例子：</p>
+<p>如果我们同时使用 QQ 和微信视频，同一时间段内摄像头资源只能分配给其中的一个进程。</p>
+<p>2）<strong>同时共享</strong></p>
+<p>同时共享与互斥共享相反，<strong>允许一个时间段内多个进程 “同时” 对系统中的某些资源进行访问</strong>。当然，所谓的 “同时” 往往是宏观上的，而在微观上，这些进程可能是交替地对该资源进行访问（即分时共享）</p>
+<p>比如，qq发送文件a，微信发送文件b，都是同时同时访问硬盘的；</p>
+<h2 id="虚拟："><a href="#虚拟：" class="headerlink" title="虚拟："></a>虚拟：</h2><p><strong>空分复用技术</strong>和<strong>时分复用技术</strong></p>
+<p>多个进程能在同一个 CPU 上并发执行就是因为使用了时分复用技术，让每个进程轮流占用处理器，每次只执行一小个时间片并快速切换。</p>
+<p>一些程序运行的内存大于电脑内存还能够运行就是因为使用了空分复用技术，把内存作为高速缓存使用，只保存需要频繁使用的，其他大部分放在磁盘上。</p>
+<p>显然，如果失去了并发性，一个时间段内系统中只能运行一道程序，那也就失去了实现虚拟性的意义了。因此，<strong>没有并发性，就谈不上虚拟性</strong></p>
+<h2 id="异步："><a href="#异步：" class="headerlink" title="异步："></a>异步：</h2><p>异步是指：在多道程序环境下，允许多个程序并发执行，但<strong>由于资源有限，进程的执行不是一贯到底的， 而是走走停停，以不可预知的速度向前推进</strong>，这就是进程的异步性。</p>
+<h1 id="操作系统的4个核心"><a href="#操作系统的4个核心" class="headerlink" title="操作系统的4个核心"></a>操作系统的4个核心</h1><h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>进程就是正在运行的程序，不仅包括运行中的程序实体，还包括它所占用的系统资源，比如CPU、内存、网络等；</p>
+<p>一个进程中可以有多个线程，它们共享进程资源；</p>
+<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><p>内存管理做的事情大概就是：</p>
+<ul>
+<li>把使用频繁的部分程序放入内存</li>
+<li>当内存满的时候，替换掉内存中的某些部分</li>
+</ul>
+<h2 id="文件系统管理"><a href="#文件系统管理" class="headerlink" title="文件系统管理"></a>文件系统管理</h2><p>每个文件可以看做一个地址空间，每个文件都是独立于其他文件的，有关文件的构造、命名、存取等都是其设置的内容</p>
+<h2 id="I-O设备管理"><a href="#I-O设备管理" class="headerlink" title="I/O设备管理"></a>I/O设备管理</h2><p>操作系统必须高效的管理输入输出设备</p>
+<h3 id="什么是内核态和用户态"><a href="#什么是内核态和用户态" class="headerlink" title=" 什么是内核态和用户态"></a><a target="_blank" rel="noopener" href="https://veal98.gitee.io/cs-wiki/#/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/1-%E4%BA%86%E8%A7%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF-%E4%BB%8E%E8%BF%99%E7%AF%87%E6%96%87%E7%AB%A0%E5%BC%80%E5%A7%8B?id=%E2%91%A0-%E4%BB%80%E4%B9%88%E6%98%AF%E5%86%85%E6%A0%B8%E6%80%81%E5%92%8C%E7%94%A8%E6%88%B7%E6%80%81"> <strong>什么是内核态和用户态</strong></a></h3><p><strong>系统调用的过程</strong>简略版大致如下：</p>
+<p>1）在用户态，应用程序传递系统调用参数</p>
+<p>2）执行陷入指令，引发一个内中断，使 CPU 进入内核态</p>
+<p>3）在内核态，执行相应的请求，内核程序处理系统调用</p>
+<p>4）返回应用程序</p>
+<p>本文参考来源;</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://veal98.gitee.io/cs-wiki/#/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">https://veal98.gitee.io/cs-wiki/#/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F</a></li>
+</ul>
 
                 
             </div>
@@ -512,7 +508,7 @@ heap_sort<span class="token punctuation">(</span>my_array<span class="token punc
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/12/07/shu-ju-jie-gou-yu-suan-fa/er-cha-dui-he-dui-pai-xu-suan-fa/">https://binbincome.github.io/2021/12/07/shu-ju-jie-gou-yu-suan-fa/er-cha-dui-he-dui-pai-xu-suan-fa/</a>
+                    <a href="https://binbincome.github.io/2021/12/09/ji-suan-ji-ji-chu/cao-zuo-xi-tong-01/">https://binbincome.github.io/2021/12/09/ji-suan-ji-ji-chu/cao-zuo-xi-tong-01/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -550,8 +546,8 @@ heap_sort<span class="token punctuation">(</span>my_array<span class="token punc
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BA%8C%E5%8F%89%E5%A0%86%E5%92%8C%E5%A0%86%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">二叉堆和堆排序算法</span>
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">操作系统</span>
                                 </a>
                             
                         </div>
@@ -595,17 +591,18 @@ heap_sort<span class="token punctuation">(</span>my_array<span class="token punc
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/12/07/shu-ju-jie-gou-yu-suan-fa/shu-ju-jie-gou-xi-ti/">
+                <a href="/2021/12/09/ji-suan-ji-ji-chu/cao-zuo-xi-tong-01/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="数据结构习题">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="操作系统01">
                         
-                        <span class="card-title">数据结构习题</span>
+                        <span class="card-title">操作系统01</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -615,26 +612,27 @@ heap_sort<span class="token punctuation">(</span>my_array<span class="token punc
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                                    数据结构
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    计算机基础
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%B9%A0%E9%A2%98/">
-                        <span class="chip bg-color">习题</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
                 </div>
@@ -648,13 +646,13 @@ heap_sort<span class="token punctuation">(</span>my_array<span class="token punc
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/05/qian-duan-kai-fa/dns-ji-qi-ji-ben-gong-zuo-yuan-li/">
+                <a href="/2021/12/09/dong-tai-gui-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="DNS及其基本工作原理">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="动态规划">
                         
-                        <span class="card-title">DNS及其基本工作原理</span>
+                        <span class="card-title">动态规划</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -665,14 +663,14 @@ heap_sort<span class="token punctuation">(</span>my_array<span class="token punc
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    网络知识
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
                                 </a>
                             
                             
@@ -682,8 +680,8 @@ heap_sort<span class="token punctuation">(</span>my_array<span class="token punc
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DNS/">
-                        <span class="chip bg-color">DNS</span>
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
                 </div>

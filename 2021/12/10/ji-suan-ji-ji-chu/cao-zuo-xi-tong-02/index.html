@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="浏览器是怎么运作的, 冰冰的小屋">
+    <meta name="keywords" content="操作系统02, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>浏览器是怎么运作的 | 冰冰的小屋</title>
+    <title>操作系统02 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">浏览器是怎么运作的</h1>
+                    <h1 class="description center-align post-title">操作系统02</h1>
                 </div>
             </div>
         </div>
@@ -364,8 +364,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/">
-                                <span class="chip bg-color">网络知识</span>
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">操作系统</span>
                             </a>
                         
                     </div>
@@ -376,8 +376,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="post-category">
-                                网络知识
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                计算机基础
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-05
+                    2021-12-10
                 </div>
                 
 
@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    486
+                    2.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    8 分
                 </div>
                 
 
@@ -428,31 +428,119 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>浏览器是运行在操作系统的应用程序</strong></p>
-<h1 id="浏览器是个多进程结构，"><a href="#浏览器是个多进程结构，" class="headerlink" title="浏览器是个多进程结构，"></a>浏览器是个多进程结构，</h1><p>\1. 浏览器进程:控制除标签页外的用户界面，包括地址，书签，后退，前进按钮等，以及负责与浏览器其他进程负责协调工作2.<br>\2. 缓存进程<br>\3. 网络进程 发起网络请求<br>\4. 渲染器进程  渲染Tab 有可能会为每个标签页是一个渲染进程<br>\5. GPU进程 渲染<br>\6. 插件进程  内置插件</p>
-<h2 id="渲染进程"><a href="#渲染进程" class="headerlink" title="渲染进程"></a>渲染进程</h2><ol>
-<li><p>浏览器通过网络请求后获取html数据，通过tcp传给渲染器进程</p>
+                <h1 id="操作系统02"><a href="#操作系统02" class="headerlink" title="操作系统02"></a>操作系统02</h1><h2 id="什么是进程？"><a href="#什么是进程？" class="headerlink" title="什么是进程？"></a>什么是进程？</h2><p>进程就是程序的一次执行过程，它是动态的产生，变化，消亡的有生命周期的；并且进程还包括运行中占用的系统空间、CPU等；</p>
+<p>为了防止一个进程中两个线程同时使用一个内存区域的简单办法就是门口加一把锁。先到的人锁上门，后到的人看到上锁，就在门口排队，等锁打开再进去。这就叫”互斥锁”（Mutual exclusion，缩写 Mutex），防止多个线程同时读写某一块内存区域。</p>
+<p>某些内存区域，只能供给固定数目的线程使用时，就是在门口挂 n 把钥匙。进去的人就取一把钥匙，出来时再把钥匙挂回原处。后到的人发现钥匙架空了，就知道必须在门口排队等着了。这种做法叫做 “信号量”（Semaphore），用来保证多个线程不会互相冲突。</p>
+<h2 id="进程的组成"><a href="#进程的组成" class="headerlink" title="进程的组成"></a>进程的组成</h2><ul>
+<li><p>PCB ：是提供给操作系统用的，是进程存在的标志，一般包含4个内容：</p>
+<p>1）<strong>进程描述信息</strong>：用来让操作系统区分各个进程</p>
+<ul>
+<li>当进程被创建时，操作系统会为该进程分配一个唯一的、不重复的 “身份证号”— <strong>PID</strong>（ProcessID，进程 ID）</li>
+<li>另外，进程描述信息还包含进程所属的用户 ID（<strong>UID</strong>）</li>
+</ul>
+<p>2）<strong>进程控制和管理信息</strong>：记录进程的运行情况。比如 CPU 的使用时间、磁盘使用情况、网络流量使用情况等。</p>
+<p>3）<strong>资源分配清单</strong>：记录给进程分配了哪些资源。比如分配了多少内存、正在使用哪些 I/O 设备、正在使用哪些文件等。</p>
+<p>4）<strong>CPU 相关信息</strong>：进程在让出 CPU 时，必须保存该进程在 CPU 中的各种信息，比如各种寄存器的值。用于实现进程切换，确保这个进程再次运行的时候恢复 CPU 现场，从断点处继续执行。这就是所谓的<strong>保存现场信息</strong>。</p>
 </li>
-<li><p>DOM - 主线程将html解析构造DOM树</p>
+<li><p>程序段：程序的代码生成的指令序列</p>
 </li>
-<li><p>style - 样式计算</p>
+<li><p>数据段：进程运行中的各种数据（比如定义的变量）</p>
 </li>
-<li><p>layoutTree - dom+style 根据dom树和样式生成layoutTree</p>
+</ul>
+<p>程序段、数据段是给进程自己用的，PCB给操作系统用的。</p>
+<h2 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h2><p>经典的进程三态模型如下：</p>
+<ul>
+<li><strong>运行态</strong>（running）：进程占有 CPU 正在运行。</li>
+<li><strong>就绪态</strong>（ready）：进程具备运行条件，等待系统分配 CPU 以便运行。</li>
+<li><strong>阻塞态</strong> / 等待态（wait）：进程不具备运行条件，正在等待某个事件的完成。</li>
+</ul>
+<p><img src="https://gitee.com/veal98/images/raw/master/img/20210219154606.png" alt="img"></p>
+<p>上图中的时间片用完，可以这样理解：</p>
+<p>进程是并发执行的嘛，宏观上在一段时间内能同时运行多个程序，但其实微观上是交替发生的。也就是说 CPU 一般不会让一个进程一次性执行完，为了保证所有进程可以得到公平调度，CPU 时间被划分为一段段的时间片，这些时间片再被轮流分配给各个进程。某个进程的时间片用完后这个进程就会进入就绪态，而其他被分配到时间片的进程就会进入运行态。这个处于就绪态的进程就需要等待进程调度程序的下一次调度，为其分配 CPU 时间片后才能再次恢复运行。</p>
+<p>需要注意的是：<strong>阻塞态是由于缺少需要的资源从而由运行态转换而来，但是该资源不包括 CPU 时间片，缺少 CPU 时间片会从运行态转换为就绪态</strong>。</p>
+<p>很多系统中都增加了新建态（new）和终止态（exit），形成<strong>五态模型</strong>：</p>
+<ul>
+<li><strong>新建态</strong>（new）：进程正在被创建时的状态</li>
+<li><strong>终止态</strong>（exit）：进程正在从系统中消失时的状态</li>
+</ul>
+<p><img src="https://gitee.com/veal98/images/raw/master/img/20210219155101.png" alt="img"></p>
+<p>从上图可以发现，<strong>只有就绪态和运行态可以相互转换，其它的都是单向转换</strong>。</p>
+<p>这些不同状态的进程操作系统是如何进行管理的呢？上文说过，PCB 是提供给操作系统使用的，是操作系统管理进程的主要依据。没错，操作就是通过 PCB 来管理这些拥有不同状态的进程的。</p>
+<p>进程的 PCB 会通过某种方式组织起来，一般来说，操作系统会把处于同一状态的所有进程的 PCB 链接在一起，这种数据结构就称为<strong>进程队列</strong>（Process Queue）。</p>
+<h2 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h2><p>原语是操作系统内核中一段特殊的程序，它具有原子性（该程序运行必须一次运行，不可中断）</p>
+<p>操作系统通过原语实现进程状态的转化，也就是进程的创建、终止、阻塞、唤醒；</p>
+<p>进程的创建过程：</p>
+<ul>
+<li>在进程列表中增加一项，从 PCB 池中申请一个空闲的 PCB（PCB 是有限的，若申请失败则创建失败），为新进程分配一个唯一的进程标识符；</li>
+<li>为新进程分配地址空间，由进程管理程序确定加载至进程地址空间中的程序；</li>
+<li>为新进程分配各种资源；</li>
+<li>初始化 PCB，如进程标识符、CPU 初始状态等；</li>
+<li>把新进程的状态设置为就绪态，并将其移入就绪队列，等待被调度运行。</li>
+</ul>
+<h2 id="进程的上下文切换"><a href="#进程的上下文切换" class="headerlink" title="进程的上下文切换"></a>进程的上下文切换</h2><p>各个进程之间共享内存资源，当进程切换时不同进程分配不同的内存空间这就是进程的上下文切换。也就是一个进程切换到另一个进程，</p>
+<p>进程的切换一定发生在内核态中</p>
+<p>进程切换也就是切换原语的流程：</p>
+<ul>
+<li>首先，将进程 A 的运行环境信息存入 PCB，这个运行环境信息就是进程的上下文（Context）</li>
+<li>然后，将 PCB 移入相应的进程队列；</li>
+<li>选择另一个进程 B 进行执行，并更新其 PCB 中的状态为运行态</li>
+<li>当进程 A 被恢复运行的时候，根据它的 PCB 恢复进程 A 所需的运行环境</li>
+</ul>
+<h2 id="线程的优缺点"><a href="#线程的优缺点" class="headerlink" title="线程的优缺点"></a>线程的优缺点</h2><p>线程的特征和进程差不多，进程有的他基本都有，比如：</p>
+<ul>
+<li>线程具有就绪、阻塞、运行三种基本状态，同样具有状态之间的转换关系；</li>
+<li>线程间可以并发执行</li>
+<li>在多 CPU 环境下，各个线程也可以分派到不同的 CPU 上并行执行</li>
+</ul>
+<p>线程的优点：</p>
+<ul>
+<li><p>一个进程中可以同时存在多个线程，这些线程共享该进程的资源。进程间的通信必须请求操作系统服务（因为 CPU 要切换到内核态），开销很大。而同进程下的线程间通信，无需操作系统干预，开销更小。</p>
+<p>不过，需要注意的是：从属于不同进程的线程间通信，也必须请求操作系统服务。</p>
 </li>
-<li><p>paint -绘制 通过遍历 Layout Tree生成绘制顺序表</p>
+<li><p>线程间的并发比进程的开销更小，系统并发性提升。</p>
+<p>同样，需要注意的是：从属于不同进程的线程间切换，它是会导致进程切换的，所以开销也大。</p>
 </li>
-<li><p>laryer - 布局 然后根据主进程将layoutTree 和绘制信息表传给合成器线程</p>
-</li>
-<li><p>合成器线程 - 将得到的信息分图层分成更小的图块</p>
-</li>
-<li><p>栅格线程  -  将更小的图块进行栅格化raster，返还给合成器线程draw quads图块信息 存储在GPU中</p>
-</li>
-<li><p>frame 合成器将栅格线程返回的图块合成帧交给浏览器进程</p>
-</li>
-<li><p>浏览器进程 收到一帧的图像后传给GPU进行渲染</p>
-</li>
-</ol>
-<h2 id="重排："><a href="#重排：" class="headerlink" title="重排："></a>重排：</h2><p>当改变dom的属性时，会重新进行样式计算，会重新布局和绘制<br>重绘：<br>当改变颜色时，只会发生样式计算和绘制(layer)<br>requestAnimationFrame()<br>会将主线程的任务分散到每一帧的间隔，从而不影响动画的流程<br>Fiber<br>react利用浏览器的空闲时间做优化<br>Transform<br>会直接运行合成器线程，所以不会感染主线程的渲染<br>在移动端使用3d转换可以优化性能（如果设备有3d加速引擎 GPU 可以提高性能 , 2d转换是无法调用GPU，2G是靠的CPU）</p>
+</ul>
+<p>线程的缺点：</p>
+<ul>
+<li>当进程中的一个线程奔溃时，会导致其所属进程的所有线程奔溃。</li>
+</ul>
+<p>举个例子，对于游戏的用户设计，就不应该使用多线程的方式，否则一个用户挂了，会影响其他同个进程的线程</p>
+<h1 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h1><p>进程调度，就是<strong>从进程的就绪队列（阻塞）中按照一定的算法选择一个进程并将 CPU 分配给它运行</strong>，以实现进程的并发执行。</p>
+<h2 id="非抢占式调度算法"><a href="#非抢占式调度算法" class="headerlink" title="非抢占式调度算法"></a>非抢占式调度算法</h2><p>非抢占式的意思就是，当进程正在运行时，它就会一直运行，直到该进程完成或发生某个事件发生而被阻塞时，才会把 CPU 让给其他进程。</p>
+<ul>
+<li>先到先服务FCFS</li>
+</ul>
+<p>先到的进程就先被调度</p>
+<ul>
+<li>最短作业优先SJF</li>
+</ul>
+<p>当前已到达的进程中运行时间最短的先调用</p>
+<ul>
+<li>高响应比优先HRRN</li>
+</ul>
+<p>只有当前运行的进程主动放弃 CPU 时（正常/异常完成，或主动阻塞），才需要进行调度，<strong>调度时计算所有就绪进程的响应比，为响应比最高的进程分配 CPU</strong>。</p>
+<p>响应比 = (进程的等待时间 + 进程需要的运行时间) / 进程需要的运行时间</p>
+<h2 id="抢占式调度算法"><a href="#抢占式调度算法" class="headerlink" title="抢占式调度算法"></a>抢占式调度算法</h2><p>抢占式的意思就是，当进程正在运行的时，可以被打断，把 CPU 让给其他进程。</p>
+<ul>
+<li>最短剩余时间优先</li>
+</ul>
+<p><strong>当一个新的进程到达时，把它所需要的整个运行时间与当前进程的剩余运行时间作比较。如果新的进程需要的时间更少，则挂起当前进程，运行新的进程，否则新的进程等待。</strong></p>
+<ul>
+<li>轮转调度算法</li>
+</ul>
+<p><strong>就绪队列中的每个进程轮流地运行一个时间片，当时间片耗尽时就强迫当前运行进程让出 CPU 资源，转而排到就绪队列尾部，等待下一轮调度</strong>。所以，一个进程一般都需要多次轮转才能完成。</p>
+<p>轮转调度算法对每个进程都一视同仁，就好比大家都排好队，一个一个来，每个人都运行一会儿再接着重新排队等待运行。</p>
+<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><blockquote>
+<p><strong>一个进程中可以有多个线程，它们共享这个进程的资源。</strong></p>
+<p><strong>线程又称为迷你进程，但是它比进程更容易创建，也更容易撤销</strong>。</p>
+<p>引入线程前，进程是资源分配和独立调度的基本单位。引入线程后，<strong>进程是资源分配的基本单位，线程是独立调度的基本单位</strong>。</p>
+<p>进程调度，就是<strong>从进程的就绪队列（阻塞）中按照一定的算法选择一个进程并将 CPU 分配给它运行</strong>，以实现进程的并发执行</p>
+</blockquote>
+<p>本文来源于：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://veal98.gitee.io/cs-wiki/#/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">https://veal98.gitee.io/cs-wiki/#/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F</a></li>
+</ul>
 
                 
             </div>
@@ -479,7 +567,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/12/05/qian-duan-kai-fa/liu-lan-qi-shi-zen-me-yun-zuo-de/">https://binbincome.github.io/2021/12/05/qian-duan-kai-fa/liu-lan-qi-shi-zen-me-yun-zuo-de/</a>
+                    <a href="https://binbincome.github.io/2021/12/10/ji-suan-ji-ji-chu/cao-zuo-xi-tong-02/">https://binbincome.github.io/2021/12/10/ji-suan-ji-ji-chu/cao-zuo-xi-tong-02/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -517,8 +605,8 @@ if (windowWidth > 768) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/">
-                                    <span class="chip bg-color">网络知识</span>
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">操作系统</span>
                                 </a>
                             
                         </div>
@@ -562,17 +650,18 @@ if (windowWidth > 768) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/12/05/qian-duan-kai-fa/dns-ji-qi-ji-ben-gong-zuo-yuan-li/">
+                <a href="/2021/12/10/ji-suan-ji-ji-chu/cao-zuo-xi-tong-02/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="DNS及其基本工作原理">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="操作系统02">
                         
-                        <span class="card-title">DNS及其基本工作原理</span>
+                        <span class="card-title">操作系统02</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -582,26 +671,27 @@ if (windowWidth > 768) {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    网络知识
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    计算机基础
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DNS/">
-                        <span class="chip bg-color">DNS</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
                 </div>
@@ -615,13 +705,13 @@ if (windowWidth > 768) {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/05/qian-duan-kai-fa/http-xie-yi/">
+                <a href="/2021/12/09/ji-suan-ji-ji-chu/cao-zuo-xi-tong-01/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Http协议">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="操作系统01">
                         
-                        <span class="card-title">Http协议</span>
+                        <span class="card-title">操作系统01</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -632,14 +722,14 @@ if (windowWidth > 768) {
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    网络知识
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    计算机基础
                                 </a>
                             
                             
@@ -649,8 +739,8 @@ if (windowWidth > 768) {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Http%E5%8D%8F%E8%AE%AE/">
-                        <span class="chip bg-color">Http协议</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
                 </div>

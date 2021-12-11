@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="动态规划, 冰冰的小屋">
+    <meta name="keywords" content="如何求解金矿问题, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>动态规划 | 冰冰的小屋</title>
+    <title>如何求解金矿问题 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">动态规划</h1>
+                    <h1 class="description center-align post-title">如何求解金矿问题</h1>
                 </div>
             </div>
         </div>
@@ -364,8 +364,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                                <span class="chip bg-color">动态规划</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95%E9%A2%98/">
+                                <span class="chip bg-color">数据结构算法题</span>
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-09
+                    2021-12-08
                 </div>
                 
 
@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    4 分
                 </div>
                 
 
@@ -428,201 +428,99 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><blockquote>
-<p>一个<strong>规模</strong>比较大的问题分成几个<strong>规模</strong>比较小的问题，然后由小的问题推导出大的问题</p>
-</blockquote>
-<h2 id="一维DP：青蛙跳台阶"><a href="#一维DP：青蛙跳台阶" class="headerlink" title="一维DP：青蛙跳台阶"></a>一维DP：青蛙跳台阶</h2><p>问题描述：一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
-<h3 id="步骤一、定义数组元素的含义"><a href="#步骤一、定义数组元素的含义" class="headerlink" title="步骤一、定义数组元素的含义"></a>步骤一、定义数组元素的含义</h3><p>定义 dp[i] 的含义为：<strong>跳上一个 i 级的台阶总共有 dp[i] 种跳法</strong></p>
-<h3 id="步骤二、找出数组元素间的关系式"><a href="#步骤二、找出数组元素间的关系式" class="headerlink" title="步骤二、找出数组元素间的关系式"></a>步骤二、找出数组元素间的关系式</h3><p> dp[n] = dp[n-1] + dp[n-2]</p>
-<h3 id="步骤三、找出初始条件"><a href="#步骤三、找出初始条件" class="headerlink" title="步骤三、找出初始条件"></a>步骤三、找出初始条件</h3><p>dp[0] = 0、dp[1] = 1、dp[2] = 1</p>
-<p>即 n &lt;= 2 时，dp[n] = n.</p>
-<h3 id="题解代码"><a href="#题解代码" class="headerlink" title="题解代码"></a>题解代码</h3><pre class="line-numbers language-JAva" data-language="JAva"><code class="language-JAva">//简单代码写出题解，当然它还可以优化；
-int f( int n ){
-    if(n &lt;= 2)
-    return n;
-    // 先创建一个数组来保存历史数据
-    int[] dp = new int[n+1];
-    // 给出初始值
-    dp[0] = 0;
-    dp[1] = 1;
-    dp[2] = 1;
-    // 通过关系式来计算出 dp[n]
-    for(int i = 2; i &lt;= n; i++){
-        dp[i] = dp[i-1] + dp[i-2];
-    }
-    // 把最终结果返回
-    return dp[n];
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="二维数组DP：最多路径数"><a href="#二维数组DP：最多路径数" class="headerlink" title="二维数组DP：最多路径数"></a>二维数组DP：最多路径数</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>一个机器人位于一个 m x n 网格的左上角</p>
-<p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角</p>
-<p>问总共有多少条不同的路径？</p>
-<h3 id="步骤一、定义数组元素的含义-1"><a href="#步骤一、定义数组元素的含义-1" class="headerlink" title="步骤一、定义数组元素的含义"></a>步骤一、定义数组元素的含义</h3><p>由于我们的目的是从左上角到右下角一共有多少种路径，那我们就定义 dp[i] [j]的含义为：<strong>当机器人从左上角走到(i, j) 这个位置时，一共有 dp[i] [j] 种路径</strong>。     </p>
-<p>注意，这个网格相当于一个二维数组，数组是从下标为 0 开始算起的，所以 右下角的位置是 (m-1, n - 1)，所以 dp[m-1] [n-1] 就是答案。</p>
-<h3 id="步骤二：找出关系数组元素间的关系式"><a href="#步骤二：找出关系数组元素间的关系式" class="headerlink" title="步骤二：找出关系数组元素间的关系式"></a>步骤二：找出关系数组元素间的关系式</h3><p>想象以下，机器人要怎么样才能到达 (i, j) 这个位置？由于机器人可以向下走或者向右走，所以有两种方式到达</p>
-<p>一种是从 (i-1, j) 这个位置走一步到达</p>
-<p>一种是从(i, j - 1) 这个位置走一步到达</p>
-<p>因为是计算所有可能的步骤，所以是把所有可能走的路径都加起来，所以关系式是 </p>
-<p><strong>dp[i] [j] = dp[i-1] [j] + dp[i] [j-1]</strong></p>
-<h3 id="步骤三、找出初始值"><a href="#步骤三、找出初始值" class="headerlink" title="步骤三、找出初始值"></a>步骤三、找出初始值</h3><p>显然，当 dp[i] [j] 中，如果 i 或者 j 有一个为 0，那么还能使用关系式吗？答是不能的，因为这个时候把 i - 1 或者 j - 1，就变成负数了，数组就会出问题了，所以我们的初始值是计算出所有的 dp[0] [0….n-1] 和所有的 dp[0….m-1] [0]。这个还是非常容易计算的，相当于计算机图中的最上面一行和左边一列。因此初始值如下：</p>
-<p>dp[0] [0….n-1] = 1; // 相当于最上面一行，机器人只能一直往右走</p>
-<p>dp[0…m-1] [0] = 1; // 相当于最左面一列，机器人只能一直往下走</p>
-<h3 id="题解代码："><a href="#题解代码：" class="headerlink" title="题解代码："></a>题解代码：</h3><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">//简单代码写出题解，当然它还可以优化；
-public static int uniquePaths(int m, int n) {
-    if (m &lt;= 0 || n &lt;= 0) {
-        return 0;
-    }
-
-    int[][] dp = new int[m][n];
-    // 初始化
-    for(int i = 0; i &lt; m; i++){
-      dp[i][0] = 1;
-    }
-    for(int i = 0; i &lt; n; i++){
-      dp[0][i] = 1;
-    }
-        // 推导出 dp[m-1][n-1]
-    for (int i = 1; i &lt; m; i++) {
-        for (int j = 1; j &lt; n; j++) {
-            dp[i][j] = dp[i-1][j] + dp[i][j-1];
-        }
-    }
-    return dp[m-1][n-1];
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>C++版的，虽然语言不同，但思维差不多的</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class Solution {
-public:
-    int uniquePaths(int m, int n) {
-        //创建m×n的二维数组，而且可以通过v[i][j]的方式来访问元素（vector支持下标访问元素）
-        //定义了一个vector容器，元素类型为vector&lt;int&gt;，初始化为包含m个vector&lt;int&gt;对象，每个对象都是一个新创立的vector&lt;int&gt;对象的拷贝，而这个新创立的vector&lt;int&gt;对象被初始化为包含n个0。
-        vector&lt;vector&lt;int&gt;&gt; dp(m, vector&lt;int&gt;(n));
-        // 初始化
-        for (int i = 0; i &lt; m; ++i) {
-            dp[i][0] = 1;
-        }
-        for (int j = 0; j &lt; n; ++j) {
-            dp[0][j] = 1;
-        }
-        // 推导出dp[m-1][n-1]
-        for (int i = 1; i &lt; m; ++i) {
-            for (int j = 1; j &lt; n; ++j) {
-                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
-            }
-        }
-        return dp[m - 1][n - 1];
-    }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="代码优化："><a href="#代码优化：" class="headerlink" title="代码优化："></a>代码优化：</h3><p> 前面的基础解法中空间复杂度为O(n * m)，下面我们来讲解如何优化成 O(n)。</p>
-<p>根据公式 </p>
-<pre class="line-numbers language-none"><code class="language-none">dp[i][j]= dp[i-1][j] + dp[i][j-1]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>，我们可以知道，当我们要计算第 i 行的值时，<strong>除了会用到第 i - 1 行外，其他第 1 至 第 i-2 行的值我们都是不需要用到的</strong>，只需要用一个一维的 dp[] 来保存<strong>一行</strong>的历史记录就可以了。然后在计算机的过程中，不断着更新 dp[] 的值。</p>
-<p>以往的二维的时候， dp[i][j] = dp[i-1] [j]+ dp[i][j-1]。现在转化成一维，不就是 <strong>dp[i] = dp[i] + dp[i-1]</strong> 吗？</p>
-<p>即 dp[1] = dp[1] + dp[0]，而且还动态帮我们更新了 dp[1] 的值。因为刚开始 dp[i] 的保存第一行的值的，现在更新为保存第二行的值。</p>
-<p>dp[i] = dp[i-1] + dp[i]</p>
-<blockquote>
-<pre class="line-numbers language-none"><code class="language-none">dp[i-1] 相当于之前的 dp[i-1][j]，dp[i] 相当于之前的 dp[i][j-1]。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</blockquote>
-<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">//优化代码如下，时间复杂度O（m*n），空间复杂度O（n）
-public static int uniquePaths(int m, int n) {
-    if (m &lt;= 0 || n &lt;= 0) {
-        return 0;
-    }
-
-    int[] dp = new int[n]; 
-    // 初始化
-    for(int i = 0; i &lt; n; i++){
-      dp[i] = 1;
-    }
-
-        // 公式：dp[i] = dp[i-1] + dp[i]
-    for (int i = 1; i &lt; m; i++) {
-        // 第 i 行第 0 列的初始值
-        dp[0] = 1;
-        for (int j = 1; j &lt; n; j++) {
-            dp[j] = dp[j-1] + dp[j];
-        }
-    }
-    return dp[n-1];
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>最后要求的答案就是：dp[n-1]</p>
-<h2 id="二维数组DP：最小路径和"><a href="#二维数组DP：最小路径和" class="headerlink" title="二维数组DP：最小路径和"></a>二维数组DP：最小路径和</h2><p>给定一个包含非负整数的 <em>m</em> x <em>n</em> 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。</p>
-<p><strong>说明：</strong>每次只能向下或者向右移动一步。</p>
-<h3 id="步骤一、定义数组元素的含义-2"><a href="#步骤一、定义数组元素的含义-2" class="headerlink" title="步骤一、定义数组元素的含义"></a>步骤一、定义数组元素的含义</h3><p>由于我们的目的是从左上角到右下角，最小路径和是多少，那我们就定义 dp[i] [j]的含义为：**当机器人从左上角走到(i, j) 这个位置时，最下的路径和是 dp[i] [j]**。那么，dp[m-1] [n-1] 就是我们要的答案了。</p>
-<p>不过这次不是计算所有可能路径，而是<strong>计算哪一个路径和是最小的</strong>，那么我们要从这两种方式中，选择一种，使得dp[i] [j] 的值是最小的，显然有</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>，dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">// arr[i][j] 表示网格总的值</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="步骤三、找出初始值-1"><a href="#步骤三、找出初始值-1" class="headerlink" title="步骤三、找出初始值"></a>步骤三、找出初始值</h3><p>显然，当 dp[i] [j] 中，如果 i 或者 j 有一个为 0，那么还能使用关系式吗？答是不能的，因为这个时候把 i - 1 或者 j - 1，就变成负数了，数组就会出问题了，所以我们的初始值是计算出所有的 dp[0] [0….n-1] 和所有的 dp[0….m-1] [0]。这个还是非常容易计算的，相当于计算机图中的最上面一行和左边一列。因此初始值如下：</p>
-<p>dp[0] [j] = arr[0] [j] + dp[0] [j-1]; // 相当于最上面一行，机器人只能一直往左走</p>
-<p>dp[i] [0] = arr[i] [0] + dp[i] [0]; // 相当于最左面一列，机器人只能一直往下走</p>
-<h3 id="题解代码：-1"><a href="#题解代码：-1" class="headerlink" title="题解代码："></a>题解代码：</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">uniquePaths</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> m <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> n <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>m <span class="token operator">&lt;=</span> <span class="token number">0</span> <span class="token operator">||</span> n <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token comment">// 初始化</span>
-    dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token comment">// 初始化最左边的列</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> dp<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment">// 初始化最上边的行</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-     <span class="token comment">// 推导出 dp[m-1][n-1]</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> dp<span class="token punctuation">[</span>m<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>O(n*m) 的空间复杂度可以优化成 O(min(n, m)) 的空间复杂度的，不过这里先不讲</p>
-</blockquote>
-<h2 id="hard-题目"><a href="#hard-题目" class="headerlink" title="hard 题目"></a>hard 题目</h2><p><strong>问题描述</strong>：</p>
-<p>给定两个单词 word1 和 word2，计算出将 word1 转换成 word2 所使用的最少操作数 。</p>
-<p>你可以对一个单词进行如下三种操作：</p>
-<p>插入一个字符 删除一个字符 替换一个字符</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">示例：
-输入<span class="token operator">:</span> word1 <span class="token operator">=</span> <span class="token string">"horse"</span><span class="token punctuation">,</span> word2 <span class="token operator">=</span> <span class="token string">"ros"</span>
-输出<span class="token operator">:</span> <span class="token number">3</span>
-解释<span class="token operator">:</span> 
-horse <span class="token operator">-&gt;</span> rorse <span class="token punctuation">(</span>将 <span class="token string">'h'</span> 替换为 <span class="token string">'r'</span><span class="token punctuation">)</span>
-rorse <span class="token operator">-&gt;</span> rose <span class="token punctuation">(</span>删除 <span class="token string">'r'</span><span class="token punctuation">)</span>
-rose <span class="token operator">-&gt;</span> ros <span class="token punctuation">(</span>删除 <span class="token string">'e'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p>本文参考来源：</p>
+                <h2 id="金矿问题题目"><a href="#金矿问题题目" class="headerlink" title="金矿问题题目"></a>金矿问题题目</h2><p>很久很久以前，有一位国王拥有5座金矿，每座金矿的黄金储量不同， 需要参与挖掘的工人人数也不同。例如有的金矿储量是500kg黄金，需要5个工人来挖掘；有的金矿储量是200kg黄金，需要3个工人来挖掘…… 如果参与挖矿的工人的总数是10。每座金矿要么全挖，要么不挖，不能 派出一半人挖取一半的金矿。要求用程序求出，要想得到尽可能多的黄金，应该选择挖取哪几座金矿？</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>首先分析题意得出这是一个动态规划问题，所谓动态规划就是把复杂的问题简化成规模较小的子问题，再从简单的子问题自底向上一步一步递推，最终得到复杂问题的最优解。</p>
+<p>动态规划的要点：</p>
+<p>确定全局最优解和最优子结构之间的关系，以及问题的边界。这个关系用数学公式来表达的话，就叫作状态转移方程式 。</p>
+<p>先找问题得边界：</p>
+<p>一直把问题简化成在0个金矿或0个 工人时的最优选择，这个收益结果显然是0，也就是问题的边界 。</p>
+<p>自底向上求解：</p>
 <ul>
-<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/91582909">告别动态规划，连刷 40 道题，我总结了这些套路，看不懂你打我（万字长文） - 知乎 (zhihu.com)</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/whl583593404/article/details/49804217">(43条消息) C++中的vector&lt; vector &gt; v(m, vector(n) );是什么意思_whl583593404的专栏-CSDN博客_vector</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/unique-paths/">Loading Question… - 力扣（LeetCode） (leetcode-cn.com)</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-path-sum/">64. 最小路径和 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
-</li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E6%96%B9%E7%A8%8B&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:154023067%7D">状态转移方程</a>: n是当前金矿储量，w是当前金矿所需人数 ,p是挖掘金矿所需人数数组，g是金矿储量数组</li>
+<li>F(n,w) = F(n-1,w) (n&gt;1,w&lt;p[n-1])</li>
+<li>F(n,w) = max( F(n-1,w),F(n-1,w-p[n-1])+g[n-1]) (n&gt;1,w&gt;=p[n-1])</li>
+<li>二维数组表示这张对应得表</li>
 </ul>
+<h2 id="递归求解代码"><a href="#递归求解代码" class="headerlink" title="递归求解代码"></a>递归求解代码</h2><pre class="line-numbers language-none"><code class="language-none">/*
+
+* 获得金矿最优收益
+* @param w 工人数量
+* @param n 可选金矿数量
+* @param p 金矿开采所需的工人数量
+* @param g 金矿储量
+  */
+  public static int getBestGoldMining(int w, int n,int[] p, int[] g){
+  if(w==0 || n==0){
+   		return 0;
+   }
+   	if(w&lt;p[n-1]){
+   		return getBestGoldMining(w, n-1, p, g);
+   	}
+   	return Math.max(getBestGoldMining(w, n-1, p, g),getBestGoldMining(w-p[n-1], n*1, p, g)+g[n-1]);
+   }
+
+ public static void main(String[] args) {
+ 	int w = 10;
+ 	int[] p = {5, 5, 3, 4 ,3};
+ 	int[] g = {400, 500, 200, 300 ,350};
+ 	System.out.println(" 最优收益：" + getBestGoldMining(w,g.length, p, g));
+}
+//单纯用递归去计算得话时间复杂度就是O(2^n)，在这个算法中有很多重复得调用计算<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<h2 id="动态规划代码"><a href="#动态规划代码" class="headerlink" title="动态规划代码"></a>动态规划代码</h2><pre class="line-numbers language-none"><code class="language-none">/**
+ * 获得金矿最优收益
+ * @param w 工人数量
+ * @param p 金矿开采所需的工人数量
+ * @param g 金矿储量
+*/
+ public static int getBestGoldMiningV2(int w, int[] p, int[] g)
+{
+	//创建表格
+	int[][] resultTable = new int[g.length+1][w+1];
+	 //填充表格
+ 	for(int i=1; i&lt;=g.length; i++){
+ 		for(int j=1; j&lt;=w; j++){
+ 			if(j&lt;p[i-1]){
+ 				resultTable[i][j] = resultTable[i-1][j];
+ 			}else{
+ 				resultTable[i]
+				[j] = Math.max(resultTable[i-1]
+				[j], resultTable[i-1][j-p[i1]]+ g[i-1]);
+			 }
+		 }
+	 }
+ 	//返回最后1个格子的值
+ 	return resultTable[g.length][w];
+ }
+//动态规划求解时间和空间都是是O(nw)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h2><pre class="line-numbers language-none"><code class="language-none">/**
+* 获得金矿最优收益
+* @param w 工人数量
+* @param p 金矿开采所需的工人数量
+* @param g 金矿储量
+*/
+public static int getBestGoldMiningV3(int w, int[] p, int[] g){
+//创建当前结果
+int[] results = new int[w+1];
+ //填充一维数组
+	for(int i=1; i&lt;=g.length; i++){
+		for(int j=w; j&gt;=1; j--){
+		if(j&gt;=p[i-1]){
+			results[j] = Math.max(results[j],results[j-p[i-1]]+ g[i-1]);
+		}
+	}
+}
+	//返回最后1个格子的值
+	return results[w];
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在表格中除第1行之外，每 一行的结果都是由上一行数据 推导出来的。我们以4个金矿9个工 人为例。 4个金矿、9个工人的最优结果，是由它的两个最优子结构，也就是3个 金矿、5个工人和3个金矿、9个工人的结果推导而来的。这两个最优子 结构都位于它的上一行。 所以，在程序中并不需要保存整个表格，无论金矿有多少座，我们只保 存1行的数据即可。在计算下一行时，要从右向左统计（读者可以想想 为什么从右向左），把旧的数据一个一个替换掉。空间复杂度降低到了O(n)</p>
 
                 
             </div>
@@ -649,7 +547,7 @@ rose <span class="token operator">-&gt;</span> ros <span class="token punctuatio
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/12/09/dong-tai-gui-hua/">https://binbincome.github.io/2021/12/09/dong-tai-gui-hua/</a>
+                    <a href="https://binbincome.github.io/2021/12/08/shu-ju-jie-gou-yu-suan-fa/ru-he-qiu-jie-jin-kuang-wen-ti/">https://binbincome.github.io/2021/12/08/shu-ju-jie-gou-yu-suan-fa/ru-he-qiu-jie-jin-kuang-wen-ti/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -687,8 +585,8 @@ rose <span class="token operator">-&gt;</span> ros <span class="token punctuatio
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                                    <span class="chip bg-color">动态规划</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95%E9%A2%98/">
+                                    <span class="chip bg-color">数据结构算法题</span>
                                 </a>
                             
                         </div>
@@ -736,13 +634,13 @@ rose <span class="token operator">-&gt;</span> ros <span class="token punctuatio
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/12/09/ji-suan-ji-ji-chu/cao-zuo-xi-tong-01/">
+                <a href="/2021/12/09/shu-ju-jie-gou-yu-suan-fa/dong-tai-gui-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="操作系统01">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="动态规划">
                         
-                        <span class="card-title">操作系统01</span>
+                        <span class="card-title">动态规划</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -759,8 +657,8 @@ rose <span class="token operator">-&gt;</span> ros <span class="token punctuatio
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    计算机基础
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
                                 </a>
                             
                             
@@ -770,8 +668,8 @@ rose <span class="token operator">-&gt;</span> ros <span class="token punctuatio
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
                 </div>
@@ -785,13 +683,13 @@ rose <span class="token operator">-&gt;</span> ros <span class="token punctuatio
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/08/ru-he-qiu-jie-jin-kuang-wen-ti/">
+                <a href="/2021/12/08/qian-duan-kai-fa/seo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="如何求解金矿问题">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="SEO">
                         
-                        <span class="card-title">如何求解金矿问题</span>
+                        <span class="card-title">SEO</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -808,8 +706,8 @@ rose <span class="token operator">-&gt;</span> ros <span class="token punctuatio
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构与算法
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    网络知识
                                 </a>
                             
                             
@@ -819,8 +717,8 @@ rose <span class="token operator">-&gt;</span> ros <span class="token punctuatio
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95%E9%A2%98/">
-                        <span class="chip bg-color">数据结构算法题</span>
+                    <a href="/tags/SEO/">
+                        <span class="chip bg-color">SEO</span>
                     </a>
                     
                 </div>
@@ -1055,7 +953,7 @@ rose <span class="token operator">-&gt;</span> ros <span class="token punctuatio
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">31.1k</span>&nbsp;字
+                class="white-color">32.9k</span>&nbsp;字
             
             
             

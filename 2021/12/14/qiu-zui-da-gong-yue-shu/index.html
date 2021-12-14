@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="冒泡排序算法, 冰冰的小屋">
+    <meta name="keywords" content="求最大公约数, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>冒泡排序算法 | 冰冰的小屋</title>
+    <title>求最大公约数 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">冒泡排序算法</h1>
+                    <h1 class="description center-align post-title">求最大公约数</h1>
                 </div>
             </div>
         </div>
@@ -389,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-01
+                    2021-12-14
                 </div>
                 
 
@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    919
+                    925
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -428,67 +428,121 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="冒泡排序算法的实现以及优化"><a href="#冒泡排序算法的实现以及优化" class="headerlink" title="冒泡排序算法的实现以及优化"></a>冒泡排序算法的实现以及优化</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>冒泡排序核心内容：</p>
-<p>相邻元素间两两比较，当一个元素大于右侧相邻元素时，交换它们的位置，如果是小于或等于的话就位置不变。本篇文章主要使用python语言实现最基础的冒泡排序语言以及算法优化，内容均来源于网络或书籍，侵权必删，如有疏漏欢迎评论指出！路漫漫其修远兮, 吾将上下而求索. 望与各位读者共勉!</p>
-<h2 id="冒泡排序算法基础v1版"><a href="#冒泡排序算法基础v1版" class="headerlink" title="冒泡排序算法基础v1版"></a>冒泡排序算法基础v1版</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">bubble_sort_v1</span><span class="token punctuation">(</span>array<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token operator">-</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> array<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> array<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                temp <span class="token operator">=</span> array<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-                array<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> array<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span>
-                array<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span>temp 
-my_array <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">89</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-bubble_sort_v1<span class="token punctuation">(</span>my_array<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>my_array<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="求最大公约数"><a href="#求最大公约数" class="headerlink" title="求最大公约数"></a>求最大公约数</h1><p>写一段代码，求出两个整数的最大公约数，要尽量优化算法的性能。</p>
+<blockquote>
+<p>辗转相除法， 又名欧几里得算法（Euclidean algorithm），该算法的目的是求出两个正整数的最大公约数。它是已知最古老的算法， 其产生时间可追溯至公元前300年前。</p>
+<p>两个数的最大公约数,将其中一个数加到另一个数上,得到的新数,其公约数不变,比如(4,6)=(4+6,6)=(4,6+2×4)=2</p>
+</blockquote>
+<p>解题代码：</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt; 
 
-<h2 id="冒泡排序算法优化v2版"><a href="#冒泡排序算法优化v2版" class="headerlink" title="冒泡排序算法优化v2版"></a>冒泡排序算法优化v2版</h2><p>有时经过数次排序后，整个数列已经是有序的了，但V1版还是会傻傻的执行，可以利用is_sorted作为标记，如果在本轮排序中元素有交换，说明数列无序；如果有无元素交换，则说明数列已经有序，直接跳出循环。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">bubble_sort_v2</span><span class="token punctuation">(</span>array<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment"># 有序标记，每轮初始是True</span>
-        is_sorted <span class="token operator">=</span><span class="token boolean">True</span>
-        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token operator">-</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> array<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> array<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                temp <span class="token operator">=</span> array<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-                array<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> array<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span>
-                array<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span>temp 
-                <span class="token comment"># 有元素交换的话就不是有序的，标记变为False</span>
-                is_sorted <span class="token operator">=</span> <span class="token boolean">False</span>
-        <span class="token keyword">if</span> is_sorted<span class="token punctuation">:</span>
-                <span class="token keyword">break</span>
-            
-my_array <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">89</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-bubble_sort_v2<span class="token punctuation">(</span>my_array<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>my_array<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+using namespace std;
 
-<h2 id="冒泡排序算法v3版"><a href="#冒泡排序算法v3版" class="headerlink" title="冒泡排序算法v3版"></a>冒泡排序算法v3版</h2><p>每一轮排序后，最后或最前的元素属于有序区，其他为无序区，按照现有逻辑每一轮排序后有序区长度加一，但实际上，数列的真正的有序区可能已经不只这个长度，而有序区的多次比较是毫无意义的。</p>
-<p>解决方案：在每轮排序后记录下最后一次元素交换的位置，该位置就是无序数列的边界，分割有序和无序区。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">bubble_sort_v3</span><span class="token punctuation">(</span>array<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment"># 记录最后一次交换的位置</span>
-    last_exchange_index <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token comment"># 无序数列的边界，每次只需比较到这</span>
-    sort_border <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment"># 有序标记，每轮初始是True</span>
-        is_sorted <span class="token operator">=</span><span class="token boolean">True</span>
-        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>sort_border<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> array<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> array<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                temp <span class="token operator">=</span> array<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-                array<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> array<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span>
-                array<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span>temp 
-                <span class="token comment"># 有元素交换的话就不是有序的，标记变为False</span>
-                is_sorted <span class="token operator">=</span> <span class="token boolean">False</span>
-                <span class="token comment"># 把无序数列的边界更新为最后一次交换元素的位置</span>
-                last_exchange_index <span class="token operator">=</span> j
-        sort_border <span class="token operator">=</span> last_exchange_index
-        <span class="token keyword">if</span> is_sorted<span class="token punctuation">:</span>
-                <span class="token keyword">break</span>
-            
-my_array <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">89</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-bubble_sort_v3<span class="token punctuation">(</span>my_array<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>my_array<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+int fun(int m,int n){
+	return n ? fun(n,m%n) : m ;
+}
 
-<h2 id="鸡尾酒排序"><a href="#鸡尾酒排序" class="headerlink" title="鸡尾酒排序"></a>鸡尾酒排序</h2><p>冒泡排序的每一轮都是从左到右比较元素并进行单向的位置交换就像气泡一样一个接着一个向上冒泡，而鸡尾酒排序的比较就像钟摆一样，元素的比较和交换是双向的。比如{2，3，4，5，6，7，8，1}这种已经有部分是有着相对规律的数列如果使用冒泡排序可能需要7轮的比较，而使用鸡尾酒排序只需要3轮。</p>
-<p>在大部分元素已经是有序的情况下，鸡尾酒排序能够有效的减少排序的次数，缺点在于代码量几乎增加了一倍。个人认为鸡尾酒排序就像是鸡肋一般，排序本身就是为了将大量的无序的数据进行排列，而鸡尾酒排序只有在特定的情况下才能使用，关于鸡尾酒排序的实现以及优化有兴趣的朋友可以自行探索啦。</p>
+int main(){
+	int a,b;
+	cin&gt;&gt;a&gt;&gt;b;	
+	cout&lt;&lt;fun(a,b)&lt;&lt;endl;
+	return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>一行代码解决了？太强了本文引用来源：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41575507/article/details/90752742">求最大公约数（辗转相除法）_ACfun-CSDN博客_辗转相除法求最大公约数</a></li>
+</ul>
+<h1 id="判断一个数是不是2的整数次幂"><a href="#判断一个数是不是2的整数次幂" class="headerlink" title="判断一个数是不是2的整数次幂"></a>判断一个数是不是2的整数次幂</h1><p>2的整数次幂有4、8、16、32等，但是把它们转化为二进制数后减1会1发现所有位都是1.</p>
+<p>所以凡是2的整数次幂和它本身减1的结果进行与运算，其结果必然为0！</p>
+<p>解题代码：</p>
+<pre class="line-numbers language-none"><code class="language-none">int main(){
+    int a;
+    cin&gt;&gt;a;
+    if ((a&amp;a-1) == 0)
+    	cout&lt;&lt;"yes"&lt;&lt;endl;
+    else
+    	cout&lt;&lt;"no"&lt;&lt;endl;
+	return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>ps：时间复杂度为O（1）哦！</p>
+<h1 id="无序数组排序后最大相邻差"><a href="#无序数组排序后最大相邻差" class="headerlink" title="无序数组排序后最大相邻差"></a>无序数组排序后最大相邻差</h1><p>1.利用桶排序的思想，先求出原数组从最小值Min到最大值Max的单位区间长度d，d=(Max-Min)/n-1。算出d的作用是为了后续确定各个桶的区间范围划分。</p>
+<p>2.创建一个长度是N+1的数组Array，数组的每一个元素都是一个List，代表一个桶。</p>
+<p>3.遍历原数组，把原数组每一个元素插入到新数组Array对应的桶当中，进入各个桶的条件是根据不同的数值区间。由于桶的总数量是N+1，所以至少有一个桶是空的。</p>
+<p>4.遍历新数组Array，计算每一个空桶右端非空桶中的最小值，与空桶左端非空桶的最大值的差，数值最大的差即为原数组排序后的相邻最大差值。</p>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public static int getMaxSortedDistance(int[] array) {
+        // 1. 获取数组中的最大值和最小值，构建数组的长度
+        int max = array[0];
+        int min = array[0];
+        for (int i = 1; i &lt; array.length; i++) {
+            if (array[i] &gt; max) {
+                max = array[i];
+            }
+            if (array[i] &lt; min) {
+                min = array[i];
+            }
+        }
+        int distance = max - min;
+        // 如果max和min相等，说明数组所有元素都相等，返回0
+        if (distance == 0) {
+            return 0;
+        }
+        // 2. 初始化桶
+        int bucketNum = array.length;
+        Bucket[] buckets = new Bucket[bucketNum];
+        for (int i = 0; i &lt; bucketNum; i++) {
+            buckets[i] = new Bucket();
+        }
+ 
+        // 3. 遍历原始数组，确定每个桶的最大最小值
+        for (int i = 0; i &lt; array.length; i++) {
+            // 确定数组元素所属的桶小标
+            int index = ((array[i] - min) * (bucketNum - 1)) / distance;
+            if (buckets[index].min == null || buckets[index].min &gt; array[i]) {
+                buckets[index].min = array[i];
+            }
+            if (buckets[index].max == null || buckets[index].max &lt; array[i]) {
+                buckets[index].max = array[i];
+            }
+        }
+ 
+        // 4. 遍历桶，找到最大差值
+        // 这里采用临时变量leftMax,在每一轮迭代时存储当前左侧桶的最大值，
+        // 而两个桶之间的差值，则是buckets[i].min - leftIndex
+        int leftIndex = buckets[0].max;
+        int maxDistance = 0;
+        for (int i = 1; i &lt; buckets.length; i++) {
+            if (buckets[i].min == null) {
+                continue;
+            }
+            if (buckets[i].min - leftIndex &gt; maxDistance) {
+                maxDistance = buckets[i].min - leftIndex;
+            }
+            leftIndex = buckets[i].max;
+        }
+        return maxDistance;
+ 
+    }
+ 
+    /**
+     * 桶
+     */
+    private static class Bucket{
+        Integer min;
+        Integer max;
+    }
+ 
+public static void main(String[] args) {
+ 
+        int[] array = new int[] {2, 6, 3, 4, 5, 10, 3};
+//        int[] array = new int[]{0, 0, 1, 2, 3, 4, 5, 6, 12, 13, 20, 10};
+        // 桶排序方式
+        int maxSortedDistance = getMaxSortedDistance(array);
+        System.out.println("最大相邻差为:"+ maxSortedDistance);
+ 
+    }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -515,7 +569,7 @@ bubble_sort_v3<span class="token punctuation">(</span>my_array<span class="token
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/12/01/shu-ju-jie-gou-yu-suan-fa/mou-pao-pai-xu-suan-fa/">https://binbincome.github.io/2021/12/01/shu-ju-jie-gou-yu-suan-fa/mou-pao-pai-xu-suan-fa/</a>
+                    <a href="https://binbincome.github.io/2021/12/14/qiu-zui-da-gong-yue-shu/">https://binbincome.github.io/2021/12/14/qiu-zui-da-gong-yue-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -602,13 +656,13 @@ bubble_sort_v3<span class="token punctuation">(</span>my_array<span class="token
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/12/02/shu-ju-jie-gou-yu-suan-fa/ha-xi-biao-he-ha-xi-han-shu/">
+                <a href="/2021/12/14/zhan-he-dui-lie-de-hu-xiang-shi-xian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="哈希表和哈希函数">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="栈和队列的互相实现">
                         
-                        <span class="card-title">哈希表和哈希函数</span>
+                        <span class="card-title">栈和队列的互相实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -619,27 +673,15 @@ bubble_sort_v3<span class="token punctuation">(</span>my_array<span class="token
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-14
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构与算法
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            冰冰的小屋
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -651,13 +693,13 @@ bubble_sort_v3<span class="token punctuation">(</span>my_array<span class="token
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/01/shu-ju-jie-gou-yu-suan-fa/cha-zhao-he-pai-xu-zhi-kuai-su-pai-xu/">
+                <a href="/2021/12/11/ji-suan-ji-ji-chu/cao-zuo-xi-tong-03/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="查找和排序之快速排序">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="程序计算机中是如何运行的">
                         
-                        <span class="card-title">查找和排序之快速排序</span>
+                        <span class="card-title">程序计算机中是如何运行的</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -668,14 +710,14 @@ bubble_sort_v3<span class="token punctuation">(</span>my_array<span class="token
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构与算法
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    计算机基础
                                 </a>
                             
                             
@@ -685,8 +727,8 @@ bubble_sort_v3<span class="token punctuation">(</span>my_array<span class="token
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
                 </div>

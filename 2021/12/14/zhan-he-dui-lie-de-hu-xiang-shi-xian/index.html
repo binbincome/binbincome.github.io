@@ -362,12 +362,25 @@ if (windowWidth > 768) {
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">数据结构及算法</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/" class="post-category">
+                                数据结构及算法
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -385,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -415,7 +428,257 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="栈和队列的相互实现"><a href="#栈和队列的相互实现" class="headerlink" title="栈和队列的相互实现"></a>栈和队列的相互实现</h1><blockquote>
+<p>栈（stack）：先进后出，后进先出。限定在表尾进行插入删除的线性表。</p>
+<p>队列（queue）：先进先出，后进后出。限定在表头删除，在表尾插入的线性表。</p>
+</blockquote>
+<p>那么如何用栈来实现队列和如何用队列来实现栈的数据结构呢？</p>
+<h1 id="用栈实现队列"><a href="#用栈实现队列" class="headerlink" title="用栈实现队列"></a>用栈实现队列</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>单个栈肯定无法实现队列，所以至少应该用两个栈来试现队列。</p>
+<h3 id="入队的实现："><a href="#入队的实现：" class="headerlink" title="入队的实现："></a>入队的实现：</h3><ul>
+<li>数据栈：每次有新元素来时，先把存放的元素弹入辅助栈，再把新元素压入数据栈底；</li>
+<li>辅助栈：等待新元素进入数据栈以后依次弹出元素压入数据栈中；</li>
+</ul>
+<p>根据这两个栈的功能，不管是数据栈中是否有元素存在，新元素都会被沉到栈底中，实现入队的功能。</p>
+<p>i<a target="_blank" rel="noopener" href="https://ask.qcloudimg.com/http-save/7414340/qx2ygppc9j.gif">img</a></p>
+<h3 id="出队的实现："><a href="#出队的实现：" class="headerlink" title="出队的实现："></a>出队的实现：</h3><p>由于在入队时，通过数据栈与辅助栈的交换，实现了后加入的元素沉在栈底，先进入的元素保留在栈顶，直接通过出栈弹出即可</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class StackImplQueue {
+    // 数据栈
+    private Stack&lt;Integer&gt; stack;
+    // 辅助栈
+    private Stack&lt;Integer&gt; aux;
+
+    StackImplQueue() {
+        stack = new Stack&lt;&gt;();
+        aux = new Stack&lt;&gt;();
+    }
+
+    // 入队--通过数据栈与辅助栈相互交换，保证新加入的元素沉在数据栈底
+    public void enqueue(Integer e) {
+        while (!stack.isEmpty()) {
+            aux.push(stack.pop());
+        }
+        stack.push(e);
+        while(!aux.isEmpty()){
+            stack.push(aux.pop());
+        }
+
+    }
+
+    // 出队--弹出数据栈元素
+    public Integer dequeue(){
+        return stack.pop();
+    }
+
+    // 查看队头元素
+    public Integer peek(){
+        return stack.peek();
+    }
+
+    // 是否为空
+    public boolean isEmpty(){
+        return stack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        StackImplQueue queue = new StackImplQueue();
+        queue.enqueue(1);
+        System.out.println(queue.peek());
+        queue.enqueue(2);
+        System.out.println(queue.peek());
+        queue.enqueue(3);
+        System.out.println(queue.peek());
+        System.out.println("=============");
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="用队列实现栈"><a href="#用队列实现栈" class="headerlink" title="用队列实现栈"></a>用队列实现栈</h1><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><h3 id="入栈："><a href="#入栈：" class="headerlink" title="入栈："></a>入栈：</h3><p>入栈的元素要在队头，而队列入队的元素在队尾，只需<strong>让队头至队尾前的其它所有元素依次出队再入队，直至在队尾新加入的元素被移到队头，也即实现了让新压入的元素保留在栈顶</strong>。</p>
+<p>i<a target="_blank" rel="noopener" href="https://ask.qcloudimg.com/http-save/7414340/r48p5r9xu8.gif">img</a></p>
+<h3 id="出栈："><a href="#出栈：" class="headerlink" title="出栈："></a>出栈：</h3><p>由于在入栈时保证队列中新加入队尾的元素被移到了队头，出栈只需弹出队头元素即可</p>
+<h2 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">QueueImplStack</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// 定义队列</span>
+    <span class="token keyword">private</span> <span class="token class-name">Queue</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> queue<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">QueueImplStack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        queue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 入栈--在队尾加入元素后,让其他元素按顺序出队再入队，保持新加入的元素永远在队头</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        queue<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> size <span class="token operator">=</span> queue<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            queue<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>queue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            i<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 出栈--将队尾前的其它所有元素出队再入队，直至队尾元素移到队头</span>
+    <span class="token keyword">public</span> <span class="token class-name">Integer</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> queue<span class="token punctuation">.</span><span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 查看栈顶元素--即队头元素</span>
+    <span class="token keyword">public</span> <span class="token class-name">Integer</span> <span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> queue<span class="token punctuation">.</span><span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 是否为空</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> queue<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">QueueImplStack</span> stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">QueueImplStack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"============="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="C-版代码"><a href="#C-版代码" class="headerlink" title="C++版代码"></a>C++版代码</h1><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">//用栈实现队列
+#include&lt;stack&gt;
+#include&lt;iostream&gt;
+
+using namespace std;
+
+class queue{
+public:
+	stack&lt;int&gt; dataStack;//数据栈 
+	stack&lt;int&gt; auxStack;//辅助栈
+	
+//入队，通过辅助栈让新元素沉于栈底
+void push(int x) {
+	while(!dataStack.empty()){
+		auxStack.push(dataStack.top());
+		dataStack.pop();
+	}
+	dataStack.push(x);
+	while(!auxStack.empty()){
+        dataStack.push(auxStack.top());
+        auxStack.pop();
+    }
+}
+
+    // 出队--弹出数据栈元素
+    int outqueue(){
+    	int temp = dataStack.top();
+    	dataStack.pop();
+        return temp;
+    }
+
+    // 查看队头元素
+    int top(){
+        return dataStack.top();
+    }
+
+    // 是否为空
+    bool empty(){
+        return dataStack.empty();
+    }
+	
+};
+
+
+int main(){
+	queue iq;
+	iq.push(1);
+	cout&lt;&lt;iq.top()&lt;&lt;endl;
+	iq.push(2);
+	cout&lt;&lt;iq.top()&lt;&lt;endl;
+	iq.push(3);
+	cout&lt;&lt;iq.top()&lt;&lt;endl;
+	cout&lt;&lt;"-------------"&lt;&lt;endl;
+	cout&lt;&lt;iq.outqueue()&lt;&lt;endl;
+	cout&lt;&lt;iq.outqueue()&lt;&lt;endl;
+	cout&lt;&lt;iq.outqueue()&lt;&lt;endl;	
+	return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">//用队列实现栈
+#include&lt;deque&gt;
+#include&lt;iostream&gt;
+
+using namespace std;
+
+class stack{
+public:
+	deque&lt;int&gt; de;
+	
+    // 入栈--在队尾加入元素后,让其他元素按顺序出队再入队，保持新加入的元素永远在队头
+    void push(int x) {
+        de.push_front(x);
+        int size = de.size();
+        int i = 0;
+        while (i &lt; size - 1) {
+            de.push_front(de.back());
+            de.pop_back();
+            i++;
+        }
+    }
+
+    // 出栈--将队尾前的其它所有元素出队再入队，直至队尾元素移到队头
+    int pop() {
+    	int temp = de.front();
+    	de.pop_front();
+        return temp;
+    }
+
+    // 查看栈顶元素--即队头元素
+    int top() {
+        return de.front();
+    }
+
+    // 是否为空
+    bool isEmpty() {
+        return de.empty();
+    }			
+};
+
+
+int main(){
+	stack iq;
+	iq.push(1);
+	cout&lt;&lt;iq.top()&lt;&lt;endl;
+	iq.push(2);
+	cout&lt;&lt;iq.top()&lt;&lt;endl;
+	iq.push(3);
+	cout&lt;&lt;iq.top()&lt;&lt;endl;
+	cout&lt;&lt;"-------------"&lt;&lt;endl;
+	cout&lt;&lt;iq.pop()&lt;&lt;endl;
+	cout&lt;&lt;iq.pop()&lt;&lt;endl;
+	cout&lt;&lt;iq.pop()&lt;&lt;endl;	
+	return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>本文参考来源：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1643318">用队列实现栈，用栈实现队列，听起来有点绕，都搞懂了就掌握了精髓！ - 云+社区 - 腾讯云 (tencent.com)</a></li>
+<li>《算法之旅》</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -478,7 +741,11 @@ if (windowWidth > 768) {
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">数据结构及算法</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -546,13 +813,25 @@ if (windowWidth > 768) {
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            冰冰的小屋
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构及算法
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构及算法</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -833,7 +1112,7 @@ if (windowWidth > 768) {
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.5k</span>&nbsp;字
+                class="white-color">37.7k</span>&nbsp;字
             
             
             

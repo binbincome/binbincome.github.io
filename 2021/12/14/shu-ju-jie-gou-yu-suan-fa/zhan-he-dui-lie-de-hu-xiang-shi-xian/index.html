@@ -364,8 +364,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">数据结构及算法</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">数据结构与算法</span>
                             </a>
                         
                     </div>
@@ -376,8 +376,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/" class="post-category">
-                                数据结构及算法
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                数据结构与算法
                             </a>
                         
                     </div>
@@ -433,13 +433,12 @@ if (windowWidth > 768) {
 <p>队列（queue）：先进先出，后进后出。限定在表头删除，在表尾插入的线性表。</p>
 </blockquote>
 <p>那么如何用栈来实现队列和如何用队列来实现栈的数据结构呢？</p>
-<h1 id="用栈实现队列"><a href="#用栈实现队列" class="headerlink" title="用栈实现队列"></a>用栈实现队列</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>单个栈肯定无法实现队列，所以至少应该用两个栈来试现队列。</p>
+<h1 id="用栈实现队列"><a href="#用栈实现队列" class="headerlink" title="用栈实现队列"></a>用栈实现队列</h1><p>单个栈肯定无法实现队列，所以至少应该用两个栈来试现队列。</p>
 <h3 id="入队的实现："><a href="#入队的实现：" class="headerlink" title="入队的实现："></a>入队的实现：</h3><ul>
 <li>数据栈：每次有新元素来时，先把存放的元素弹入辅助栈，再把新元素压入数据栈底；</li>
 <li>辅助栈：等待新元素进入数据栈以后依次弹出元素压入数据栈中；</li>
 </ul>
 <p>根据这两个栈的功能，不管是数据栈中是否有元素存在，新元素都会被沉到栈底中，实现入队的功能。</p>
-<p>i<a target="_blank" rel="noopener" href="https://ask.qcloudimg.com/http-save/7414340/qx2ygppc9j.gif">img</a></p>
 <h3 id="出队的实现："><a href="#出队的实现：" class="headerlink" title="出队的实现："></a>出队的实现：</h3><p>由于在入队时，通过数据栈与辅助栈的交换，实现了后加入的元素沉在栈底，先进入的元素保留在栈顶，直接通过出栈弹出即可</p>
 <h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class StackImplQueue {
     // 数据栈
@@ -497,8 +496,7 @@ if (windowWidth > 768) {
 
 
 
-<h1 id="用队列实现栈"><a href="#用队列实现栈" class="headerlink" title="用队列实现栈"></a>用队列实现栈</h1><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><h3 id="入栈："><a href="#入栈：" class="headerlink" title="入栈："></a>入栈：</h3><p>入栈的元素要在队头，而队列入队的元素在队尾，只需<strong>让队头至队尾前的其它所有元素依次出队再入队，直至在队尾新加入的元素被移到队头，也即实现了让新压入的元素保留在栈顶</strong>。</p>
-<p>i<a target="_blank" rel="noopener" href="https://ask.qcloudimg.com/http-save/7414340/r48p5r9xu8.gif">img</a></p>
+<h1 id="用队列实现栈"><a href="#用队列实现栈" class="headerlink" title="用队列实现栈"></a>用队列实现栈</h1><h3 id="入栈："><a href="#入栈：" class="headerlink" title="入栈："></a>入栈：</h3><p>入栈的元素要在队头，而队列入队的元素在队尾，只需<strong>让队头至队尾前的其它所有元素依次出队再入队，直至在队尾新加入的元素被移到队头，也即实现了让新压入的元素保留在栈顶</strong>。</p>
 <h3 id="出栈："><a href="#出栈：" class="headerlink" title="出栈："></a>出栈：</h3><p>由于在入栈时保证队列中新加入队尾的元素被移到了队头，出栈只需弹出队头元素即可</p>
 <h2 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">QueueImplStack</span> <span class="token punctuation">{</span>
 
@@ -704,7 +702,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/12/14/zhan-he-dui-lie-de-hu-xiang-shi-xian/">https://binbincome.github.io/2021/12/14/zhan-he-dui-lie-de-hu-xiang-shi-xian/</a>
+                    <a href="https://binbincome.github.io/2021/12/14/shu-ju-jie-gou-yu-suan-fa/zhan-he-dui-lie-de-hu-xiang-shi-xian/">https://binbincome.github.io/2021/12/14/shu-ju-jie-gou-yu-suan-fa/zhan-he-dui-lie-de-hu-xiang-shi-xian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -742,8 +740,8 @@ int main(){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">数据结构及算法</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">数据结构与算法</span>
                                 </a>
                             
                         </div>
@@ -792,7 +790,7 @@ int main(){
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/12/14/zhan-he-dui-lie-de-hu-xiang-shi-xian/">
+                <a href="/2021/12/14/shu-ju-jie-gou-yu-suan-fa/zhan-he-dui-lie-de-hu-xiang-shi-xian/">
                     <div class="card-image">
                         
                         
@@ -815,8 +813,8 @@ int main(){
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构及算法
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
                                 </a>
                             
                             
@@ -827,8 +825,8 @@ int main(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构及算法</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>
@@ -842,7 +840,7 @@ int main(){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/14/qiu-zui-da-gong-yue-shu/">
+                <a href="/2021/12/14/shu-ju-jie-gou-yu-suan-fa/qiu-zui-da-gong-yue-shu/">
                     <div class="card-image">
                         
                         

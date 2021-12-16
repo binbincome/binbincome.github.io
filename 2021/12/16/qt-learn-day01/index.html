@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="浏览器是怎么运作的, 冰冰的小屋">
+    <meta name="keywords" content="QT_learn_day01, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>浏览器是怎么运作的 | 冰冰的小屋</title>
+    <title>QT_learn_day01 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">浏览器是怎么运作的</h1>
+                    <h1 class="description center-align post-title">QT_learn_day01</h1>
                 </div>
             </div>
         </div>
@@ -364,8 +364,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/">
-                                <span class="chip bg-color">网络知识</span>
+                            <a href="/tags/QT/">
+                                <span class="chip bg-color">QT</span>
                             </a>
                         
                     </div>
@@ -376,8 +376,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="post-category">
-                                网络知识
+                            <a href="/categories/C/" class="post-category">
+                                C++
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-05
+                    2021-12-16
                 </div>
                 
 
@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    486
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    8 分
                 </div>
                 
 
@@ -428,31 +428,128 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>浏览器是运行在操作系统的应用程序</strong></p>
-<h1 id="浏览器是个多进程结构，"><a href="#浏览器是个多进程结构，" class="headerlink" title="浏览器是个多进程结构，"></a>浏览器是个多进程结构，</h1><p>\1. 浏览器进程:控制除标签页外的用户界面，包括地址，书签，后退，前进按钮等，以及负责与浏览器其他进程负责协调工作2.<br>\2. 缓存进程<br>\3. 网络进程 发起网络请求<br>\4. 渲染器进程  渲染Tab 有可能会为每个标签页是一个渲染进程<br>\5. GPU进程 渲染<br>\6. 插件进程  内置插件</p>
-<h2 id="渲染进程"><a href="#渲染进程" class="headerlink" title="渲染进程"></a>渲染进程</h2><ol>
-<li><p>浏览器通过网络请求后获取html数据，通过tcp传给渲染器进程</p>
-</li>
-<li><p>DOM - 主线程将html解析构造DOM树</p>
-</li>
-<li><p>style - 样式计算</p>
-</li>
-<li><p>layoutTree - dom+style 根据dom树和样式生成layoutTree</p>
-</li>
-<li><p>paint -绘制 通过遍历 Layout Tree生成绘制顺序表</p>
-</li>
-<li><p>laryer - 布局 然后根据主进程将layoutTree 和绘制信息表传给合成器线程</p>
-</li>
-<li><p>合成器线程 - 将得到的信息分图层分成更小的图块</p>
-</li>
-<li><p>栅格线程  -  将更小的图块进行栅格化raster，返还给合成器线程draw quads图块信息 存储在GPU中</p>
-</li>
-<li><p>frame 合成器将栅格线程返回的图块合成帧交给浏览器进程</p>
-</li>
-<li><p>浏览器进程 收到一帧的图像后传给GPU进行渲染</p>
-</li>
-</ol>
-<h2 id="重排："><a href="#重排：" class="headerlink" title="重排："></a>重排：</h2><p>当改变dom的属性时，会重新进行样式计算，会重新布局和绘制<br>重绘：<br>当改变颜色时，只会发生样式计算和绘制(layer)<br>requestAnimationFrame()<br>会将主线程的任务分散到每一帧的间隔，从而不影响动画的流程<br>Fiber<br>react利用浏览器的空闲时间做优化<br>Transform<br>会直接运行合成器线程，所以不会感染主线程的渲染<br>在移动端使用3d转换可以优化性能（如果设备有3d加速引擎 GPU 可以提高性能 , 2d转换是无法调用GPU，2G是靠的CPU）</p>
+                <h1 id="QT是什么？"><a href="#QT是什么？" class="headerlink" title="QT是什么？"></a>QT是什么？</h1><p>QT一个跨平台的 C++ 开发库，主要用来开发图形用户界面（Graphical User Interface，GUI）程序</p>
+<p>总起来说，Qt 主要用于桌面程序开发和嵌入式开发。</p>
+<p>用 Qt 来开发 Windows 桌面程序有以下优点：</p>
+<ul>
+<li>简单易学：Qt 封装的很好，几行代码就可以开发出一个简单的客户端，不需要了解 Windows API。</li>
+<li>资料丰富：资料丰富能够成倍降低学习成本，否则你只能去看源码，关于 DirectUI、Htmlayout、aardio 的资料就很少。</li>
+<li>漂亮的界面：Qt 很容易做出漂亮的界面和炫酷的动画，而 MFC、WTL、wxWidgets 比较麻烦。</li>
+<li>独立安装：Qt 程序最终会编译为本地代码，不需要其他库的支撑，而 Java 要安装虚拟机，C# 要安装 .NET Framework。</li>
+<li>跨平台：如果你的程序需要运行在多个平台下，同时又希望降低开发成本，Qt 几乎是必备的。</li>
+</ul>
+<p>用qt来开发手机移动应用开发</p>
+<p>QML 类似于网页设计的 HTML，是一种标记语言，我们可以借助 CSS 对它进行美化，也可以借助 <a target="_blank" rel="noopener" href="http://c.biancheng.net/js/">JavaScript</a> 进行交互。QML 只能用来进行界面设计和人机交互，也就是只能胜任 UI 部分，在底层仍然需要调用 C++ 编写的组件来完善功能，比如访问数据库、网络通信、多线程多进程、文件读写、图像处理、音频视频处理等都离不开 C++。目前的大型开发一般是以 C++ 为主、QML 为辅的开发模式。</p>
+<p>使用 QML 开发界面主要有以下几个优点：</p>
+<ul>
+<li>QML 非常灵活，可以做出非常炫酷的效果，例如 QQ、360、迅雷等都不在话下。</li>
+<li>QML 是标记语言，见名知意，非常容易编写和阅读，大大提高了开发和维护效率。</li>
+<li>QML 界面简洁大气，有很多动画，适合移动端。</li>
+<li>不同平台下的 QML 使用相同的渲染机制，界面效果一致，不会随操作系统的不同而变化。</li>
+</ul>
+<h1 id="QT学习第一步：初步了解"><a href="#QT学习第一步：初步了解" class="headerlink" title="QT学习第一步：初步了解"></a>QT学习第一步：初步了解</h1><ul>
+<li>qt的软件安装：网上教程很多</li>
+<li>了解它的目录结构：<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/3866.html">解密Qt安装目录的结构 (biancheng.net)</a></li>
+</ul>
+<p><a target="_blank" rel="noopener" href="http://c.biancheng.net/qt/">Qt</a> 不是凭空产生的，它是基于现有工具链打造而成的，它所使用的编译器、链接器、调试器等都不是自己的，Qt 官方只是开发了上层工具。</p>
+<ul>
+<li>GNU工具： MinGW 可以生成 Windows 里面的 exe 程序和 dll 链接库</li>
+<li>qmake 工具：核心的项目构建工具，可以生成跨平台的 .pro 项目文件，并能依据不同操作系统和编译工具生成相应的 Makefile，用于构建可执行程序或链接库。而Boost C++ Libraries、<a target="_blank" rel="noopener" href="http://c.biancheng.net/opencv/">OpenCV</a>、LLVM、Clang 等是用 CMake 脚本。</li>
+</ul>
+<h2 id="QT涉及术语名词"><a href="#QT涉及术语名词" class="headerlink" title="QT涉及术语名词"></a>QT涉及术语名词</h2><p>makefile：它是一个生成脚本，生成器make根据规范的makefile自动生成目标程序或文件</p>
+<p>debug：调试版本链接的也是 Debug 版本的库文件，比如 libQt5Guid.a/Qt5Guid.dll，库文件的简短名（不含扩展名）都是以 d 结尾的，Debug 库通常都比较大 。</p>
+<p>release：链接的通常就是 Release 版本的库文件，Release 版本库文件名字比 Debug 版本库文件少一个字母 d ，如 libQt5Gui.a/Qt5Gui.dll，而且 Release 版本库一般都比 Debug 版本小很多，运行效率也高很多。</p>
+<p>Dynamic Link 即动态链接，Static Link 即静态链接。</p>
+<blockquote>
+<h4 id="动态链接库"><a href="#动态链接库" class="headerlink" title="动态链接库"></a>动态链接库</h4><p>目标程序通常都不是独立个体，生成程序时都需要链接其他的库，要用到其他库的代码。对于多个程序同时运行而言，内存中就可能有同一个库的多个副本，占用了太多内存而干的活差不多。</p>
+<p>为了优化内存运用效率，引入了动态链接库（Dynamic Link Library），或叫共享库（Shared Object）。使用动态链接库时，内存中只需要一份该库文件，其他程序要使用该库文件时，只要链接过来就行了。由于动态库文件外置，链接到动态库的目标程序相对比较小，因为剥离了大量库代码，而只需要一些链接指针。</p>
+<p>使用动态库，也意味着程序需要链接到如 *.dll 或 *.so 文件，得提前装好动态库文件，然后目标程序才能正常运行。</p>
+<h4 id="静态链接库"><a href="#静态链接库" class="headerlink" title="静态链接库"></a>静态链接库</h4><p>静态库就是将链接库的代码和自己编写的代码都编译链接到一块，链接到静态库的程序通常比较大，但好处是运行时依赖的库文件很少，因为目标程序自己内部集成了很多库代码。</p>
+<h4 id="库文件后缀"><a href="#库文件后缀" class="headerlink" title="库文件后缀"></a>库文件后缀</h4><p>Linux/Unix 系统里静态库扩展名一般是 .a，动态库扩展名一般是 .so 。Windows 系统里 VC 编译器用的静态库扩展名一般是 .lib，动态库扩展名一般是 .dll 。</p>
+<p>MinGW 比较特殊，是将 GNU 工具集和链接库从 Linux/Unix 系统移植到 Windows 里， 有意思的情况就出现了，MinGW 使用的静态库扩展名为 .a ，而其动态库扩展名则为 .dll， .a 仅在生成目标程序过程中使用，.dll 则是在目标程序运行时使用。</p>
+</blockquote>
+<p>Explicit Linking 即显式链接，Implicit Linking 即隐式链接，这两种都是动态链接库的使用方式。</p>
+<blockquote>
+<p>动态链接库通常都有其导出函数列表， 告知其他可执行程序可以使用它的哪些函数。可执行程序使用这些导出函数有两种方式：一是在运行时使用主动加载动态库的函数，Linux 里比如用 dlopen 函数打开并加载动态库，Windows 里一般用 LoadLibrary 打开并加载动态库，只有当程序代码执行到这些函数时，其参数里的动态库才会被加载，这就是显式链接。显式链接方式是在运行时加载动态库，其程序启动时并不检查这些动态库是否存在。</p>
+<p>隐式链接是最为常见的，所有的编译环境默认都是采用隐式链接的方式使用动态库。隐式链接会在链接生成可执行程序时就确立依赖关系，在该程序启动时，操作系统自动会检查它依赖的动态库，并一一加载到该程序的内存空间，程序员就不需要操心什么时候加载动态库了。比如 VC 编译环境，链接时使用动态库对应的 .lib 文件（包含动态库的导出函数声明，但没有实际功能代码），在 .exe 程序运行前系统会检查依赖的 .dll，如果找不到某个动态库就会出现报错的对话框</p>
+</blockquote>
+<p><strong>MinGW 是将动态库的导出函数声明放在了 .a 文件里，程序运行依赖的动态库也是 .dll 。</strong></p>
+<h1 id="QT学习第二步：第一个项目"><a href="#QT学习第二步：第一个项目" class="headerlink" title="QT学习第二步：第一个项目"></a>QT学习第二步：第一个项目</h1><p><img src="/QT-learn-day01/image-20211216105205179.png" alt="image-20211216105205179"></p>
+<h2 id="项目分析"><a href="#项目分析" class="headerlink" title="项目分析"></a>项目分析</h2><p>创建项目（注意取消创建界面）</p>
+<p>main.cpp 文件</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include "mainwindow.h" //自己创建的要用""
+#include &lt;QApplication&gt; //qt提供的&lt;&gt;
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;//MainWindow 是自定义的类，继承自 QMainWindow 主窗口类
+    w.show();//默认情况下，Qt 提供的所有组件（控件、部件）都是隐藏的，不会自动显示。通过调用 MainWindow 类提供的 show() 方法，w 窗口就可以在程序运行后显示出来。
+    return a.exec();
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>创建项目时，定义了一个继承自 QMainWindow 的主窗口类，并起名为 MianWindow，该类的定义部分位于 mainwindow.h 头文件中，实现部分位于 mainwindow.cpp 源文件中。</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">//mainwindow.h
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+#include &lt;QMainWindow&gt;
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT//本质是一个已定义好的宏，所有需要“信号和槽”功能的组件都必须将 Q_OBJECT 作为 private 属性成员引入到类中。
+public:
+    MainWindow(QWidget *parent = 0);//带参的构造函数：QWidget 是所有组件的基类，借助 parent 指针，可以为当前窗口指定父窗口。
+    ~MainWindow();
+};
+
+
+
+
+//mainwindow.cpp
+#endif // MAINWINDOW_H
+#include "mainwindow.h"
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+{
+}
+MainWindow::~MainWindow()
+{
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="编码实现简易的窗口界面"><a href="#编码实现简易的窗口界面" class="headerlink" title="编码实现简易的窗口界面"></a>编码实现简易的窗口界面</h2><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">//mainwindow.h
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+#include &lt;QMainWindow&gt;
+#include &lt;QLabel&gt;      // 引入 QLable 文件框组件的头文件
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+public:
+    MainWindow(QWidget *parent = 0);
+    ~MainWindow();
+private:
+    QLabel *lab;        // 定义一个私有的 QLabel 指针对象
+};
+
+
+
+
+//mainwindow.cpp
+#endif // MAINWINDOW_H
+#include "mainwindow.h"
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+{
+    // 创建一个 QLable 对象
+    this-&gt;lab = new QLabel("Hello,World!",this);
+}
+MainWindow::~MainWindow()
+{
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/QT-learn-day01/image-20211216111915053.png" alt="image-20211216111915053"></p>
+<p>这样就通过编码实现的包含文本框的窗口，而字体和大小都是可以通过代码改变的，这也是第一个qt程序！收工，芜湖！</p>
 
                 
             </div>
@@ -479,7 +576,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/12/05/qian-duan-kai-fa/liu-lan-qi-shi-zen-me-yun-zuo-de/">https://binbincome.github.io/2021/12/05/qian-duan-kai-fa/liu-lan-qi-shi-zen-me-yun-zuo-de/</a>
+                    <a href="https://binbincome.github.io/2021/12/16/qt-learn-day01/">https://binbincome.github.io/2021/12/16/qt-learn-day01/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -517,8 +614,8 @@ if (windowWidth > 768) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/">
-                                    <span class="chip bg-color">网络知识</span>
+                                <a href="/tags/QT/">
+                                    <span class="chip bg-color">QT</span>
                                 </a>
                             
                         </div>
@@ -562,17 +659,18 @@ if (windowWidth > 768) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/12/05/qian-duan-kai-fa/dns-ji-qi-ji-ben-gong-zuo-yuan-li/">
+                <a href="/2021/12/16/qt-learn-day01/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="DNS及其基本工作原理">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="QT_learn_day01">
                         
-                        <span class="card-title">DNS及其基本工作原理</span>
+                        <span class="card-title">QT_learn_day01</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -582,26 +680,27 @@ if (windowWidth > 768) {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    网络知识
+                            <a href="/categories/C/" class="post-category">
+                                    C++
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DNS/">
-                        <span class="chip bg-color">DNS</span>
+                    <a href="/tags/QT/">
+                        <span class="chip bg-color">QT</span>
                     </a>
                     
                 </div>
@@ -615,13 +714,13 @@ if (windowWidth > 768) {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/05/qian-duan-kai-fa/http-xie-yi/">
+                <a href="/2021/12/15/hong-bao-suan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Http协议">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="红包算法">
                         
-                        <span class="card-title">Http协议</span>
+                        <span class="card-title">红包算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -632,14 +731,14 @@ if (windowWidth > 768) {
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    网络知识
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
                                 </a>
                             
                             
@@ -649,8 +748,8 @@ if (windowWidth > 768) {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Http%E5%8D%8F%E8%AE%AE/">
-                        <span class="chip bg-color">Http协议</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>

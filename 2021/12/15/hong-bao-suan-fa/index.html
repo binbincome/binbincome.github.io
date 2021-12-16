@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="浏览器是怎么运作的, 冰冰的小屋">
+    <meta name="keywords" content="红包算法, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>浏览器是怎么运作的 | 冰冰的小屋</title>
+    <title>红包算法 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">浏览器是怎么运作的</h1>
+                    <h1 class="description center-align post-title">红包算法</h1>
                 </div>
             </div>
         </div>
@@ -364,8 +364,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/">
-                                <span class="chip bg-color">网络知识</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">数据结构与算法</span>
                             </a>
                         
                     </div>
@@ -376,8 +376,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="post-category">
-                                网络知识
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                数据结构与算法
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-05
+                    2021-12-15
                 </div>
                 
 
@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    486
+                    861
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -428,31 +428,92 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>浏览器是运行在操作系统的应用程序</strong></p>
-<h1 id="浏览器是个多进程结构，"><a href="#浏览器是个多进程结构，" class="headerlink" title="浏览器是个多进程结构，"></a>浏览器是个多进程结构，</h1><p>\1. 浏览器进程:控制除标签页外的用户界面，包括地址，书签，后退，前进按钮等，以及负责与浏览器其他进程负责协调工作2.<br>\2. 缓存进程<br>\3. 网络进程 发起网络请求<br>\4. 渲染器进程  渲染Tab 有可能会为每个标签页是一个渲染进程<br>\5. GPU进程 渲染<br>\6. 插件进程  内置插件</p>
-<h2 id="渲染进程"><a href="#渲染进程" class="headerlink" title="渲染进程"></a>渲染进程</h2><ol>
-<li><p>浏览器通过网络请求后获取html数据，通过tcp传给渲染器进程</p>
-</li>
-<li><p>DOM - 主线程将html解析构造DOM树</p>
-</li>
-<li><p>style - 样式计算</p>
-</li>
-<li><p>layoutTree - dom+style 根据dom树和样式生成layoutTree</p>
-</li>
-<li><p>paint -绘制 通过遍历 Layout Tree生成绘制顺序表</p>
-</li>
-<li><p>laryer - 布局 然后根据主进程将layoutTree 和绘制信息表传给合成器线程</p>
-</li>
-<li><p>合成器线程 - 将得到的信息分图层分成更小的图块</p>
-</li>
-<li><p>栅格线程  -  将更小的图块进行栅格化raster，返还给合成器线程draw quads图块信息 存储在GPU中</p>
-</li>
-<li><p>frame 合成器将栅格线程返回的图块合成帧交给浏览器进程</p>
-</li>
-<li><p>浏览器进程 收到一帧的图像后传给GPU进行渲染</p>
-</li>
+                <h1 id="红包算法"><a href="#红包算法" class="headerlink" title="红包算法"></a>红包算法</h1><p>微信抢红包想来大家都知道，发出一个固定金额的红包，由若干个人来抢，需要满足哪些规则？</p>
+<ul>
+<li>所有人抢到金额之和等于红包金额，不能超过，也不能少于。</li>
+<li>每个人至少抢到一分钱。</li>
+<li>要保证所有人抢到金额的几率相等。</li>
+</ul>
+<blockquote>
+<p>普通法：每次针对剩余总金额做一次随机，随机值就是第一个人的数值。这个算法的好处是完全随机，坏处是极有可能造成前人抢的太多，后人太少。例如，100元分给10个人，第一个人在0-100随机，均值为50。而第二个人的均值只剩25，之后是12.5。</p>
+</blockquote>
+<p>普通法和二倍均值法各有缺点，来看看《算法之旅》中提到的没有实现的线段切割法。</p>
+<h1 id="线段切割法"><a href="#线段切割法" class="headerlink" title="线段切割法"></a>线段切割法</h1><p>把红包总金额M想象成一条很长的线段，而每个人抢到的金额，则是这条主线段所拆分出的若干子线段。</p>
+<p>每个人抢到的金额也就是子线段的长度由“切割点”来决定。当 N 个人一起抢红包的时候，就需要确定 N-1 个切割点。因此，我们需要做 N-1 次随机运算，以此确定 N-1 个切割点。随机的范围区间是（1， M-1）。</p>
+<p>当所有切割点确定以后，子线段的长度也随之确定。这样每个人来抢红包的时候，只需要顺次领取与子线段长度等价的红包金额即可。</p>
+<p>这就是线段切割法的思路。在这里需要注意以下两点：</p>
+<ol>
+<li>当随机切割点出现重复，如何处理。</li>
+<li>如何尽可能降低时间复杂度和空间复杂度。</li>
 </ol>
-<h2 id="重排："><a href="#重排：" class="headerlink" title="重排："></a>重排：</h2><p>当改变dom的属性时，会重新进行样式计算，会重新布局和绘制<br>重绘：<br>当改变颜色时，只会发生样式计算和绘制(layer)<br>requestAnimationFrame()<br>会将主线程的任务分散到每一帧的间隔，从而不影响动画的流程<br>Fiber<br>react利用浏览器的空闲时间做优化<br>Transform<br>会直接运行合成器线程，所以不会感染主线程的渲染<br>在移动端使用3d转换可以优化性能（如果设备有3d加速引擎 GPU 可以提高性能 , 2d转换是无法调用GPU，2G是靠的CPU）</p>
+<pre class="line-numbers language-none"><code class="language-none">#include&lt;iostream&gt;
+#include&lt;set&gt;
+#include&lt;time.h&gt; 
+#include &lt;stdlib.h&gt;
+
+using namespace std;
+//线段切割法    无保底
+//iTotalGold总金额    iNum份数    iBaseGold保底金额
+void cutline(int iTotalGold, int iNum)
+{
+  
+  if (iNum &gt; iTotalGold)
+  {
+    return;
+  }
+  if (iNum == iTotalGold)
+  {
+    for (int i = 0; i &lt; iNum; ++i)
+      cout &lt;&lt; 1 &lt;&lt; " ";
+    cout &lt;&lt; endl;
+    return;
+  }
+  std::set&lt;int&gt; setGold;
+  for (int i = 0; i &lt; iNum-1; ++i)
+  {
+    while (1)
+    {
+      int iPos = rand() % iTotalGold;
+      if (setGold.find(iPos) == setGold.end())
+      {
+        setGold.insert(iPos);
+        break;
+      }
+    }
+  }
+  cout &lt;&lt; "线段切割法(无保底):" &lt;&lt; endl;
+  int iPreLine = 0;
+  for (auto &amp;it : setGold)
+  {
+    cout &lt;&lt; it - iPreLine &lt;&lt; " ";
+    iPreLine = it;
+  }
+  cout &lt;&lt; iTotalGold - iPreLine &lt;&lt; " ";
+  cout &lt;&lt; endl;
+}
+
+int main(void)
+{
+	srand((unsigned int)time(0));//初始化种子为随机值
+    int iTotalGold = 100;
+    int iNum = 10; 
+    int iBaseGold = 5;
+    cutline(iTotalGold, iNum);
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>发现缺点是由于过于随机导致有可能有小概率造成某个人分配过多，不过可以做一个保底就欧克啦！</p>
+<h1 id="双倍随机法"><a href="#双倍随机法" class="headerlink" title="双倍随机法"></a>双倍随机法</h1><p>每次随机的时候，取0-每个人平均金额的2倍进行随机。</p>
+<p>微信团队公布的算法好像就是这个。</p>
+<p>例如：100个人分10分，每次随机都是0-100/10*2去随机，基本可以保证每个人平均在10左右，是相当平均的算法。不过需要注意最后几个人可能已经不足20的情况。</p>
+<p>本文参考文章：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_38754349/article/details/108271392">最全解密微信红包随机算法(含代码实现)_weixin_38754349的博客-CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhanglu_1024/article/details/118889172">抢红包算法–四种抢红包算法对比（附源码）_zhanglu_1024的博客-CSDN博客_抢红包算法</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1454083">微信红包算法 - 云+社区 - 腾讯云 (tencent.com)</a></li>
+</ul>
 
                 
             </div>
@@ -479,7 +540,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/12/05/qian-duan-kai-fa/liu-lan-qi-shi-zen-me-yun-zuo-de/">https://binbincome.github.io/2021/12/05/qian-duan-kai-fa/liu-lan-qi-shi-zen-me-yun-zuo-de/</a>
+                    <a href="https://binbincome.github.io/2021/12/15/hong-bao-suan-fa/">https://binbincome.github.io/2021/12/15/hong-bao-suan-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -517,8 +578,8 @@ if (windowWidth > 768) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/">
-                                    <span class="chip bg-color">网络知识</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">数据结构与算法</span>
                                 </a>
                             
                         </div>
@@ -566,13 +627,13 @@ if (windowWidth > 768) {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/12/05/qian-duan-kai-fa/dns-ji-qi-ji-ben-gong-zuo-yuan-li/">
+                <a href="/2021/12/16/qt-learn-day01/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="DNS及其基本工作原理">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="QT_learn_day01">
                         
-                        <span class="card-title">DNS及其基本工作原理</span>
+                        <span class="card-title">QT_learn_day01</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -583,14 +644,14 @@ if (windowWidth > 768) {
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-16
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    网络知识
+                            <a href="/categories/C/" class="post-category">
+                                    C++
                                 </a>
                             
                             
@@ -600,8 +661,8 @@ if (windowWidth > 768) {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DNS/">
-                        <span class="chip bg-color">DNS</span>
+                    <a href="/tags/QT/">
+                        <span class="chip bg-color">QT</span>
                     </a>
                     
                 </div>
@@ -615,13 +676,13 @@ if (windowWidth > 768) {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/05/qian-duan-kai-fa/http-xie-yi/">
+                <a href="/2021/12/14/shu-ju-jie-gou-yu-suan-fa/zhan-he-dui-lie-de-hu-xiang-shi-xian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Http协议">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="栈和队列的互相实现">
                         
-                        <span class="card-title">Http协议</span>
+                        <span class="card-title">栈和队列的互相实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -632,14 +693,14 @@ if (windowWidth > 768) {
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    网络知识
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
                                 </a>
                             
                             
@@ -649,8 +710,8 @@ if (windowWidth > 768) {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Http%E5%8D%8F%E8%AE%AE/">
-                        <span class="chip bg-color">Http协议</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>

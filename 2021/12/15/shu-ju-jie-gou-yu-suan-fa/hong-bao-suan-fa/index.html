@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="A*寻路算法, 冰冰的小屋">
+    <meta name="keywords" content="红包算法, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>A*寻路算法 | 冰冰的小屋</title>
+    <title>红包算法 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">A*寻路算法</h1>
+                    <h1 class="description center-align post-title">红包算法</h1>
                 </div>
             </div>
         </div>
@@ -389,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-16
+                    2021-12-15
                 </div>
                 
 
@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    520
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -428,101 +428,153 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>迷宫寻路算法中A*算法比BFS更高效一点！</p>
-<p>简化搜索区域</p>
+                <h1 id="红包算法"><a href="#红包算法" class="headerlink" title="红包算法"></a>红包算法</h1><p>微信抢红包想来大家都知道，发出一个固定金额的红包，由若干个人来抢，需要满足哪些规则？</p>
+<ul>
+<li>所有人抢到金额之和等于红包金额，不能超过，也不能少于。</li>
+<li>每个人至少抢到一分钱。</li>
+<li>要保证所有人抢到金额的几率相等。</li>
+</ul>
+<blockquote>
+<p>普通法：每次针对剩余总金额做一次随机，随机值就是第一个人的数值。这个算法的好处是完全随机，坏处是极有可能造成前人抢的太多，后人太少。例如，100元分给10个人，第一个人在0-100随机，均值为50。而第二个人的均值只剩25，之后是12.5。</p>
+</blockquote>
+<p>普通法和二倍均值法各有缺点，来看看《算法之旅》中提到的没有实现的线段切割法。</p>
+<h1 id="线段切割法"><a href="#线段切割法" class="headerlink" title="线段切割法"></a>线段切割法</h1><p>把红包总金额M想象成一条很长的线段，而每个人抢到的金额，则是这条主线段所拆分出的若干子线段。</p>
+<p>每个人抢到的金额也就是子线段的长度由“切割点”来决定。当 N 个人一起抢红包的时候，就需要确定 N-1 个切割点。因此，我们需要做 N-1 次随机运算，以此确定 N-1 个切割点。随机的范围区间是（1， M-1）。</p>
+<p>当所有切割点确定以后，子线段的长度也随之确定。这样每个人来抢红包的时候，只需要顺次领取与子线段长度等价的红包金额即可。</p>
+<p>这就是线段切割法的思路。在这里需要注意以下两点：</p>
 <ol>
-<li>一个记录下所有被考虑来寻找最短路径的方块（称为open 列表）</li>
-<li>一个记录下不会再被考虑的方块（成为closed列表）</li>
+<li>当随机切割点出现重复，如何处理。</li>
+<li>如何尽可能降低时间复杂度和空间复杂度。</li>
 </ol>
-<pre class="line-numbers language-none"><code class="language-none">#include&lt;stdio.h&gt;
-#include&lt;iostream&gt;
-#include&lt;stdlib.h&gt;
-#include&lt;string&gt;
-#include&lt;string.h&gt;
-#include&lt;algorithm&gt;
-#include&lt;stack&gt;
-#include&lt;list&gt;
-#include&lt;queue&gt;
-#include&lt;iterator&gt;
+<pre class="line-numbers language-none"><code class="language-none">#include&lt;iostream&gt;
+#include&lt;set&gt;
+#include&lt;time.h&gt; 
+#include &lt;stdlib.h&gt;
 
 using namespace std;
-#define MAX   10
-
-int fx[4] = { -1,1,0,0 }, fy[4] = { 0,0,-1,1 };
-int sx, sy, ex, ey;
-struct _NODE
+//线段切割法    无保底
+//iTotalGold总金额    iNum份数    iBaseGold保底金额
+void cutline(int iTotalGold, int iNum)
 {
-	int x;int y;//节点坐标
-	int dis;//节点的步数
-	int f;//权值
-};
-
-int cmp( _NODE a,  _NODE b)
-{
-	return a.f &lt; b.f;
+  
+  if (iNum &gt; iTotalGold)
+  {
+    return;
+  }
+  if (iNum == iTotalGold)
+  {
+    for (int i = 0; i &lt; iNum; ++i)
+      cout &lt;&lt; 1 &lt;&lt; " ";
+    cout &lt;&lt; endl;
+    return;
+  }
+  std::set&lt;int&gt; setGold;
+  for (int i = 0; i &lt; iNum-1; ++i)
+  {
+    while (1)
+    {
+      int iPos = rand() % iTotalGold;
+      if (setGold.find(iPos) == setGold.end())
+      {
+        setGold.insert(iPos);
+        break;
+      }
+    }
+  }
+  cout &lt;&lt; "线段切割法(无保底):" &lt;&lt; endl;
+  int iPreLine = 0;
+  for (auto &amp;it : setGold)
+  {
+    cout &lt;&lt; it - iPreLine &lt;&lt; " ";
+    iPreLine = it;
+  }
+  cout &lt;&lt; iTotalGold - iPreLine &lt;&lt; " ";
+  cout &lt;&lt; endl;
 }
-int weight(int x, int y)//高级算法不会   来个曼哈顿距离计算
-{
-	return abs(x - sx) + abs(y - sy) + abs(x - ex) + abs(y - ey);
-}
 
-int fun_a(int maze[9][9])
+int main(void)
 {
-	_NODE  sNode;
-	sNode.x = sx;sNode.y = sy;sNode.dis = 0;
-	sNode.f= weight(sNode.x, sNode.y);
-	maze[sNode.x][sNode.y] = 1;
-	list&lt;_NODE&gt;  mylist;
-	mylist.push_back(sNode);//添加头结点
-	while (!mylist.empty())
-	{
-	    mylist.sort(cmp);//按节点权值大小进行排序
-		sNode = mylist.front();mylist.pop_front();//从链表中取出节点
-		maze[sNode.x][sNode.y] = 1;//并将访问状态设为1
-		if (sNode.x == ex &amp;&amp; sNode.y == ey)
-		{
-			return sNode.dis;
-		}
-		for (int i = 0;i &lt; 4;i++)
-		{
-			if (sNode.x + fx[i] &lt; 9 &amp;&amp; sNode.x + fx[i] &gt;= 0 &amp;&amp; sNode.y + fy[i] &lt; 9 &amp;&amp;
-				sNode.y + fy[i] &gt;= 0 &amp;&amp; maze[sNode.x + fx[i]][sNode.y + fy[i]] == 0)   //判断路径是否可走
-			{
-				_NODE  tp;
-				tp.x = sNode.x + fx[i];
-				tp.y = sNode.y + fy[i];
-				tp.f = weight(tp.x, tp.y); //计算节点的权值
-				tp.dis = sNode.dis + 1;  //更新步数
-				mylist.push_back(tp);
-			}
-	   }
-	}
-	return 0;
+	srand((unsigned int)time(0));//初始化种子为随机值
+    int iTotalGold = 100;
+    int iNum = 10; 
+    int iBaseGold = 5;
+    cutline(iTotalGold, iNum);
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>发现缺点是由于过于随机导致有可能有小概率造成某个人分配过多，不过可以做一个保底就欧克啦！</p>
+<h1 id="双倍随机法"><a href="#双倍随机法" class="headerlink" title="双倍随机法"></a>双倍随机法</h1><p>每次随机的时候，取0-每个人平均金额的2倍进行随机。</p>
+<p>微信团队公布的算法好像就是这个。</p>
+<p>例如：100个人分10分，每次随机都是0-100/10*2去随机，基本可以保证每个人平均在10左右，是相当平均的算法。不过需要注意最后几个人可能已经不足20的情况。</p>
+<pre class="line-numbers language-none"><code class="language-none">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;stdlib.h&gt; 
+#include &lt;iterator&gt;
+
+using namespace std;
+//双倍随机法
+//iTotalGold总金额    iNum份数    iBaseGold保底金额
+
+void twobase(int iTotalGold, int iNum, int iBaseGold)
+{
+  if (iNum *iBaseGold &gt; iTotalGold)
+  {
+    cout &lt;&lt; "保底太多 " &lt;&lt; iBaseGold &lt;&lt; endl;
+    return;
+  }
+  std::vector&lt;int&gt; veGold(iNum, iBaseGold);
+  iTotalGold -= iNum*iBaseGold;
+  int iBaseTmp = iTotalGold / iNum * 2;
+  for (int i = 0; i &lt; iNum - 1; ++i)
+  {
+    if (iTotalGold == 0)
+      break;
+    int iTmp = 0;
+    if (iTotalGold &gt;= iBaseTmp){
+    	iTmp = rand()%iBaseTmp;
+    }
+    else
+      iTmp = rand() % iTotalGold;
+    veGold[i] += iTmp;
+    iTotalGold -= iTmp;
+  }
+  veGold[iNum - 1] = iTotalGold;
+  cout &lt;&lt; "双倍随机法:" &lt;&lt; endl;
+  copy(veGold.begin(), veGold.end(), ostream_iterator&lt;int&gt;(cout, " "));
+  cout &lt;&lt; endl;
 }
 
 int main()
 {
-	int t;
-	cin &gt;&gt; t;
-	while (t--)
-	{
-		int maze[9][9] =
-		{ { 1,1,1,1,1,1,1,1,1 },
-		{ 1,0,0,1,0,0,1,0,1 },
-		{ 1,0,0,1,1,0,0,0,1 },
-		{ 1,0,1,0,1,1,0,1,1 },
-		{ 1,0,0,0,0,1,0,0,1 },
-		{ 1,1,0,1,0,1,0,0,1 },
-		{ 1,1,0,1,0,1,0,0,1 },
-		{ 1,1,0,1,0,0,0,0,1 },
-		{ 1,1,1,1,1,1,1,1,1 },
-		};
-		cin &gt;&gt; sx &gt;&gt; sy &gt;&gt; ex &gt;&gt; ey;
-		cout &lt;&lt; fun_a(maze) &lt;&lt; endl;
-	}
-	return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    int iTotalGold = 100;
+    int iNum = 10; 
+    int iBaseGold = 5;
+    twobase(iTotalGold, iNum, iBaseGold);
+  
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>本文参考文章：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_38754349/article/details/108271392">最全解密微信红包随机算法(含代码实现)_weixin_38754349的博客-CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhanglu_1024/article/details/118889172">抢红包算法–四种抢红包算法对比（附源码）_zhanglu_1024的博客-CSDN博客_抢红包算法</a></li>
+</ul>
 
                 
             </div>
@@ -549,7 +601,7 @@ int main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/12/16/a-xun-lu-suan-fa/">https://binbincome.github.io/2021/12/16/a-xun-lu-suan-fa/</a>
+                    <a href="https://binbincome.github.io/2021/12/15/shu-ju-jie-gou-yu-suan-fa/hong-bao-suan-fa/">https://binbincome.github.io/2021/12/15/shu-ju-jie-gou-yu-suan-fa/hong-bao-suan-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -632,62 +684,11 @@ int main()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2021/12/16/a-xun-lu-suan-fa/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="A*寻路算法">
-                        
-                        <span class="card-title">A*寻路算法</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-16
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构与算法
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/12/16/qt-learn-day01/">
+                <a href="/2021/12/16/qtday01/">
                     <div class="card-image">
                         
                         
@@ -703,9 +704,9 @@ int main()
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-16
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -723,6 +724,55 @@ int main()
                     
                     <a href="/tags/QT/">
                         <span class="chip bg-color">QT</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/12/14/shu-ju-jie-gou-yu-suan-fa/zhan-he-dui-lie-de-hu-xiang-shi-xian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="栈和队列的互相实现">
+                        
+                        <span class="card-title">栈和队列的互相实现</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>
@@ -957,7 +1007,7 @@ int main()
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">41.5k</span>&nbsp;字
+                class="white-color">44.8k</span>&nbsp;字
             
             
             

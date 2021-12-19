@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="贪心算法, 冰冰的小屋">
+    <meta name="keywords" content="计算机网络01, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>贪心算法 | 冰冰的小屋</title>
+    <title>计算机网络01 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">贪心算法</h1>
+                    <h1 class="description center-align post-title">计算机网络01</h1>
                 </div>
             </div>
         </div>
@@ -364,8 +364,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">数据结构与算法</span>
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                                <span class="chip bg-color">计算机网络</span>
                             </a>
                         
                     </div>
@@ -376,8 +376,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                数据结构与算法
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                计算机基础
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-17
+                    2021-12-19
                 </div>
                 
 
@@ -405,7 +405,7 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    4 分
                 </div>
                 
 
@@ -428,146 +428,67 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><blockquote>
-<p>每一步都力求最大限度地解决问题，每一步都选择的是当前最优的解决方案，这种解决问题的算法就是<strong>贪心算法</strong>。</p>
-</blockquote>
-<p>举例：</p>
-<p>假设1元、2元、5元、10元、20元、50元、100元的纸币分别有c0, c1, c2, c3, c4, c5, c6张。现在要用这些钱来支付K元，至少要用多少张纸币？</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
-#include &lt;math.h&gt;
-
-using namespace std;
- 
-//当前的钱库，面值以及对应数量
-int single_money[7] = {1,2,5,10,20,50,100};
-int number_money[7] = {2,5,0,3,4,0,4};
- 
-//每种面值使用贪心算法后需要使用的张数
-int count[7] = {};
- 
-int total_count;
- 
-int tanxin(int money)
-{
-	if (money &gt;= 0)   //考虑一下输入规范的问题
-	{
-		for (int i = 6; i &gt;= 0; i--)
-		{
-			count[i] = min(number_money[i],money/single_money[i]);
-			money = money - count[i]*single_money[i];
-		}
-		return 0;
-	}
-	else
-	{
-		return money;
-	}
-	
-}
- 
- 
-int main(int argc,char** argv)
-{
-	int money;
-	cout&lt;&lt;"Please input the amount of money:";
-	cin&gt;&gt;money;
-	if(! tanxin(money))
-	{
-		cout&lt;&lt;"贪心最优结果为："&lt;&lt;endl;
-		cout&lt;&lt;"100元："&lt;&lt;count[6]&lt;&lt;"张"&lt;&lt;endl;
-		cout&lt;&lt;"50元："&lt;&lt;count[5]&lt;&lt;"张"&lt;&lt;endl;
-		cout&lt;&lt;"20元："&lt;&lt;count[4]&lt;&lt;"张"&lt;&lt;endl;
-		cout&lt;&lt;"10元："&lt;&lt;count[3]&lt;&lt;"张"&lt;&lt;endl;
-		cout&lt;&lt;"5元："&lt;&lt;count[2]&lt;&lt;"张"&lt;&lt;endl;
-		cout&lt;&lt;"2元："&lt;&lt;count[1]&lt;&lt;"张"&lt;&lt;endl;
-		cout&lt;&lt;"1元："&lt;&lt;count[0]&lt;&lt;"张"&lt;&lt;endl;
-	}
-	else
-	{
-		cout&lt;&lt;"Ops, Wrong number~";
-	}
-
-	return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>贪心算法注重的是每一步选择最优的解决方案（又称“局部最优解”），并不关心整个解决方案是否最优。</p>
-<p>贪心算法常用来解决<strong>部分背包问题</strong>。</p>
-<blockquote>
-<p>在限定条件下，如何从众多物品中选出收益最高的几件物品，这样的问题就称为背包问题</p>
-<p>根据不同的限定条件，背包问题还可以有更细致的划分：</p>
+                <h1 id="网络介绍及分类"><a href="#网络介绍及分类" class="headerlink" title="网络介绍及分类"></a>网络介绍及分类</h1><h2 id="网络介绍"><a href="#网络介绍" class="headerlink" title="网络介绍"></a>网络介绍</h2><p>计算机网络是由通信介质将地理位置不同的且相互独立的计算机连接起来，实现数据通信与资源共享</p>
+<h2 id="网络类型"><a href="#网络类型" class="headerlink" title="网络类型"></a>网络类型</h2><p>按拓扑结构分类</p>
 <ul>
-<li>0-1 背包问题：每件物品都不可再分，要么整个装入背包，要么放弃，不允许出现类似“将物品的 1/3 装入背包”的情况；</li>
-<li>部分背包问题：每件物品是可再分的，即允许将某件物品的一部分（例如 1/3）放入背包；</li>
-<li>完全背包问题：挑选物品时，每件物品可以选择多个，也就是说不限物品的数量。</li>
-<li>多重背包问题：每件物品的数量是有严格规定的，比如物品 A 有 2 件，物品 B 有 3 件。</li>
+<li>总线型：最初的的网络类型，效率低且容易故障</li>
+<li>环形：同一时间只有两台有网络令牌的计算机能够通信</li>
+<li>星型：中央节点压力大，容易单点故障，但是网络利用率较高</li>
+<li>网型：现代设备采用的类型</li>
 </ul>
-</blockquote>
-<h2 id="贪心算法和动态规划算法"><a href="#贪心算法和动态规划算法" class="headerlink" title="贪心算法和动态规划算法"></a>贪心算法和动态规划算法</h2><p>💡 <strong>贪心选择性质是贪心算法与动态规划算法的主要区别</strong>：</p>
+<p>按地域分类：参照物不同，类型不同</p>
 <ul>
-<li>在动态规划算法中，每步所做的选择依赖于相关子问题的解，所以只有解决相关子问题后，才能做出选择。</li>
-<li>而在贪心算法中，仅在当前状态下做出最好选择，即局部最优选择，再去解做出这个选择后产生的相应的子问题。也就是说，<strong>贪心算法所做的贪心选择可以依赖过去所做过的选择，但绝不依赖将来所作的选择，也不依赖子问题的解</strong>。</li>
+<li>局域网（LAN）：一个公司或一个家庭</li>
+<li>域域网（MAN）：一个区或一个城市或一个国家</li>
+<li>广域网（WAN）：一个国家或全世界</li>
 </ul>
-<p>⭐ 正是由于这种差别，<strong>动态规划算法是<code>自底向上</code>的，而贪心算法是<code>自顶向下</code>的</strong>，以迭代的方式做出相继的贪心选择，<strong>每做一次贪心选择，就将所求问题简化为规模更小的子问题</strong>。</p>
-<h1 id="区间调度问题"><a href="#区间调度问题" class="headerlink" title="区间调度问题"></a>区间调度问题</h1><p><strong>【题目】</strong>给你很多形如 <code>[start, end]</code> 的闭区间，请你设计一个算法，<strong>算出这些区间中最多有几个互不相交的区间</strong>。</p>
-<pre class="line-numbers language-none"><code class="language-none">int intervalSchedule(int[][] intvs) {}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>举个例子，<code>intvs = [[1,3], [2,4], [3,6]]</code>，这些区间最多有 2 个区间互不相交，即 <code>[[1,3], [3,6]]</code>，你的算法应该返回 2。注意边界相同并不算相交。</p>
-<p><strong>【解题思路】</strong>正确的思路其实很简单，可以分为以下三步：</p>
-<ol>
-<li>从区间集合 intvs 中选择一个区间 x，这个 x 是在当前所有区间中<strong>结束最早的</strong>（end 最小）。</li>
-<li>把所有与 x 区间相交的区间从区间集合 intvs 中删除。</li>
-<li>重复步骤 1 和 2，直到 intvs 为空为止。之前选出的那些 x 就是最大不相交子集。</li>
+<h2 id="网络设备"><a href="#网络设备" class="headerlink" title="网络设备"></a>网络设备</h2><ul>
+<li>交换机：负责组建局域网，研究的是MAC地址（出厂时厂商做这块网卡的时放入的48位，由厂商地址和全球唯一的编号组成）</li>
+<li>路由器：负责组建广域网，研究的是IP地址</li>
+</ul>
+<h2 id="传输介质"><a href="#传输介质" class="headerlink" title="传输介质"></a>传输介质</h2><p>同轴电缆：</p>
+<p>双绞线：两根具有绝缘保护层的铜导线按一定密度互相搅在一起，传输中辐射出的电波互相抵消，有效降低信号干扰程度</p>
+<p>分为屏蔽双绞线和非屏蔽两种，理论最大传输100米，但建议不要超过90米.</p>
+<p>也可以按传输速度分为5类（百兆）和超5类（两者之间），6类（千兆）</p>
+<p>光纤：易折，但传输速率快</p>
+<p>单模光纤：只能传输一种模式的光，传输距离远，单模外套一般为黄色</p>
+<p>多模光纤：可传多种模式的光，但传输距离比较近，一般为橘红色</p>
+<p>电磁信号，蓝牙等</p>
+<p>通常目前使用的是光纤远距离传输，到家里转双绞线</p>
+<h1 id="ISO与OSI"><a href="#ISO与OSI" class="headerlink" title="ISO与OSI"></a>ISO与OSI</h1><h2 id="ISO介绍"><a href="#ISO介绍" class="headerlink" title="ISO介绍"></a>ISO介绍</h2><p>一个全球性的非政府组织，负责绝大多数领域（军工，石油，船舶等垄断行业）的标准化活动，中国国家技术监督局代表中国作为正式成员加入ISO</p>
+<p>由于不同厂商计算机采用的不同的通信协议，所以当时不同厂商之间的计算机无法通信。1977年Bachman在ANSI（美国国家标准协会）早期会议中提交了他的七层模型（），该唯一草案后来经过完善后1978年发布诞生了OSI七层模型。</p>
+<h2 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h2><h1 id="TCP-IP四层"><a href="#TCP-IP四层" class="headerlink" title="TCP/IP四层"></a>TCP/IP四层</h1><p>OSI体系概念清楚，理论完整，但是过于庞大，复杂且不实用，由技术人员自己开发的TCP/IP协议栈获得了更广泛的应用。</p>
+<p><img src="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/image-20210904101100846.png" alt="image-20210904101100846"></p>
+<ul>
+<li><p>网络接口层：操作系统中的设备驱动程序和计算机中对应的网络接口卡。就是处理物理接口细节的电缆，交换机，传输介质等。有ARP协议和RARP协议</p>
+</li>
+<li><p>网际层：处理分组在网络中的活动。网络层协议中包括IP协议，ICMP协议，IGMP协议</p>
+</li>
+<li><p>传输层：主要是提供两台主机上的应用程序提供端到端的通信。有两个互不相同的传输协议：TCP（传输控制协议）和UDP（用户数据报协议）</p>
+</li>
+<li><p>应用层：负责处理特定的应用程序细节。几乎各种不同的TCP/IP实现都会提供下面这些通用的应用程序：</p>
+</li>
+</ul>
+<p>Tenlnet远程登录</p>
+<p>FTP文件传输协议</p>
+<p>SMYTP简单邮件传送协议</p>
+<p>SNMP简单网络管理协议</p>
+<p><img src="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/image-20210904112658031.png" alt="image-20210904112658031"></p>
+<h1 id="TCP和UDP"><a href="#TCP和UDP" class="headerlink" title="TCP和UDP"></a>TCP和UDP</h1><p>它们都使用相同的网络层协议（IP），但向应用层提供的确实完全不同的服务。TCP提供的是面向连接的可靠的字节流服务。</p>
+<h2 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h2><p>传输控制协议，面向连接的协议</p>
+<p>面向连接就两个使用TCP的应用（通常为一个server，一个client）在彼此交换数据前建立一个TCP连接（三次握手），进行一对一传输</p>
+<p><img src="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/image-20210904120630973.png" alt="image-20210904120630973"></p>
+<p>传输完成后（四次挥手）</p>
+<p><img src="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/image-20210904121029932.png" alt="image-20210904121029932"></p>
+<h2 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h2><p>用户数据报协议，无连接的传输层协议，提供面向事务的简单不可靠信息传输服务。UDP报文没有可靠性保障，顺序保证，和流量控制字段，可靠性差。但正是因为它的可控制选项比较少，数据传输过程中延迟低，数据传输效率高，并其可以一对一，一对多传输，多对多交互通信</p>
+<p>一般视频，音频，既时消息都是udp</p>
+<h2 id="TCP与UDP的区别"><a href="#TCP与UDP的区别" class="headerlink" title="TCP与UDP的区别"></a>TCP与UDP的区别</h2><ol>
+<li>tcp面向连接，udp无连接</li>
+<li>tcp是可靠服务。它通过校检和重传控制，序号标识，滑动窗口，确认应答，丢包的重发控制，乱序的顺序控制等来传输的数据，能够无差错，不丢失，不重复切按序到达。而udp则是尽力交付，不保证可靠交付。</li>
+<li>udp具有较好的实时性，工作效率较高，适用高速传输和实时性较高的通信和广播通信</li>
+<li>tcp只能端到端，而udp不是</li>
+<li>tcp对系统资源要求较多，udp相反</li>
 </ol>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
-
-using namespace std;
-
-int intervals[][2]={{1,3},{3,6},{2,4}};
-
-void sort(){
-	for(int i=0;i&lt;3;i++){
-		int temp[][1]={0};
-		if (intervals[i][1]&gt;intervals[i+1][1]){
-			temp[0][0] = intervals[i][0];
-			temp[0][1] = intervals[i][1];
-			intervals[i][0] = intervals[i+1][0];
-			intervals[i][1] = intervals[i+1][1];
-			intervals[i+1][0] = temp[0][0] ;
-			intervals[i+1][1] = temp[0][1] ;
-		}
-	}	
-}
-
-int main(){	
-	sort();	//先给区间升序排列
-	int count = 0; // 最大的不相交区间的数量
-	int x_end = intervals[0][1]; // 从最小的 end 开始
-    for(int i=1;i&lt;3;i++){
-        int start = intervals[i][0];
-        int end = intervals[0][i];
-            if(start &gt;= x_end){
-                count ++;
-                x_end = end;
-            }
-    }
-
-    cout&lt;&lt;count&lt;&lt;endl;
-	return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
-<p>本文引用来源：</p>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/misayaaaaa/article/details/72789998">贪心算法——C++实现经典案例——初级_MISAYAONE的博客-CSDN博客_贪心算法c++</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="http://c.biancheng.net/">http://c.biancheng.net/</a></p>
-</li>
-</ul>
 
                 
             </div>
@@ -594,7 +515,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/12/17/tan-xin-suan-fa/">https://binbincome.github.io/2021/12/17/tan-xin-suan-fa/</a>
+                    <a href="https://binbincome.github.io/2021/12/19/ji-suan-ji-ji-chu/ji-suan-ji-wang-luo-01/">https://binbincome.github.io/2021/12/19/ji-suan-ji-ji-chu/ji-suan-ji-wang-luo-01/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -632,8 +553,8 @@ int main(){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">数据结构与算法</span>
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                                    <span class="chip bg-color">计算机网络</span>
                                 </a>
                             
                         </div>
@@ -681,13 +602,13 @@ int main(){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/12/17/hui-su-suan-fa-jie-jue-mi-gong-wen-ti/">
+                <a href="/2021/12/19/linux02/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="回溯算法解决迷宫问题">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Linux02">
                         
-                        <span class="card-title">回溯算法解决迷宫问题</span>
+                        <span class="card-title">Linux02</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -698,14 +619,14 @@ int main(){
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-19
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构与算法
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
                                 </a>
                             
                             
@@ -715,8 +636,8 @@ int main(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -730,13 +651,13 @@ int main(){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/16/shu-ju-jie-gou-yu-suan-fa/a-xun-lu-suan-fa/">
+                <a href="/2021/12/19/za-tan/za-tan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="A*寻路算法">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="杂谈">
                         
-                        <span class="card-title">A*寻路算法</span>
+                        <span class="card-title">杂谈</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -747,14 +668,14 @@ int main(){
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构与算法
+                            <a href="/categories/%E6%9D%82%E8%B0%88/" class="post-category">
+                                    杂谈
                                 </a>
                             
                             
@@ -764,8 +685,8 @@ int main(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E9%94%99%E8%AF%AF/">
+                        <span class="chip bg-color">操作错误</span>
                     </a>
                     
                 </div>
@@ -1000,7 +921,7 @@ int main(){
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">44.8k</span>&nbsp;字
+                class="white-color">45.6k</span>&nbsp;字
             
             
             

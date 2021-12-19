@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="杂谈, 冰冰的小屋">
+    <meta name="keywords" content="贪心算法, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>杂谈 | 冰冰的小屋</title>
+    <title>贪心算法 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">杂谈</h1>
+                    <h1 class="description center-align post-title">贪心算法</h1>
                 </div>
             </div>
         </div>
@@ -364,8 +364,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%93%8D%E4%BD%9C%E9%94%99%E8%AF%AF/">
-                                <span class="chip bg-color">操作错误</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">数据结构与算法</span>
                             </a>
                         
                     </div>
@@ -376,8 +376,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%9D%82%E8%B0%88/" class="post-category">
-                                杂谈
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                数据结构与算法
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-19
+                    2021-12-17
                 </div>
                 
 
@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    196
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -428,9 +428,146 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="杂谈"><a href="#杂谈" class="headerlink" title="杂谈"></a>杂谈</h1><h1 id="记录一次非常无语的事件"><a href="#记录一次非常无语的事件" class="headerlink" title="记录一次非常无语的事件"></a>记录一次非常无语的事件</h1><p>就最开始入门前端的时候我是看的尚硅谷的视频，当时配置的VScode后陪伴了我很长一段时间，后来有一天点击VScode的文图标运行不了，卸载也卸载不了，显示找不到文件，重新安装也不行，百度了一番操作也没啥用，最后只好另下载WebStorm来使用，今天重命名了一个文件改成了之前的名字，code的图标就突然的亮了，欸，好了！原来是我安装的文件的位置被我改了名字，吐血！</p>
-<h1 id="干了这碗鸡汤！"><a href="#干了这碗鸡汤！" class="headerlink" title="干了这碗鸡汤！"></a>干了这碗鸡汤！</h1><p>生活的理想，就是为了理想的生活</p>
-<p>只有拥抱浪潮，才能屹立于浪潮之巅</p>
+                <h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><blockquote>
+<p>每一步都力求最大限度地解决问题，每一步都选择的是当前最优的解决方案，这种解决问题的算法就是<strong>贪心算法</strong>。</p>
+</blockquote>
+<p>举例：</p>
+<p>假设1元、2元、5元、10元、20元、50元、100元的纸币分别有c0, c1, c2, c3, c4, c5, c6张。现在要用这些钱来支付K元，至少要用多少张纸币？</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;math.h&gt;
+
+using namespace std;
+ 
+//当前的钱库，面值以及对应数量
+int single_money[7] = {1,2,5,10,20,50,100};
+int number_money[7] = {2,5,0,3,4,0,4};
+ 
+//每种面值使用贪心算法后需要使用的张数
+int count[7] = {};
+ 
+int total_count;
+ 
+int tanxin(int money)
+{
+	if (money &gt;= 0)   //考虑一下输入规范的问题
+	{
+		for (int i = 6; i &gt;= 0; i--)
+		{
+			count[i] = min(number_money[i],money/single_money[i]);
+			money = money - count[i]*single_money[i];
+		}
+		return 0;
+	}
+	else
+	{
+		return money;
+	}
+	
+}
+ 
+ 
+int main(int argc,char** argv)
+{
+	int money;
+	cout&lt;&lt;"Please input the amount of money:";
+	cin&gt;&gt;money;
+	if(! tanxin(money))
+	{
+		cout&lt;&lt;"贪心最优结果为："&lt;&lt;endl;
+		cout&lt;&lt;"100元："&lt;&lt;count[6]&lt;&lt;"张"&lt;&lt;endl;
+		cout&lt;&lt;"50元："&lt;&lt;count[5]&lt;&lt;"张"&lt;&lt;endl;
+		cout&lt;&lt;"20元："&lt;&lt;count[4]&lt;&lt;"张"&lt;&lt;endl;
+		cout&lt;&lt;"10元："&lt;&lt;count[3]&lt;&lt;"张"&lt;&lt;endl;
+		cout&lt;&lt;"5元："&lt;&lt;count[2]&lt;&lt;"张"&lt;&lt;endl;
+		cout&lt;&lt;"2元："&lt;&lt;count[1]&lt;&lt;"张"&lt;&lt;endl;
+		cout&lt;&lt;"1元："&lt;&lt;count[0]&lt;&lt;"张"&lt;&lt;endl;
+	}
+	else
+	{
+		cout&lt;&lt;"Ops, Wrong number~";
+	}
+
+	return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>贪心算法注重的是每一步选择最优的解决方案（又称“局部最优解”），并不关心整个解决方案是否最优。</p>
+<p>贪心算法常用来解决<strong>部分背包问题</strong>。</p>
+<blockquote>
+<p>在限定条件下，如何从众多物品中选出收益最高的几件物品，这样的问题就称为背包问题</p>
+<p>根据不同的限定条件，背包问题还可以有更细致的划分：</p>
+<ul>
+<li>0-1 背包问题：每件物品都不可再分，要么整个装入背包，要么放弃，不允许出现类似“将物品的 1/3 装入背包”的情况；</li>
+<li>部分背包问题：每件物品是可再分的，即允许将某件物品的一部分（例如 1/3）放入背包；</li>
+<li>完全背包问题：挑选物品时，每件物品可以选择多个，也就是说不限物品的数量。</li>
+<li>多重背包问题：每件物品的数量是有严格规定的，比如物品 A 有 2 件，物品 B 有 3 件。</li>
+</ul>
+</blockquote>
+<h2 id="贪心算法和动态规划算法"><a href="#贪心算法和动态规划算法" class="headerlink" title="贪心算法和动态规划算法"></a>贪心算法和动态规划算法</h2><p>💡 <strong>贪心选择性质是贪心算法与动态规划算法的主要区别</strong>：</p>
+<ul>
+<li>在动态规划算法中，每步所做的选择依赖于相关子问题的解，所以只有解决相关子问题后，才能做出选择。</li>
+<li>而在贪心算法中，仅在当前状态下做出最好选择，即局部最优选择，再去解做出这个选择后产生的相应的子问题。也就是说，<strong>贪心算法所做的贪心选择可以依赖过去所做过的选择，但绝不依赖将来所作的选择，也不依赖子问题的解</strong>。</li>
+</ul>
+<p>⭐ 正是由于这种差别，<strong>动态规划算法是<code>自底向上</code>的，而贪心算法是<code>自顶向下</code>的</strong>，以迭代的方式做出相继的贪心选择，<strong>每做一次贪心选择，就将所求问题简化为规模更小的子问题</strong>。</p>
+<h1 id="区间调度问题"><a href="#区间调度问题" class="headerlink" title="区间调度问题"></a>区间调度问题</h1><p><strong>【题目】</strong>给你很多形如 <code>[start, end]</code> 的闭区间，请你设计一个算法，<strong>算出这些区间中最多有几个互不相交的区间</strong>。</p>
+<pre class="line-numbers language-none"><code class="language-none">int intervalSchedule(int[][] intvs) {}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>举个例子，<code>intvs = [[1,3], [2,4], [3,6]]</code>，这些区间最多有 2 个区间互不相交，即 <code>[[1,3], [3,6]]</code>，你的算法应该返回 2。注意边界相同并不算相交。</p>
+<p><strong>【解题思路】</strong>正确的思路其实很简单，可以分为以下三步：</p>
+<ol>
+<li>从区间集合 intvs 中选择一个区间 x，这个 x 是在当前所有区间中<strong>结束最早的</strong>（end 最小）。</li>
+<li>把所有与 x 区间相交的区间从区间集合 intvs 中删除。</li>
+<li>重复步骤 1 和 2，直到 intvs 为空为止。之前选出的那些 x 就是最大不相交子集。</li>
+</ol>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+
+using namespace std;
+
+int intervals[][2]={{1,3},{3,6},{2,4}};
+
+void sort(){
+	for(int i=0;i&lt;3;i++){
+		int temp[][1]={0};
+		if (intervals[i][1]&gt;intervals[i+1][1]){
+			temp[0][0] = intervals[i][0];
+			temp[0][1] = intervals[i][1];
+			intervals[i][0] = intervals[i+1][0];
+			intervals[i][1] = intervals[i+1][1];
+			intervals[i+1][0] = temp[0][0] ;
+			intervals[i+1][1] = temp[0][1] ;
+		}
+	}	
+}
+
+int main(){	
+	sort();	//先给区间升序排列
+	int count = 0; // 最大的不相交区间的数量
+	int x_end = intervals[0][1]; // 从最小的 end 开始
+    for(int i=1;i&lt;3;i++){
+        int start = intervals[i][0];
+        int end = intervals[0][i];
+            if(start &gt;= x_end){
+                count ++;
+                x_end = end;
+            }
+    }
+
+    cout&lt;&lt;count&lt;&lt;endl;
+	return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+<p>本文引用来源：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/misayaaaaa/article/details/72789998">贪心算法——C++实现经典案例——初级_MISAYAONE的博客-CSDN博客_贪心算法c++</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://c.biancheng.net/">http://c.biancheng.net/</a></p>
+</li>
+</ul>
 
                 
             </div>
@@ -457,7 +594,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/12/19/za-tan/">https://binbincome.github.io/2021/12/19/za-tan/</a>
+                    <a href="https://binbincome.github.io/2021/12/17/shu-ju-jie-gou-yu-suan-fa/tan-xin-suan-fa/">https://binbincome.github.io/2021/12/17/shu-ju-jie-gou-yu-suan-fa/tan-xin-suan-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -495,8 +632,8 @@ if (windowWidth > 768) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%93%8D%E4%BD%9C%E9%94%99%E8%AF%AF/">
-                                    <span class="chip bg-color">操作错误</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">数据结构与算法</span>
                                 </a>
                             
                         </div>
@@ -544,56 +681,7 @@ if (windowWidth > 768) {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/12/19/ji-suan-ji-wang-luo-01/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="计算机网络01">
-                        
-                        <span class="card-title">计算机网络01</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-19
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    计算机基础
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                        <span class="chip bg-color">计算机网络</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/12/17/hui-su-suan-fa-jie-jue-mi-gong-wen-ti/">
+                <a href="/2021/12/17/shu-ju-jie-gou-yu-suan-fa/hui-su-suan-fa-jie-jue-mi-gong-wen-ti/">
                     <div class="card-image">
                         
                         
@@ -609,8 +697,57 @@ if (windowWidth > 768) {
                         
                     </div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
+                                    数据结构与算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/12/16/shu-ju-jie-gou-yu-suan-fa/a-xun-lu-suan-fa/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="A*寻路算法">
+                        
+                        <span class="card-title">A*寻路算法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-16
                             </span>
                         <span class="publish-author">
                             
@@ -863,7 +1000,7 @@ if (windowWidth > 768) {
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">44.8k</span>&nbsp;字
+                class="white-color">45.6k</span>&nbsp;字
             
             
             

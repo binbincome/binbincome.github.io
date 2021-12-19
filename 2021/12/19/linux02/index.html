@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JWT, 冰冰的小屋">
+    <meta name="keywords" content="Linux02, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JWT | 冰冰的小屋</title>
+    <title>Linux02 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JWT</h1>
+                    <h1 class="description center-align post-title">Linux02</h1>
                 </div>
             </div>
         </div>
@@ -364,14 +364,23 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                后端
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -380,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-21
+                    2021-12-19
                 </div>
                 
 
@@ -389,7 +398,7 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    285
+                    152
                 </div>
                 
 
@@ -419,18 +428,61 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Json-Web-Token"><a href="#Json-Web-Token" class="headerlink" title="Json Web Token"></a>Json Web Token</h1><p>jwt 即 json web token。用于身份校验，当用户登录的时候，服务器会给用户分配一个token，服务不会保存。当用户需要访问服务器的时候，需要带着token，服务通过token来判断用户现在的状态，比如token失效不正确等。</p>
-<h2 id="前后端分离时为何推荐token认证"><a href="#前后端分离时为何推荐token认证" class="headerlink" title="前后端分离时为何推荐token认证?"></a>前后端分离时为何推荐token认证?</h2><ul>
-<li><p>Token无需存储降低服务器成本，session是将用户信息存储在服务器中的，当用户量增大时服务器的压力也会随着增大。</p>
+                <h1 id="Linux02"><a href="#Linux02" class="headerlink" title="Linux02"></a>Linux02</h1><p>常用命令：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用（英文）</th>
+<th>作用（中文）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ls</td>
+<td>list</td>
+<td>查看当前文件夹下的内容，类似Dos中的dir</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>print work directory</td>
+<td>查看当前所在文件夹</td>
+</tr>
+<tr>
+<td>cd [目录名]</td>
+<td>change directory</td>
+<td>切换文件夹</td>
+</tr>
+<tr>
+<td>touch [文件名]</td>
+<td>touch</td>
+<td>如果文件不存在，新建文件</td>
+</tr>
+<tr>
+<td>mkdir [目录名]</td>
+<td>make directory</td>
+<td>创建目录</td>
+</tr>
+<tr>
+<td>rm [文件名]</td>
+<td>remove</td>
+<td>删除指定的文件名</td>
+</tr>
+<tr>
+<td>clear</td>
+<td>clear</td>
+<td>清屏</td>
+</tr>
+</tbody></table>
+<h3 id="运行-python-程序"><a href="#运行-python-程序" class="headerlink" title="运行 python 程序"></a>运行 python 程序</h3><ul>
+<li><p>创建一个 test.py 文件</p>
 </li>
-<li><p>防御CSRF跨站伪造请求攻击，session是基于cookie进行用户识别的, cookie如果被截获，用户信息就容易泄露。</p>
-</li>
-<li><p>扩展性强，session需要存储无法共享，当搭建了多个服务器时其他服务器无法获取到session中的验证数据用户无法验证成功。而Token可以实现服务器间共享，这样不管哪里都可以访问到。</p>
-</li>
-<li><p>Token可以减轻服务器的压力，减少频繁的查询数据库。</p>
-</li>
-<li><p>支持跨域访问, 适用于移动平台应用</p>
-</li>
+<li><p>在文件第一行指定 python 命令的路径</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Hello World!'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>添加执行权限</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">chmod +x test.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>直接运行 py 文件</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">./test.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 
                 
@@ -448,7 +500,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Binbin</a>
+                    <a href="/about" rel="external nofollow noreferrer">冰冰的小屋</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -458,7 +510,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/11/21/qian-duan-kai-fa/jsonwebtoken/">https://binbincome.github.io/2021/11/21/qian-duan-kai-fa/jsonwebtoken/</a>
+                    <a href="https://binbincome.github.io/2021/12/19/linux02/">https://binbincome.github.io/2021/12/19/linux02/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -471,7 +523,7 @@ if (windowWidth > 768) {
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Binbin</a>
+                    <a href="/about" target="_blank">冰冰的小屋</a>
                     !
                 </span>
             </div>
@@ -496,8 +548,8 @@ if (windowWidth > 768) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
                         </div>
@@ -541,66 +593,18 @@ if (windowWidth > 768) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/11/22/ruan-jian-ce-shi/di-yi-pian-wen-zhang-ce-shi/">
+                <a href="/2021/12/19/linux02/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="第一篇文章测试">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Linux02">
                         
-                        <span class="card-title">第一篇文章测试</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-22
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/11/21/qian-duan-kai-fa/jsonwebtoken/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="JWT">
-                        
-                        <span class="card-title">JWT</span>
+                        <span class="card-title">Linux02</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -611,12 +615,16 @@ if (windowWidth > 768) {
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-19
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Binbin
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -625,8 +633,57 @@ if (windowWidth > 768) {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/12/19/ji-suan-ji-ji-chu/ji-suan-ji-wang-luo-01/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="计算机网络01">
+                        
+                        <span class="card-title">计算机网络01</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    计算机基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
                     </a>
                     
                 </div>

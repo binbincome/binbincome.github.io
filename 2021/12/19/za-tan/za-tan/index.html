@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="回溯算法解决迷宫问题, 冰冰的小屋">
+    <meta name="keywords" content="杂谈, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>回溯算法解决迷宫问题 | 冰冰的小屋</title>
+    <title>杂谈 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">回溯算法解决迷宫问题</h1>
+                    <h1 class="description center-align post-title">杂谈</h1>
                 </div>
             </div>
         </div>
@@ -364,8 +364,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">数据结构与算法</span>
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E9%94%99%E8%AF%AF/">
+                                <span class="chip bg-color">操作错误</span>
                             </a>
                         
                     </div>
@@ -376,8 +376,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                数据结构与算法
+                            <a href="/categories/%E6%9D%82%E8%B0%88/" class="post-category">
+                                杂谈
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-17
+                    2021-12-19
                 </div>
                 
 
@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    538
+                    835
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -428,83 +428,108 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h1><pre class="line-numbers language-none"><code class="language-none">#include &lt;stdio.h&gt;
-//typedef enum { false, true } bool;
-#define ROW 5
-#define COL 5
-//假设当前迷宫中没有起点到终点的路线
-bool find = false;
-//回溯算法查找可行路线
-void maze_puzzle(char maze[ROW][COL], int row, int col, int outrow, int outcol);
-//判断 (row,col) 区域是否可以移动
-bool canMove(char maze[ROW][COL], int row, int col);
-//输出行走路线
-void printmaze(char maze[ROW][COL]);
-int main()
-{
-    char maze[ROW][COL] = {
-    {'1','0','1','1','1'},
-    {'1','1','1','0','1'},
-    {'1','0','0','1','1'},
-    {'1','0','0','1','0'},
-    {'1','0','0','1','1'} };
-    maze_puzzle(maze, 0, 0, ROW - 1, COL - 1);
-    if (find == false) {
-        printf("未找到可行线路");
-    }
-    return 0;
-}
-//(row,col) 表示起点，(outrow,outcol)表示终点
-void maze_puzzle(char maze[ROW][COL], int row, int col, int outrow, int outcol) {
-    maze[row][col] = 'Y'; // 将各个走过的区域标记为 Y
-    //如果行走至终点，表明有从起点到终点的路线
-    if (row == outrow &amp;&amp; col == outcol) {
-        find = true;
-        printf("成功走出迷宫,路线图为：\n");
-        printmaze(maze);
-        return;
-    }
-    //尝试向上移动
-    if (canMove(maze, row - 1, col)) {
-        maze_puzzle(maze, row - 1, col, outrow, outcol);
-        //如果程序不结束，表明此路不通，恢复该区域的标记
-        maze[row - 1][col] = '1';
-    }
-    //尝试向左移动
-    if (canMove(maze, row, col - 1)) {
-        maze_puzzle(maze, row, col - 1, outrow, outcol);
-        //如果程序不结束，表明此路不通，恢复该区域的标记
-        maze[row][col - 1] = '1';
-    }
-    //尝试向下移动
-    if (canMove(maze, row + 1, col)) {
-        maze_puzzle(maze, row + 1, col, outrow, outcol);
-        //如果程序不结束，表明此路不通，恢复该区域的标记
-        maze[row + 1][col] = '1';
-    }
-    //尝试向右移动
-    if (canMove(maze, row, col + 1)) {
-        maze_puzzle(maze, row, col + 1, outrow, outcol);
-        //如果程序不结束，表明此路不通，恢复该区域的标记
-        maze[row][col + 1] = '1';
-    }
-}
-//判断 (row,col) 区域是否可以移动
-bool canMove(char maze[ROW][COL], int row, int col) {
-    //如果目标区域位于地图内，不是黑色区域，且尚未行走过，返回 true：反之，返回 false
-    return row &gt;= 0 &amp;&amp; row &lt;= ROW - 1 &amp;&amp; col &gt;= 0 &amp;&amp; col &lt;= COL - 1 &amp;&amp; maze[row][col] != '0' &amp;&amp; maze[row][col] != 'Y';
-}
-//输出可行的路线
-void printmaze(char maze[ROW][COL]) {
-    int i, j;
-    for (i = 0; i &lt; ROW; i++) {
-        for (j = 0; j &lt; COL; j++) {
-            printf("%c ", maze[i][j]);
-        }
-        printf("\n");
-    }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="杂谈"><a href="#杂谈" class="headerlink" title="杂谈"></a>杂谈</h1><h1 id="记录一次非常无语的事件"><a href="#记录一次非常无语的事件" class="headerlink" title="记录一次非常无语的事件"></a>记录一次非常无语的事件</h1><p>就最开始入门前端的时候我是看的尚硅谷的视频，当时配置的VScode后陪伴了我很长一段时间，后来有一天点击VScode的文图标运行不了，卸载也卸载不了，显示找不到文件，重新安装也不行，百度了一番操作也没啥用，最后只好另下载WebStorm来使用，今天重命名了一个文件改成了之前的名字，code的图标就突然的亮了，欸，好了！原来是我安装的文件的位置被我改了名字，吐血！</p>
+<h1 id="干了这碗鸡汤！"><a href="#干了这碗鸡汤！" class="headerlink" title="干了这碗鸡汤！"></a>干了这碗鸡汤！</h1><p>生活的理想，就是为了理想的生活</p>
+<p>只有拥抱浪潮，才能屹立于浪潮之巅</p>
+<h1 id="非常眼熟的代码"><a href="#非常眼熟的代码" class="headerlink" title="非常眼熟的代码"></a>非常眼熟的代码</h1><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;bits/stdc++.h&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<p>老是在题解和别人的代码看见这行代码，忍不住搜了一下原来这是一个万能头文件</p>
+<p>它包括了c++中所有的头文件，下面贴下源码中看看它包含了多少头文件吧！</p>
+<pre class="line-numbers language-none"><code class="language-none">// C
+#ifndef _GLIBCXX_NO_ASSERT
+#include &lt;cassert&gt;
+#endif
+#include &lt;cctype&gt;
+#include &lt;cerrno&gt;
+#include &lt;cfloat&gt;
+#include &lt;ciso646&gt;
+#include &lt;climits&gt;
+#include &lt;clocale&gt;
+#include &lt;cmath&gt;
+#include &lt;csetjmp&gt;
+#include &lt;csignal&gt;
+#include &lt;cstdarg&gt;
+#include &lt;cstddef&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstdlib&gt;
+#include &lt;cstring&gt;
+#include &lt;ctime&gt;
+
+#if __cplusplus &gt;= 201103L
+#include &lt;ccomplex&gt;
+#include &lt;cfenv&gt;
+#include &lt;cinttypes&gt;
+#include &lt;cstdalign&gt;
+#include &lt;cstdbool&gt;
+#include &lt;cstdint&gt;
+#include &lt;ctgmath&gt;
+#include &lt;cwchar&gt;
+#include &lt;cwctype&gt;
+#endif
+
+// C++
+#include &lt;algorithm&gt;
+#include &lt;bitset&gt;
+#include &lt;complex&gt;
+#include &lt;deque&gt;
+#include &lt;exception&gt;
+#include &lt;fstream&gt;
+#include &lt;functional&gt;
+#include &lt;iomanip&gt;
+#include &lt;ios&gt;
+#include &lt;iosfwd&gt;
+#include &lt;iostream&gt;
+#include &lt;istream&gt;
+#include &lt;iterator&gt;
+#include &lt;limits&gt;
+#include &lt;list&gt;
+#include &lt;locale&gt;
+#include &lt;map&gt;
+#include &lt;memory&gt;
+#include &lt;new&gt;
+#include &lt;numeric&gt;
+#include &lt;ostream&gt;
+#include &lt;queue&gt;
+#include &lt;set&gt;
+#include &lt;sstream&gt;
+#include &lt;stack&gt;
+#include &lt;stdexcept&gt;
+#include &lt;streambuf&gt;
+#include &lt;string&gt;
+#include &lt;typeinfo&gt;
+#include &lt;utility&gt;
+#include &lt;valarray&gt;
+#include &lt;vector&gt;
+
+#if __cplusplus &gt;= 201103L
+#include &lt;array&gt;
+#include &lt;atomic&gt;
+#include &lt;chrono&gt;
+#include &lt;condition_variable&gt;
+#include &lt;forward_list&gt;
+#include &lt;future&gt;
+#include &lt;initializer_list&gt;
+#include &lt;mutex&gt;
+#include &lt;random&gt;
+#include &lt;ratio&gt;
+#include &lt;regex&gt;
+#include &lt;scoped_allocator&gt;
+#include &lt;system_error&gt;
+#include &lt;thread&gt;
+#include &lt;tuple&gt;
+#include &lt;typeindex&gt;
+#include &lt;type_traits&gt;
+#include &lt;unordered_map&gt;
+#include &lt;unordered_set&gt;
+#endif<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>平时学习的时候最好还是自己打上头文件！而且用这个可能会慢一点，当然如果想偷懒还是可以的哈哈!</p>
+<h1 id="Linux切换root失败"><a href="#Linux切换root失败" class="headerlink" title="Linux切换root失败"></a>Linux切换root失败</h1><p>在Linux中我以普通用户的身份登录以后，想要配置网络，修改一个文件，结果没有权限保存，强制都没用，然后切换root用户，报错鉴定故障，困扰我好久，甚至想重装系统了都，结果偶然发现是我命令用错了，切换root用户的命令是su不是sudo！</p>
+<p>su和sudo的区别是:</p>
+<p>　　1) su的密码是root的密码，而sudo的密码是用户的密码；</p>
+<p>　　2) su直接将身份变成root，而sudo是以用户登录后以root的身份运行命令，不需要知道root密码.</p>
+<p>感谢：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013371163/article/details/60469114">Linux - root初始密码设置_北岛知寒-CSDN博客_root默认密码</a></p>
+<p>初始密码我是设置了，结果无语了，命令作用搞错了</p>
 
                 
             </div>
@@ -531,7 +556,7 @@ void printmaze(char maze[ROW][COL]) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/12/17/hui-su-suan-fa-jie-jue-mi-gong-wen-ti/">https://binbincome.github.io/2021/12/17/hui-su-suan-fa-jie-jue-mi-gong-wen-ti/</a>
+                    <a href="https://binbincome.github.io/2021/12/19/za-tan/za-tan/">https://binbincome.github.io/2021/12/19/za-tan/za-tan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -569,8 +594,8 @@ void printmaze(char maze[ROW][COL]) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">数据结构与算法</span>
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E9%94%99%E8%AF%AF/">
+                                    <span class="chip bg-color">操作错误</span>
                                 </a>
                             
                         </div>
@@ -618,13 +643,13 @@ void printmaze(char maze[ROW][COL]) {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/12/19/za-tan/">
+                <a href="/2021/12/19/ji-suan-ji-ji-chu/ji-suan-ji-wang-luo-01/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="杂谈">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="计算机网络01">
                         
-                        <span class="card-title">杂谈</span>
+                        <span class="card-title">计算机网络01</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -641,8 +666,8 @@ void printmaze(char maze[ROW][COL]) {
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9D%82%E8%B0%88/" class="post-category">
-                                    杂谈
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    计算机基础
                                 </a>
                             
                             
@@ -652,8 +677,8 @@ void printmaze(char maze[ROW][COL]) {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E9%94%99%E8%AF%AF/">
-                        <span class="chip bg-color">操作错误</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
                     </a>
                     
                 </div>
@@ -667,13 +692,13 @@ void printmaze(char maze[ROW][COL]) {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/17/tan-xin-suan-fa/">
+                <a href="/2021/12/17/shu-ju-jie-gou-yu-suan-fa/hui-su-suan-fa-jie-jue-mi-gong-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="贪心算法">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="回溯算法解决迷宫问题">
                         
-                        <span class="card-title">贪心算法</span>
+                        <span class="card-title">回溯算法解决迷宫问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -937,7 +962,7 @@ void printmaze(char maze[ROW][COL]) {
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">44.8k</span>&nbsp;字
+                class="white-color">45.6k</span>&nbsp;字
             
             
             

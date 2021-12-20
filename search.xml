@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Qtday02</title>
+      <link href="/2021/12/20/qtday02/"/>
+      <url>/2021/12/20/qtday02/</url>
+      
+        <content type="html"><![CDATA[<h1 id="QT笔记"><a href="#QT笔记" class="headerlink" title="QT笔记"></a>QT笔记</h1><h2 id="信号和槽"><a href="#信号和槽" class="headerlink" title="信号和槽"></a>信号和槽</h2><ul><li>QMainWindow 类生成的窗口自带菜单栏、工具栏和状态栏，中央区域还可以添加多个控件，常用来作为应用程序的主窗口；</li><li>QDialog 类生成的窗口非常简单，没有菜单栏、工具栏和状态栏，但可以添加多个控件，常用来制作对话框。</li><li>QWidget 类，它的用法非常灵活，既可以用来制作窗口，也可以作为某个窗口上的控件。</li></ul><blockquote><p>实际开发中，制作应用程序的主窗口可以用 QMainWindow 或者 QWdiget；制作一个提示信息的对话框就用 QDialog 或 QWidget；如果暂时无法决定，后续可能作为窗口，也可能作为控件，就选择 QWidget。</p></blockquote><p><img src="/Qtday02/1632193B2-0.gif" alt="img"></p><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">QWidget widget;//定义一个按钮，它位于 widget 窗口中QPushButton But("按钮控件",&amp;widget);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>信号发送者是 But 按钮对象，要发送的信号是“按钮被点击”，可以用 QPushButton 类提供的 clicked() 信号函数表示；信号的接收者是 widget 主窗口对象，“窗口关闭”作为信号对应的槽，可以用 QWidget 类提供的 close() 函数表示。</p><p>用 connect() 函数将 But 按钮的 clicked() 信号函数和 widget 窗口的 close() 槽函数关联起来，</p><p> connect() 函数指定信号函数和槽函数的语法格式是<code>&amp;+函数所在类+函数名</code>。</p><p>实现代码如下：</p><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(&amp;But, SIGNAL(clicked()), &amp;widget, SLOT(close()));<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>如此就实现了“按下按钮会关闭窗口”的功能。</p><h2 id="QLabel文本框"><a href="#QLabel文本框" class="headerlink" title="QLabel文本框"></a>QLabel文本框</h2><h1 id="课程讲解"><a href="#课程讲解" class="headerlink" title="课程讲解"></a>课程讲解</h1><p>demo.pro文件</p><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">QT       += core gui   //core核心库，gui图形界面greaterThan(QT_MAJOR_VERSION, 4): QT += widgets//让代码在老版本和新版本中兼容TARGET = demo03  //项目名称TEMPLATE = app# The following define makes your compiler emit warnings if you use# any feature of Qt which has been marked as deprecated (the exact warnings# depend on your compiler). Please consult the documentation of the# deprecated API in order to know how to port your code away from it.DEFINES += QT_DEPRECATED_WARNINGS# You can also make your code fail to compile if you use deprecated APIs.# In order to do so, uncomment the following line.# You can also select to disable deprecated APIs only up to a certain version of Qt.#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0SOURCES += \        main.cpp \        mainwindow.cppHEADERS += \        mainwindow.h<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none">#ifndef MAINWINDOW_H#define MAINWINDOW_H#include &lt;QMainWindow&gt;namespace Ui {//防止重复命名class MainWindow;//主界面}class MainWindow : public QMainWindow{    Q_OBJECTpublic:    explicit MainWindow(QWidget *parent = 0);    ~MainWindow();private:    Ui::MainWindow *ui;};#endif // MAINWINDOW_H<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none">#include "mainwindow.h"#include &lt;QApplication&gt;int main(int argc, char *argv[]){    QApplication a(argc, argv);//继承自wiget类的    MainWindow w;//s    w.show();//显示界面    return a.exec();//事件循环}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> QT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux02</title>
       <link href="/2021/12/19/linux02/"/>
       <url>/2021/12/19/linux02/</url>

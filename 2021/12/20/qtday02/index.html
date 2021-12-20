@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="操作系统02, 冰冰的小屋">
+    <meta name="keywords" content="Qtday02, 冰冰的小屋">
     <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>操作系统02 | 冰冰的小屋</title>
+    <title>Qtday02 | 冰冰的小屋</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -243,12 +243,12 @@ if (windowWidth > 768) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">操作系统02</h1>
+                    <h1 class="description center-align post-title">Qtday02</h1>
                 </div>
             </div>
         </div>
@@ -364,8 +364,8 @@ if (windowWidth > 768) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                                <span class="chip bg-color">操作系统</span>
+                            <a href="/tags/QT/">
+                                <span class="chip bg-color">QT</span>
                             </a>
                         
                     </div>
@@ -376,8 +376,8 @@ if (windowWidth > 768) {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
-                                计算机基础
+                            <a href="/categories/C/" class="post-category">
+                                C++
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@ if (windowWidth > 768) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-10
+                    2021-12-20
                 </div>
                 
 
@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    615
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    2 分
                 </div>
                 
 
@@ -428,119 +428,92 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="操作系统02"><a href="#操作系统02" class="headerlink" title="操作系统02"></a>操作系统02</h1><h2 id="什么是进程？"><a href="#什么是进程？" class="headerlink" title="什么是进程？"></a>什么是进程？</h2><p>进程就是程序的一次执行过程，它是动态的产生，变化，消亡的有生命周期的；并且进程还包括运行中占用的系统空间、CPU等；</p>
-<p>为了防止一个进程中两个线程同时使用一个内存区域的简单办法就是门口加一把锁。先到的人锁上门，后到的人看到上锁，就在门口排队，等锁打开再进去。这就叫”互斥锁”（Mutual exclusion，缩写 Mutex），防止多个线程同时读写某一块内存区域。</p>
-<p>某些内存区域，只能供给固定数目的线程使用时，就是在门口挂 n 把钥匙。进去的人就取一把钥匙，出来时再把钥匙挂回原处。后到的人发现钥匙架空了，就知道必须在门口排队等着了。这种做法叫做 “信号量”（Semaphore），用来保证多个线程不会互相冲突。</p>
-<h2 id="进程的组成"><a href="#进程的组成" class="headerlink" title="进程的组成"></a>进程的组成</h2><ul>
-<li><p>PCB ：是提供给操作系统用的，是进程存在的标志，一般包含4个内容：</p>
-<p>1）<strong>进程描述信息</strong>：用来让操作系统区分各个进程</p>
-<ul>
-<li>当进程被创建时，操作系统会为该进程分配一个唯一的、不重复的 “身份证号”— <strong>PID</strong>（ProcessID，进程 ID）</li>
-<li>另外，进程描述信息还包含进程所属的用户 ID（<strong>UID</strong>）</li>
+                <h1 id="QT笔记"><a href="#QT笔记" class="headerlink" title="QT笔记"></a>QT笔记</h1><h2 id="信号和槽"><a href="#信号和槽" class="headerlink" title="信号和槽"></a>信号和槽</h2><ul>
+<li>QMainWindow 类生成的窗口自带菜单栏、工具栏和状态栏，中央区域还可以添加多个控件，常用来作为应用程序的主窗口；</li>
+<li>QDialog 类生成的窗口非常简单，没有菜单栏、工具栏和状态栏，但可以添加多个控件，常用来制作对话框。</li>
+<li>QWidget 类，它的用法非常灵活，既可以用来制作窗口，也可以作为某个窗口上的控件。</li>
 </ul>
-<p>2）<strong>进程控制和管理信息</strong>：记录进程的运行情况。比如 CPU 的使用时间、磁盘使用情况、网络流量使用情况等。</p>
-<p>3）<strong>资源分配清单</strong>：记录给进程分配了哪些资源。比如分配了多少内存、正在使用哪些 I/O 设备、正在使用哪些文件等。</p>
-<p>4）<strong>CPU 相关信息</strong>：进程在让出 CPU 时，必须保存该进程在 CPU 中的各种信息，比如各种寄存器的值。用于实现进程切换，确保这个进程再次运行的时候恢复 CPU 现场，从断点处继续执行。这就是所谓的<strong>保存现场信息</strong>。</p>
-</li>
-<li><p>程序段：程序的代码生成的指令序列</p>
-</li>
-<li><p>数据段：进程运行中的各种数据（比如定义的变量）</p>
-</li>
-</ul>
-<p>程序段、数据段是给进程自己用的，PCB给操作系统用的。</p>
-<h2 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h2><p>经典的进程三态模型如下：</p>
-<ul>
-<li><strong>运行态</strong>（running）：进程占有 CPU 正在运行。</li>
-<li><strong>就绪态</strong>（ready）：进程具备运行条件，等待系统分配 CPU 以便运行。</li>
-<li><strong>阻塞态</strong> / 等待态（wait）：进程不具备运行条件，正在等待某个事件的完成。</li>
-</ul>
-<p><img src="https://gitee.com/veal98/images/raw/master/img/20210219154606.png" alt="img"></p>
-<p>上图中的时间片用完，可以这样理解：</p>
-<p>进程是并发执行的嘛，宏观上在一段时间内能同时运行多个程序，但其实微观上是交替发生的。也就是说 CPU 一般不会让一个进程一次性执行完，为了保证所有进程可以得到公平调度，CPU 时间被划分为一段段的时间片，这些时间片再被轮流分配给各个进程。某个进程的时间片用完后这个进程就会进入就绪态，而其他被分配到时间片的进程就会进入运行态。这个处于就绪态的进程就需要等待进程调度程序的下一次调度，为其分配 CPU 时间片后才能再次恢复运行。</p>
-<p>需要注意的是：<strong>阻塞态是由于缺少需要的资源从而由运行态转换而来，但是该资源不包括 CPU 时间片，缺少 CPU 时间片会从运行态转换为就绪态</strong>。</p>
-<p>很多系统中都增加了新建态（new）和终止态（exit），形成<strong>五态模型</strong>：</p>
-<ul>
-<li><strong>新建态</strong>（new）：进程正在被创建时的状态</li>
-<li><strong>终止态</strong>（exit）：进程正在从系统中消失时的状态</li>
-</ul>
-<p><img src="https://gitee.com/veal98/images/raw/master/img/20210219155101.png" alt="img"></p>
-<p>从上图可以发现，<strong>只有就绪态和运行态可以相互转换，其它的都是单向转换</strong>。</p>
-<p>这些不同状态的进程操作系统是如何进行管理的呢？上文说过，PCB 是提供给操作系统使用的，是操作系统管理进程的主要依据。没错，操作就是通过 PCB 来管理这些拥有不同状态的进程的。</p>
-<p>进程的 PCB 会通过某种方式组织起来，一般来说，操作系统会把处于同一状态的所有进程的 PCB 链接在一起，这种数据结构就称为<strong>进程队列</strong>（Process Queue）。</p>
-<h2 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h2><p>原语是操作系统内核中一段特殊的程序，它具有原子性（该程序运行必须一次运行，不可中断）</p>
-<p>操作系统通过原语实现进程状态的转化，也就是进程的创建、终止、阻塞、唤醒；</p>
-<p>进程的创建过程：</p>
-<ul>
-<li>在进程列表中增加一项，从 PCB 池中申请一个空闲的 PCB（PCB 是有限的，若申请失败则创建失败），为新进程分配一个唯一的进程标识符；</li>
-<li>为新进程分配地址空间，由进程管理程序确定加载至进程地址空间中的程序；</li>
-<li>为新进程分配各种资源；</li>
-<li>初始化 PCB，如进程标识符、CPU 初始状态等；</li>
-<li>把新进程的状态设置为就绪态，并将其移入就绪队列，等待被调度运行。</li>
-</ul>
-<h2 id="进程的上下文切换"><a href="#进程的上下文切换" class="headerlink" title="进程的上下文切换"></a>进程的上下文切换</h2><p>各个进程之间共享内存资源，当进程切换时不同进程分配不同的内存空间这就是进程的上下文切换。也就是一个进程切换到另一个进程，</p>
-<p>进程的切换一定发生在内核态中</p>
-<p>进程切换也就是切换原语的流程：</p>
-<ul>
-<li>首先，将进程 A 的运行环境信息存入 PCB，这个运行环境信息就是进程的上下文（Context）</li>
-<li>然后，将 PCB 移入相应的进程队列；</li>
-<li>选择另一个进程 B 进行执行，并更新其 PCB 中的状态为运行态</li>
-<li>当进程 A 被恢复运行的时候，根据它的 PCB 恢复进程 A 所需的运行环境</li>
-</ul>
-<h2 id="线程的优缺点"><a href="#线程的优缺点" class="headerlink" title="线程的优缺点"></a>线程的优缺点</h2><p>线程的特征和进程差不多，进程有的他基本都有，比如：</p>
-<ul>
-<li>线程具有就绪、阻塞、运行三种基本状态，同样具有状态之间的转换关系；</li>
-<li>线程间可以并发执行</li>
-<li>在多 CPU 环境下，各个线程也可以分派到不同的 CPU 上并行执行</li>
-</ul>
-<p>线程的优点：</p>
-<ul>
-<li><p>一个进程中可以同时存在多个线程，这些线程共享该进程的资源。进程间的通信必须请求操作系统服务（因为 CPU 要切换到内核态），开销很大。而同进程下的线程间通信，无需操作系统干预，开销更小。</p>
-<p>不过，需要注意的是：从属于不同进程的线程间通信，也必须请求操作系统服务。</p>
-</li>
-<li><p>线程间的并发比进程的开销更小，系统并发性提升。</p>
-<p>同样，需要注意的是：从属于不同进程的线程间切换，它是会导致进程切换的，所以开销也大。</p>
-</li>
-</ul>
-<p>线程的缺点：</p>
-<ul>
-<li>当进程中的一个线程奔溃时，会导致其所属进程的所有线程奔溃。</li>
-</ul>
-<p>举个例子，对于游戏的用户设计，就不应该使用多线程的方式，否则一个用户挂了，会影响其他同个进程的线程</p>
-<h1 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h1><p>进程调度，就是<strong>从进程的就绪队列（阻塞）中按照一定的算法选择一个进程并将 CPU 分配给它运行</strong>，以实现进程的并发执行。</p>
-<h2 id="非抢占式调度算法"><a href="#非抢占式调度算法" class="headerlink" title="非抢占式调度算法"></a>非抢占式调度算法</h2><p>非抢占式的意思就是，当进程正在运行时，它就会一直运行，直到该进程完成或发生某个事件发生而被阻塞时，才会把 CPU 让给其他进程。</p>
-<ul>
-<li>先到先服务FCFS</li>
-</ul>
-<p>先到的进程就先被调度</p>
-<ul>
-<li>最短作业优先SJF</li>
-</ul>
-<p>当前已到达的进程中运行时间最短的先调用</p>
-<ul>
-<li>高响应比优先HRRN</li>
-</ul>
-<p>只有当前运行的进程主动放弃 CPU 时（正常/异常完成，或主动阻塞），才需要进行调度，<strong>调度时计算所有就绪进程的响应比，为响应比最高的进程分配 CPU</strong>。</p>
-<p>响应比 = (进程的等待时间 + 进程需要的运行时间) / 进程需要的运行时间</p>
-<h2 id="抢占式调度算法"><a href="#抢占式调度算法" class="headerlink" title="抢占式调度算法"></a>抢占式调度算法</h2><p>抢占式的意思就是，当进程正在运行的时，可以被打断，把 CPU 让给其他进程。</p>
-<ul>
-<li>最短剩余时间优先</li>
-</ul>
-<p><strong>当一个新的进程到达时，把它所需要的整个运行时间与当前进程的剩余运行时间作比较。如果新的进程需要的时间更少，则挂起当前进程，运行新的进程，否则新的进程等待。</strong></p>
-<ul>
-<li>轮转调度算法</li>
-</ul>
-<p><strong>就绪队列中的每个进程轮流地运行一个时间片，当时间片耗尽时就强迫当前运行进程让出 CPU 资源，转而排到就绪队列尾部，等待下一轮调度</strong>。所以，一个进程一般都需要多次轮转才能完成。</p>
-<p>轮转调度算法对每个进程都一视同仁，就好比大家都排好队，一个一个来，每个人都运行一会儿再接着重新排队等待运行。</p>
-<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><blockquote>
-<p><strong>一个进程中可以有多个线程，它们共享这个进程的资源。</strong></p>
-<p><strong>线程又称为迷你进程，但是它比进程更容易创建，也更容易撤销</strong>。</p>
-<p>引入线程前，进程是资源分配和独立调度的基本单位。引入线程后，<strong>进程是资源分配的基本单位，线程是独立调度的基本单位</strong>。</p>
-<p>进程调度，就是<strong>从进程的就绪队列（阻塞）中按照一定的算法选择一个进程并将 CPU 分配给它运行</strong>，以实现进程的并发执行</p>
+<blockquote>
+<p>实际开发中，制作应用程序的主窗口可以用 QMainWindow 或者 QWdiget；制作一个提示信息的对话框就用 QDialog 或 QWidget；如果暂时无法决定，后续可能作为窗口，也可能作为控件，就选择 QWidget。</p>
 </blockquote>
-<p>本文来源于：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://veal98.gitee.io/cs-wiki/#/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">https://veal98.gitee.io/cs-wiki/#/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F</a></li>
-</ul>
+<p><img src="/Qtday02/1632193B2-0.gif" alt="img"></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">QWidget widget;
+//定义一个按钮，它位于 widget 窗口中
+QPushButton But("按钮控件",&amp;widget);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>信号发送者是 But 按钮对象，要发送的信号是“按钮被点击”，可以用 QPushButton 类提供的 clicked() 信号函数表示；信号的接收者是 widget 主窗口对象，“窗口关闭”作为信号对应的槽，可以用 QWidget 类提供的 close() 函数表示。</p>
+<p>用 connect() 函数将 But 按钮的 clicked() 信号函数和 widget 窗口的 close() 槽函数关联起来，</p>
+<p> connect() 函数指定信号函数和槽函数的语法格式是<code>&amp;+函数所在类+函数名</code>。</p>
+<p>实现代码如下：</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">connect(&amp;But, SIGNAL(clicked()), &amp;widget, SLOT(close()));<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如此就实现了“按下按钮会关闭窗口”的功能。</p>
+<h2 id="QLabel文本框"><a href="#QLabel文本框" class="headerlink" title="QLabel文本框"></a>QLabel文本框</h2><h1 id="课程讲解"><a href="#课程讲解" class="headerlink" title="课程讲解"></a>课程讲解</h1><p>demo.pro文件</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">QT       += core gui   //core核心库，gui图形界面
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets//让代码在老版本和新版本中兼容
+
+TARGET = demo03  //项目名称
+TEMPLATE = app
+
+# The following define makes your compiler emit warnings if you use
+# any feature of Qt which has been marked as deprecated (the exact warnings
+# depend on your compiler). Please consult the documentation of the
+# deprecated API in order to know how to port your code away from it.
+DEFINES += QT_DEPRECATED_WARNINGS
+
+# You can also make your code fail to compile if you use deprecated APIs.
+# In order to do so, uncomment the following line.
+# You can also select to disable deprecated APIs only up to a certain version of Qt.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+
+SOURCES += \
+        main.cpp \
+        mainwindow.cpp
+
+HEADERS += \
+        mainwindow.h<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include &lt;QMainWindow&gt;
+
+namespace Ui {//防止重复命名
+class MainWindow;//主界面
+}
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
+
+private:
+    Ui::MainWindow *ui;
+};
+
+#endif // MAINWINDOW_H<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">#include "mainwindow.h"
+#include &lt;QApplication&gt;
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);//继承自wiget类的
+    MainWindow w;//s
+    w.show();//显示界面
+
+    return a.exec();//事件循环
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -567,7 +540,7 @@ if (windowWidth > 768) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://binbincome.github.io/2021/12/10/ji-suan-ji-ji-chu/cao-zuo-xi-tong-02/">https://binbincome.github.io/2021/12/10/ji-suan-ji-ji-chu/cao-zuo-xi-tong-02/</a>
+                    <a href="https://binbincome.github.io/2021/12/20/qtday02/">https://binbincome.github.io/2021/12/20/qtday02/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -605,8 +578,8 @@ if (windowWidth > 768) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                                    <span class="chip bg-color">操作系统</span>
+                                <a href="/tags/QT/">
+                                    <span class="chip bg-color">QT</span>
                                 </a>
                             
                         </div>
@@ -650,17 +623,18 @@ if (windowWidth > 768) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/12/11/ji-suan-ji-ji-chu/cao-zuo-xi-tong-03/">
+                <a href="/2021/12/20/qtday02/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="程序计算机中是如何运行的">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Qtday02">
                         
-                        <span class="card-title">程序计算机中是如何运行的</span>
+                        <span class="card-title">Qtday02</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -670,26 +644,27 @@ if (windowWidth > 768) {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    计算机基础
+                            <a href="/categories/C/" class="post-category">
+                                    C++
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
+                    <a href="/tags/QT/">
+                        <span class="chip bg-color">QT</span>
                     </a>
                     
                 </div>
@@ -703,13 +678,13 @@ if (windowWidth > 768) {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/09/ji-suan-ji-ji-chu/cao-zuo-xi-tong-01/">
+                <a href="/2021/12/19/linux02/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="操作系统01">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Linux02">
                         
-                        <span class="card-title">操作系统01</span>
+                        <span class="card-title">Linux02</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -720,14 +695,14 @@ if (windowWidth > 768) {
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    计算机基础
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
                                 </a>
                             
                             
@@ -737,8 +712,8 @@ if (windowWidth > 768) {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>

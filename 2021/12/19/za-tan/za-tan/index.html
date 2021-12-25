@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    835
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    6 分
                 </div>
                 
 
@@ -429,14 +429,13 @@ if (windowWidth > 768) {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="杂谈"><a href="#杂谈" class="headerlink" title="杂谈"></a>杂谈</h1><h1 id="记录一次非常无语的事件"><a href="#记录一次非常无语的事件" class="headerlink" title="记录一次非常无语的事件"></a>记录一次非常无语的事件</h1><p>就最开始入门前端的时候我是看的尚硅谷的视频，当时配置的VScode后陪伴了我很长一段时间，后来有一天点击VScode的文图标运行不了，卸载也卸载不了，显示找不到文件，重新安装也不行，百度了一番操作也没啥用，最后只好另下载WebStorm来使用，今天重命名了一个文件改成了之前的名字，code的图标就突然的亮了，欸，好了！原来是我安装的文件的位置被我改了名字，吐血！</p>
-<h1 id="干了这碗鸡汤！"><a href="#干了这碗鸡汤！" class="headerlink" title="干了这碗鸡汤！"></a>干了这碗鸡汤！</h1><p>生活的理想，就是为了理想的生活</p>
-<p>只有拥抱浪潮，才能屹立于浪潮之巅</p>
+<h1 id="干了这碗鸡汤！"><a href="#干了这碗鸡汤！" class="headerlink" title="干了这碗鸡汤！"></a>干了这碗鸡汤！</h1><p><strong>生活的理想，就是为了理想的生活</strong></p>
+<p><strong>只有拥抱浪潮，才能屹立于浪潮之巅</strong></p>
 <h1 id="非常眼熟的代码"><a href="#非常眼熟的代码" class="headerlink" title="非常眼熟的代码"></a>非常眼熟的代码</h1><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;bits/stdc++.h&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>老是在题解和别人的代码看见这行代码，忍不住搜了一下原来这是一个万能头文件</p>
 <p>它包括了c++中所有的头文件，下面贴下源码中看看它包含了多少头文件吧！</p>
-<pre class="line-numbers language-none"><code class="language-none">// C
-#ifndef _GLIBCXX_NO_ASSERT
+<pre class="line-numbers language-none"><code class="language-none">#ifndef _GLIBCXX_NO_ASSERT
 #include &lt;cassert&gt;
 #endif
 #include &lt;cctype&gt;
@@ -521,7 +520,7 @@ if (windowWidth > 768) {
 #include &lt;type_traits&gt;
 #include &lt;unordered_map&gt;
 #include &lt;unordered_set&gt;
-#endif<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+#endif<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>平时学习的时候最好还是自己打上头文件！而且用这个可能会慢一点，当然如果想偷懒还是可以的哈哈!</p>
 <h1 id="Linux切换root失败"><a href="#Linux切换root失败" class="headerlink" title="Linux切换root失败"></a>Linux切换root失败</h1><p>在Linux中我以普通用户的身份登录以后，想要配置网络，修改一个文件，结果没有权限保存，强制都没用，然后切换root用户，报错鉴定故障，困扰我好久，甚至想重装系统了都，结果偶然发现是我命令用错了，切换root用户的命令是su不是sudo！</p>
@@ -530,6 +529,27 @@ if (windowWidth > 768) {
 <p>　　2) su直接将身份变成root，而sudo是以用户登录后以root的身份运行命令，不需要知道root密码.</p>
 <p>感谢：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013371163/article/details/60469114">Linux - root初始密码设置_北岛知寒-CSDN博客_root默认密码</a></p>
 <p>初始密码我是设置了，结果无语了，命令作用搞错了</p>
+<h1 id="Linux网络问题"><a href="#Linux网络问题" class="headerlink" title="Linux网络问题"></a>Linux网络问题</h1><p>之前看到尚硅谷比较老旧的教程，别人装虚拟机的时候就是选择的NAt模式，还专门分了一期视频讲的，nat模式最好，他也用的这个模式装的，没啥问题，但是到我就是网络有问题，去按照百度的各种方法一个一个的试都不管用，足足折腾几个小时都没得用，后来换了桥接模式，瞬间就通了，啥都没调，吐血了，教程是那么说没错，可是实际操作就是有很大的不同，所以还是实践比较重要！</p>
+<h1 id="无限恐怖，个人电脑被控制了！"><a href="#无限恐怖，个人电脑被控制了！" class="headerlink" title="无限恐怖，个人电脑被控制了！"></a>无限恐怖，个人电脑被控制了！</h1><p>又是一个安静的晚上，一个人坐在床上敲电脑，我本来在浏览着网页，打开着IDE和word，完成今天培训的日志，结果，鼠标突然不受控制的移动起来，因为我在双手在敲代码，不排除误触触控面板的可能，所以我用触控面板调节回鼠标以后继续敲，结果她她她居然又动了，，期间我使用鼠标尝试移动，结果被拖回去了，楞了一会儿，看着鼠标自动操作，而我双手已经离开电脑的我，楞了一下后说时迟那时快，很快啊，反应过来第一件事就是Ctrl+S，接着一套<strong>强制关机</strong>的组合拳，过了一会儿以后，开机重启几秒钟以后我第一件事首先就是<strong>断网</strong>，然后去把远程协助和远程桌面全部关掉设置为<strong>不允许连接到这台计算机</strong>，然后<strong>卸载可疑程序</strong>，因为我之前弄过一些破解的软件使用，也曾有下载过流氓软件，不过流氓软件解决以后反正没跳出来骚扰过我以后就没管了，随后ctrl+alt+delete<strong>关闭可疑进程</strong>，接着就是<strong>修改用户的密码</strong>为复杂的数字+大小写字母+符号，接着打开<strong>管家清理插件和全盘杀毒</strong>！进行到这里作为普通用户已经尽力了，做好物理备份，如果实在不行只能重装了！</p>
+<p>意外收获：</p>
+<p>1.win+r输入MRT可以清理恶意文件！</p>
+<p>2.安全模式的进入：</p>
+<ul>
+<li>无法启动Windows时：长按强制关机，然后开机到有启动徽标界面时再强制关机，这样3次以后进入自动修复界面点击疑难解答—高级选项—启动设置—点击重启—按数字4或F4键进入安全模式</li>
+<li>可以进入Windows时：长按shift并点击重启后出现自动修复界面和无法启动时的操作一样进入安全模式</li>
+</ul>
+<p>3.注册表有着好多之前删除的软件确还存在的情况，顺手清了几个认识的，不认识的不敢动蛤。</p>
+<p>总结：</p>
+<blockquote>
+<p>计划对一些公有文件进行云备份，对私有文件进行物理备份，这样不管出现什么情况，至少还能兜底！</p>
+</blockquote>
+<h1 id="最近追番"><a href="#最近追番" class="headerlink" title="最近追番"></a>最近追番</h1><p>双城之战</p>
+<p>斗破苍穹之三年之约</p>
+<p>某科学的超电磁炮</p>
+<p>魔法禁书目录</p>
+<p>冰雪奇缘</p>
+<p>冰雪奇缘2</p>
+<p>国王排名</p>
 
                 
             </div>
@@ -962,7 +982,7 @@ if (windowWidth > 768) {
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">46.2k</span>&nbsp;字
+                class="white-color">49.9k</span>&nbsp;字
             
             
             

@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    556
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -428,17 +428,8 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="算法-暴力枚举"><a href="#算法-暴力枚举" class="headerlink" title="算法-暴力枚举"></a>算法-暴力枚举</h1><p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image/image-01.png" alt="image"></p>
-<h1 id="例1：P2241-统计方形"><a href="#例1：P2241-统计方形" class="headerlink" title="例1：P2241 统计方形"></a>例1：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2241">P2241 统计方形</a></h1><p>n x m 方格的棋盘，求里面包含多少个正方形、长方形（不含正方形）</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>一行，两个正整数 n,m（n*≤5000,*m≤5000）</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一行，两个正整数，分别表示方格包含多少正方形、长方形（不包含正方形）。</p>
-<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入</strong> </p>
-<pre class="line-numbers language-none"><code class="language-none">2 3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><strong>输出</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">8 10<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>一、先算正方形个数</p>
+                <h1 id="算法-暴力枚举"><a href="#算法-暴力枚举" class="headerlink" title="算法-暴力枚举"></a>算法-暴力枚举</h1><p><img src="/%E7%AE%97%E6%B3%95-%E6%9A%B4%E5%8A%9B%E6%9E%9A%E4%B8%BE/image-01.png" alt="image-01"></p>
+<h1 id="例1：P2241-统计方形"><a href="#例1：P2241-统计方形" class="headerlink" title="例1：P2241 统计方形"></a>例1：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2241">P2241 统计方形</a></h1><h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>一、先算正方形个数</p>
 <p>暴力枚举每个格子存在时的正方形个数加起来，固定了正方形的右下角(i,j)，此时可能的正方形个数为Min（i，j）。</p>
 <blockquote>
 <p>假设i，j是格子的行和列，</p>
@@ -483,7 +474,139 @@ int main()
 <blockquote>
 <p>吐血了，小学生的题解代码都看不懂，好不容易找了个看的懂得，现在这么卷了嘛。这个路还很长，慢慢填坑吧！</p>
 </blockquote>
-<h1 id="例2：P2089-烤鸡"><a href="#例2：P2089-烤鸡" class="headerlink" title="例2：P2089 烤鸡 "></a>例2：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2089">P2089 烤鸡 </a></h1>
+<h1 id="例2：P2089-烤鸡"><a href="#例2：P2089-烤鸡" class="headerlink" title="例2：P2089 烤鸡 "></a>例2：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2089">P2089 烤鸡 </a></h1><h2 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h2><p>暴力枚举或者深度优先搜索；</p>
+<h2 id="暴力美学-歪解"><a href="#暴力美学-歪解" class="headerlink" title="暴力美学(歪解)"></a>暴力美学(歪解)</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span>  </span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>  
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+    <span class="token keyword">int</span> a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>e<span class="token punctuation">,</span>f<span class="token punctuation">,</span>g<span class="token punctuation">,</span>h<span class="token punctuation">,</span>i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>in<span class="token punctuation">,</span>x<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>  
+    cin<span class="token operator">&gt;&gt;</span>in<span class="token punctuation">;</span>  
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>a<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>a<span class="token operator">++</span><span class="token punctuation">)</span>  
+    <span class="token punctuation">{</span>  
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>b<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>b<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>b<span class="token operator">++</span><span class="token punctuation">)</span>  
+        <span class="token punctuation">{</span>  
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>c<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>c<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>c<span class="token operator">++</span><span class="token punctuation">)</span>  
+            <span class="token punctuation">{</span>  
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>d<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>d<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>d<span class="token operator">++</span><span class="token punctuation">)</span>  
+                <span class="token punctuation">{</span>  
+                    <span class="token keyword">for</span> <span class="token punctuation">(</span>e<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>e<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>e<span class="token operator">++</span><span class="token punctuation">)</span>  
+                    <span class="token punctuation">{</span>  
+                        <span class="token keyword">for</span> <span class="token punctuation">(</span>f<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>f<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>f<span class="token operator">++</span><span class="token punctuation">)</span>  
+                        <span class="token punctuation">{</span>  
+                            <span class="token keyword">for</span> <span class="token punctuation">(</span>g<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>g<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>g<span class="token operator">++</span><span class="token punctuation">)</span>  
+                            <span class="token punctuation">{</span>  
+                                <span class="token keyword">for</span><span class="token punctuation">(</span>h<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>h<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>h<span class="token operator">++</span><span class="token punctuation">)</span>  
+                                <span class="token punctuation">{</span>  
+                                    <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>  
+                                    <span class="token punctuation">{</span>  
+                                        <span class="token keyword">for</span> <span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>  
+                                        <span class="token punctuation">{</span>  
+                                            <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token operator">+</span>c<span class="token operator">+</span>d<span class="token operator">+</span>e<span class="token operator">+</span>f<span class="token operator">+</span>g<span class="token operator">+</span>h<span class="token operator">+</span>i<span class="token operator">+</span>j<span class="token operator">==</span>in<span class="token punctuation">)</span>  
+                                            <span class="token punctuation">{</span>  
+                                                x<span class="token operator">++</span><span class="token punctuation">;</span>  
+                                            <span class="token punctuation">}</span>  
+                                        <span class="token punctuation">}</span>  
+                                    <span class="token punctuation">}</span>  
+                                <span class="token punctuation">}</span>  
+                            <span class="token punctuation">}</span>  
+                        <span class="token punctuation">}</span>  
+                    <span class="token punctuation">}</span>  
+                <span class="token punctuation">}</span>  
+            <span class="token punctuation">}</span>  
+        <span class="token punctuation">}</span>  
+    <span class="token punctuation">}</span>  
+    cout<span class="token operator">&lt;&lt;</span>x<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>  
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>a<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>a<span class="token operator">++</span><span class="token punctuation">)</span>  
+    <span class="token punctuation">{</span>  
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>b<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>b<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>b<span class="token operator">++</span><span class="token punctuation">)</span>  
+        <span class="token punctuation">{</span>  
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>c<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>c<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>c<span class="token operator">++</span><span class="token punctuation">)</span>  
+            <span class="token punctuation">{</span>  
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>d<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>d<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>d<span class="token operator">++</span><span class="token punctuation">)</span>  
+                <span class="token punctuation">{</span>  
+                    <span class="token keyword">for</span> <span class="token punctuation">(</span>e<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>e<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>e<span class="token operator">++</span><span class="token punctuation">)</span>  
+                    <span class="token punctuation">{</span>  
+                        <span class="token keyword">for</span> <span class="token punctuation">(</span>f<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>f<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>f<span class="token operator">++</span><span class="token punctuation">)</span>  
+                        <span class="token punctuation">{</span>  
+                            <span class="token keyword">for</span> <span class="token punctuation">(</span>g<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>g<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>g<span class="token operator">++</span><span class="token punctuation">)</span>  
+                            <span class="token punctuation">{</span>  
+                                <span class="token keyword">for</span><span class="token punctuation">(</span>h<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>h<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>h<span class="token operator">++</span><span class="token punctuation">)</span>  
+                                <span class="token punctuation">{</span>  
+                                    <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>  
+                                    <span class="token punctuation">{</span>  
+                                        <span class="token keyword">for</span> <span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span><span class="token number">3</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>  
+                                        <span class="token punctuation">{</span>  
+                                            <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token operator">+</span>c<span class="token operator">+</span>d<span class="token operator">+</span>e<span class="token operator">+</span>f<span class="token operator">+</span>g<span class="token operator">+</span>h<span class="token operator">+</span>i<span class="token operator">+</span>j<span class="token operator">==</span>in<span class="token punctuation">)</span>  
+                                            <span class="token punctuation">{</span>  
+                                                cout<span class="token operator">&lt;&lt;</span>a<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>  
+                                                cout<span class="token operator">&lt;&lt;</span>b<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>  
+                                                cout<span class="token operator">&lt;&lt;</span>c<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>  
+                                                cout<span class="token operator">&lt;&lt;</span>d<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>  
+                                                cout<span class="token operator">&lt;&lt;</span>e<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>  
+                                                cout<span class="token operator">&lt;&lt;</span>f<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>  
+                                                cout<span class="token operator">&lt;&lt;</span>g<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>  
+                                                cout<span class="token operator">&lt;&lt;</span>h<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>  
+                                                cout<span class="token operator">&lt;&lt;</span>i<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>  
+                                                cout<span class="token operator">&lt;&lt;</span>j<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>  
+                                            <span class="token punctuation">}</span>  
+                                        <span class="token punctuation">}</span>  
+                                    <span class="token punctuation">}</span>  
+                                <span class="token punctuation">}</span>  
+                            <span class="token punctuation">}</span>  
+                        <span class="token punctuation">}</span>  
+                    <span class="token punctuation">}</span>  
+                <span class="token punctuation">}</span>  
+            <span class="token punctuation">}</span>  
+        <span class="token punctuation">}</span>  
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>  
+<span class="token comment">//so beautiful!</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="深度优先搜索（正解）"><a href="#深度优先搜索（正解）" class="headerlink" title="深度优先搜索（正解）"></a>深度优先搜索（正解）</h2><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int s,flag=0,sum=0;//flag判断是否有解,sum方案总数 
+int nice[11],ans[20000][11]; 
+
+void dfs(int dep,int total){//dep代表当前放第几种配料，total代表当前的配料和 
+	if(dep==11){//若放到最后一个格子 
+		if(total==s){//若所有配料质量之和达到美味程度 		
+			flag=1;
+			sum++; 
+			for(int j=1;j&lt;=10;j++)//存储当前方案 
+				ans[sum][j]=nice[j];
+		}	
+		return;
+	}
+	else{
+		for(int i=1;i&lt;=3;i++){//当前这种配料有三种放法 		
+			if(total+i&gt;s) break;
+			else{
+				nice[dep]=i;//存储 
+				dfs(dep+1,total+i);//搜索下一种配料 nice[dep]=0;//回溯 
+			}
+		}
+	}
+}
+
+int main(void){
+	cin&gt;&gt;s;//输入 
+	dfs(1,0);
+	if(flag==1){
+		cout&lt;&lt;sum&lt;&lt;endl;//输出总数 
+		for(int i=1;i&lt;=sum;i++){//输出全部方案 
+			for(int j=1;j&lt;=10;j++){
+				cout&lt;&lt;ans[i][j]&lt;&lt;" ";
+			}
+			cout&lt;&lt;endl;
+		}	
+	}
+	else if(flag==0){//若无解 	
+		cout&lt;&lt;0&lt;&lt;endl;	
+	}
+	return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="例3：P1618三连击"><a href="#例3：P1618三连击" class="headerlink" title="例3：P1618三连击"></a>例3：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1618">P1618三连击</a></h1><h2 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h2><h1 id="例4：P1088火星人"><a href="#例4：P1088火星人" class="headerlink" title="例4：P1088火星人 "></a>例4：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1088">P1088火星人 </a></h1>
                 
             </div>
             <hr/>
@@ -917,7 +1040,7 @@ int main()
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">52.5k</span>&nbsp;字
+                class="white-color">53k</span>&nbsp;字
             
             
             

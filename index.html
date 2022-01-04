@@ -490,9 +490,11 @@ if (windowWidth > 768) {
                         <div class="summary block-with-text">
                             
                                 算法-暴力枚举
-例1：P2241 统计方形n x m 方格的棋盘，求里面包含多少个正方形、长方形（不含正方形）
-输入格式一行，两个正整数 n,m（n*≤5000,*m≤5000）
-输出格式一行，两个正整数，分别表示方格包含多少正方形、长方形
+例1：P2241 统计方形解题思路一、先算正方形个数
+暴力枚举每个格子存在时的正方形个数加起来，固定了正方形的右下角(i,j)，此时可能的正方形个数为Min（i，j）。
+
+假设i，j是格子的行和列，
+初始1 x 1时有1个；
                             
                         </div>
                         <div class="publish-info">
@@ -2554,7 +2556,7 @@ step1：设原栈为栈A，辅组栈为B，当第一个元素进栈A时，同时
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">52.5k</span>&nbsp;字
+                class="white-color">53k</span>&nbsp;字
             
             
             

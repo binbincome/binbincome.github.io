@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -447,7 +447,7 @@ if (windowWidth > 768) {
 <blockquote>
 <p>index = HashCode (“this”) % Array.length = 3559070 % 8 = 6</p>
 </blockquote>
-<h1 id="散列表中的读写操作"><a href="#散列表中的读写操作" class="headerlink" title="散列表中的读写操作"></a>散列表中的读写操作</h1><p>写操作</p>
+<h1 id="哈希表中的读写操作"><a href="#哈希表中的读写操作" class="headerlink" title="哈希表中的读写操作"></a>哈希表中的读写操作</h1><p>写操作</p>
 <ul>
 <li>第1步，通过哈希函数，把Key转化成数组下标5。 </li>
 <li>第2步，如果数组下标5对应的位置没有元素，就把这个Entry填充到数 组下标5的位置</li>
@@ -470,6 +470,7 @@ if (windowWidth > 768) {
 <li> 第2步，找到数组下标2所对应的元素，如果这个元素的Key是002936， 那么就找到了；如果这个Key不是002936也没关系，由于数组的每个元素都与一个链表对应，可以顺着链表慢慢往下找，看看能否找到与 Key相匹配的节点。</li>
 </ul>
 <p>注意：关于HashMap的实现，JDK 8和以前的版本有着很大的 不同。当多个Entry被Hash到同一个数组下标位置时，为了提升插入和查找的效率，HashMap会把Entry的链表转化为红黑树这种数据结构。由于散列表的具体实现代码比较复杂，所以有兴趣自己去看看源码吧嘿嘿。</p>
+<h1 id="哈希算法"><a href="#哈希算法" class="headerlink" title="哈希算法"></a>哈希算法</h1><p>Hash算法是一个广义的算法，也可以认为是一种思想，使用Hash算法可以提高存储空间的利用率，可以提高数据的查询效率，也可以做数字签名来保障数据传递的安全性。所以Hash算法被广泛地应用在互联网应用中。</p>
 
                 
             </div>
@@ -902,7 +903,7 @@ if (windowWidth > 768) {
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">53k</span>&nbsp;字
+                class="white-color">54.4k</span>&nbsp;字
             
             
             

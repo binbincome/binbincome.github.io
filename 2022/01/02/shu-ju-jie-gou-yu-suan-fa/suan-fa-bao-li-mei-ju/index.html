@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -582,7 +582,7 @@ void dfs(int dep,int total){//dep代表当前放第几种配料，total代表当
 			if(total+i&gt;s) break;
 			else{
 				nice[dep]=i;//存储 
-				dfs(dep+1,total+i);//搜索下一种配料 nice[dep]=0;//回溯 
+				dfs(dep+1,total+i);//搜索下一种配料 nice[dep]=0;
 			}
 		}
 	}
@@ -606,7 +606,35 @@ int main(void){
 	return 0;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="例3：P1618三连击"><a href="#例3：P1618三连击" class="headerlink" title="例3：P1618三连击"></a>例3：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1618">P1618三连击</a></h1><h2 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h2><h1 id="例4：P1088火星人"><a href="#例4：P1088火星人" class="headerlink" title="例4：P1088火星人 "></a>例4：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1088">P1088火星人 </a></h1>
+<h1 id="例3：P1618三连击"><a href="#例3：P1618三连击" class="headerlink" title="例3：P1618三连击"></a>例3：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1618">P1618三连击</a></h1><p>STL中的next_permutation和prev_permutation计算排列组合关系的算法</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qian2213762498/article/details/79683905">【用法总结】C++ STL中 next_permutation函数的用法_荷叶田田-CSDN博客_next_permutation</a></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int a[10]={0,1,2,3,4,5,6,7,8,9};
+int main()
+{
+    int A,B,C,h=0;
+    cin&gt;&gt;A&gt;&gt;B&gt;&gt;C;
+    int t=A*B*C;
+    A=t/A;
+    B=t/B;
+    C=t/C;
+    do{
+        if((100*a[1]+10*a[2]+a[3])*A==(100*a[4]+10*a[5]+a[6])*B&amp;&amp;(100*a[1]+10*a[2]+a[3])*A==(100*a[7]+10*a[8]+a[9])*C)//如果符合比例；
+        {
+            cout&lt;&lt;a[1]&lt;&lt;a[2]&lt;&lt;a[3]&lt;&lt;" "&lt;&lt;a[4]&lt;&lt;a[5]&lt;&lt;a[6]&lt;&lt;" "&lt;&lt;a[7]&lt;&lt;a[8]&lt;&lt;a[9]&lt;&lt;endl;//输出
+            h++;
+        }
+    }while(next_permutation(a+1,a+10));//STL中的下一个排列函数；
+    if(h==0) cout&lt;&lt;"No!!!";//没有解输出NO；
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
                 
             </div>
             <hr/>
@@ -715,18 +743,17 @@ int main(void){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/01/02/shu-ju-jie-gou-yu-suan-fa/suan-fa-bao-li-mei-ju/">
+                <a href="/2022/01/09/suan-fa-dong-tai-gui-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="算法-暴力枚举">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="算法-动态规划">
                         
-                        <span class="card-title">算法-暴力枚举</span>
+                        <span class="card-title">算法-动态规划</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -736,9 +763,9 @@ int main(void){
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -751,12 +778,11 @@ int main(void){
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9A%B4%E5%8A%9B%E6%9E%9A%E4%B8%BE/">
-                        <span class="chip bg-color">暴力枚举</span>
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
                 </div>
@@ -1040,7 +1066,7 @@ int main(void){
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">53k</span>&nbsp;字
+                class="white-color">54.4k</span>&nbsp;字
             
             
             

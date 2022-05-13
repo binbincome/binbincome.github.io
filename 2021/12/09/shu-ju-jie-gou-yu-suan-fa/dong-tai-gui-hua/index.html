@@ -398,14 +398,14 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    4.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    19 分
                 </div>
                 
 
@@ -432,7 +432,239 @@ if (windowWidth > 768) {
 <p>一个<strong>规模</strong>比较大的问题分成几个<strong>规模</strong>比较小的问题，然后由小的问题推导出大的问题</p>
 <p>动态规划可以分为如下四大类，可以依次进行学习：线性动规，区域动规，树形动规，背包动规。</p>
 </blockquote>
-<h2 id="一维DP：青蛙跳台阶"><a href="#一维DP：青蛙跳台阶" class="headerlink" title="一维DP：青蛙跳台阶"></a>一维DP：青蛙跳台阶</h2><p>问题描述：一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
+<h1 id="一个案列引入动态规划"><a href="#一个案列引入动态规划" class="headerlink" title="一个案列引入动态规划"></a>一个案列引入动态规划</h1><h2 id="数字三角形–递归"><a href="#数字三角形–递归" class="headerlink" title="数字三角形–递归"></a>数字三角形–递归</h2><p><img src="/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/image-20220327221725745.png" alt="image-20220327221725745"></p>
+<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><p>在上面的数字三角形中寻找一条从顶部到底边的路径，使得路径上所经过的数字之和最大。路径上的每一步都只能往左下或右下走。只需要求出这个最大和即可，不必给出具体路径。三角形的行数大于1小于等于100，数字为 0 - 99</p>
+<h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>虽然只是一道简单的递推题，即使用循环都能做出来，但是从零开始逐渐分析，慢慢的就能体会到动态规划的用处，也让我对动态规划的理解也更加的深入。让我们一步一步的剖析这个从无到最终演变的过程。</p>
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">5 
+7
+3 8
+8 1 0
+2 7 4 4
+4 5 2 6 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>题解： 首先用最简单的二维数组存数字三角形，用递归的方式求一下结果试一下；</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+//d(r,j)表示第r行第j列数字
+//maxSum(r,j)表示从d (r,j)到底边的最佳路径的数字之和 
+
+int n;//数字三角形行数 
+int D[101][101];//存放数字三角形 
+
+int maxSum(int i,int j){
+	if(i == n) return D[i][j];//递归出口
+	int x = maxSum(i+1,j);// d(i,j)到下面一行的最优选择 
+	int y = maxSum(i+1,j+1);
+	return max(x,y)+D[i][j]; 
+}
+int main(){
+	cin&gt;&gt;n;
+	for(int i=1;i&lt;=n;++i)
+		for(int j=1;j&lt;=n;++j)
+			cin&gt;&gt;D[i][j];
+	cout&lt;&lt;maxSum(1,1)&lt;&lt;endl;//求第1行第1列到底边的最优路径 	
+	return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="数字三角形–改进"><a href="#数字三角形–改进" class="headerlink" title="数字三角形–改进"></a>数字三角形–改进</h2><h3 id="思路分析："><a href="#思路分析：" class="headerlink" title="思路分析："></a>思路分析：</h3><p>如果采用递规的方法，深度遍历每条路径，存在大量重复计算。则时间复杂度为 2^n ,对于 n = 100 行， 肯定超时。如果每算出一个MaxSum(r,j)就保存起来，下次用到其值的时候直接取用，则可免去重复计算。那么可以用O(n^2 )时间完成计算。因为三角形的数字总数是 n(n+1)/2</p>
+<h3 id="改进题解："><a href="#改进题解：" class="headerlink" title="改进题解："></a>改进题解：</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define MAX 101
+int D[MAX][MAX]; int n;
+int maxSum[MAX][MAX];
+int MaxSum(int i, int j){
+	if( maxSum[i][j] != -1 )
+		return maxSum[i][j];
+		if(i==n)
+		maxSum[i][j] = D[i][j];
+	else {
+		int x = MaxSum(i+1,j);
+		int y = MaxSum(i+1,j+1);
+		maxSum[i][j] = max(x,y)+
+		D[i][j];
+	}
+	return maxSum[i][j];
+	}
+int main(){
+	int i,j;
+	cin &gt;&gt; n;
+	for(i=1;i&lt;=n;i++)
+        for(j=1;j&lt;=i;j++) {
+            cin &gt;&gt; D[i][j];
+            maxSum[i][j] = -1;
+        }
+	cout &lt;&lt; MaxSum(1,1) &lt;&lt; endl;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="数字三角形–记忆形递推"><a href="#数字三角形–记忆形递推" class="headerlink" title="数字三角形–记忆形递推"></a>数字三角形–记忆形递推</h2><h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>接下来是比较容易理解，也是最容易见到的递推，但是，和一般的递推有一点点不一样的是，没必要用二维maxSum数组存储每一个MaxSum(r,j),只要从底层一行行向上递推，那么只要一维数组maxSum[100]即可,即只要存储一行的MaxSum值就可以。</p>
+<blockquote>
+<p>ps：因为用一维数组maxSum[100]来记忆过程中的一行的MaxSum，也就是记忆形递推吧；</p>
+</blockquote>
+<h3 id="题解：-1"><a href="#题解：-1" class="headerlink" title="题解："></a>题解：</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define MAX 101
+int D[MAX][MAX]; int n;
+int maxSum[MAX][MAX];
+int main() {
+int i,j;
+cin &gt;&gt; n;
+for(i=1;i&lt;=n;i++)
+for(j=1;j&lt;=i;j++)
+cin &gt;&gt; D[i][j];
+for( int i = 1;i &lt;= n; ++ i )
+maxSum[n][i] = D[n][i];
+for( int i = n-1; i&gt;= 1; --i )
+for( int j = 1; j &lt;= i; ++j )
+maxSum[i][j] =
+max(maxSum[i+1][j],maxSum[i+1][j+1]) + D[i][j]
+cout &lt;&lt; maxSum[1][1] &lt;&lt; endl;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="数字三角形–空间优化"><a href="#数字三角形–空间优化" class="headerlink" title="数字三角形–空间优化"></a>数字三角形–空间优化</h2><p>进一步考虑，连maxSum数组都可以不要，直接用D的第n行替代maxSum即可。 节省空间，时间复杂度不变</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define MAX 101
+int D[MAX][MAX];
+int n; int * maxSum;
+
+int main(){
+	int i,j;
+	cin &gt;&gt; n;
+	for(i=1;i&lt;=n;i++)
+		for(j=1;j&lt;=i;j++)
+			cin &gt;&gt; D[i][j];
+	maxSum = D[n]; //maxSum指向第n行
+    for( int i = n-1; i&gt;= 1; --i )
+    	for( int j = 1; j &lt;= i; ++j )
+    		maxSum[j] = max(maxSum[j],maxSum[j+1]) + D[i][j];
+    cout &lt;&lt; maxSum[1] &lt;&lt; endl;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>由一个数字三角形的案例我们简单的了解了什么是</p>
+<h1 id="最长上升子序列"><a href="#最长上升子序列" class="headerlink" title="最长上升子序列"></a>最长上升子序列</h1><p>问题描述 一个数的序列ai，当a1 &lt; a2 &lt; … &lt; aS的时候，我们称这个序 列是上升的。对于给定的一个序列(a1 , a2 , …, aN)，我们可以得到 一些上升的子序列(ai1, ai2, …, aiK)，这里1 &lt;= i1 &lt; i2 &lt; … &lt; iK  &lt;= N。比如，对于序列(1, 7, 3, 5, 9, 4, 8)，有它的一些上升子 序列，如(1, 7), (3, 4, 8)等等。这些子序列中最长的长度是4，比 如子序列(1, 3, 5, 8).  你的任务，就是对于给定的序列，求出最长上升子序列的长度。</p>
+<p>输入数据 </p>
+<p>​        输入的第一行是序列的长度N (1 &lt;= N &lt;= 1000)。第二行给 出序列中的N个整数，这些整数的取值范围都在0到10000。 </p>
+<p>输出要求 </p>
+<p>​        最长上升子序列的长度。 </p>
+<p>输入样例 </p>
+<pre class="line-numbers language-none"><code class="language-none">7 
+1 7 3 5 9 4 8 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>输出样例 </p>
+<pre class="line-numbers language-none"><code class="language-none">4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>1、把原问题分解成子问题</p>
+<p>求以ak（k=1, 2, 3…N）为终点的最长上升子序列的长度，只要这N个子问题都解决了，那么这N个子问题的解中， 最大的那个就是整个问题的解。</p>
+<p>2、确定状态</p>
+<p>子问题只和一个变量– 数字的位置相关。因此序列中数的 位置k 就是“状态”，而状态 k 对应的“值”，就是以ak做为 “终点”的最长上升子序列的长度。 状态一共有N个。</p>
+<p>3、找状态转移方程</p>
+<p>maxLen (k)表示以ak做为“终点”的 最长上升子序列的长度那么： 初始状态：maxLen (1) = 1  maxLen (k) = max { maxLen (i)：1&lt;=i &lt; k 且 ai &lt; ak且 k≠1 } + 1 若找不到这样的i,则maxLen(k) = 1</p>
+<p>题解：</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">```
+
+
+
+# 最长公共子序列
+
+输入两行字符串，求两字符串最长公共子序列
+
+```C++
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
+const int MAXN = 1010;
+
+char size1[MAXN];
+char size2[MAXN];
+int maxLen[MAXN][MAXN];
+
+int main(){
+	int i,j;
+	/*for(i=0;i&lt;MAXN;++i){
+		size1[i] = getchar();
+		if(size1[i] == '\n') break;
+	}   size1[i]='\0';//最后一个字符赋值作为为c语言判断 字符串结束的依据 
+	*/
+	cin&gt;&gt;size1;
+	cin&gt;&gt;size2;
+	int length1 = strlen(size1);
+	int length2 = strlen(size2);
+	for( i = 0;i &lt;= length1; i ++ )//第1列初始化为0 
+		maxLen[i][0] = 0;
+	for( j = 0;j &lt;= length2; j ++ )//第1行初始化为0 
+		maxLen[0][j] = 0;
+	//核心解题关键 
+	for( i = 1;i &lt;= length1;i++ ) {
+		for( j = 1;j &lt;= length2;j++ ) {
+			if( size1[i-1] == size2[j-1] )
+				maxLen[i][j] = maxLen[i-1][j-1] + 1;
+			else
+				maxLen[i][j] = max(maxLen[i][j-1],maxLen[i-1][j]);
+		}
+	}
+	cout &lt;&lt; maxLen[length1][length2];
+
+	return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="解题思路总结："><a href="#解题思路总结：" class="headerlink" title="解题思路总结："></a>解题思路总结：</h1><p><strong>先确定问题是否能用动态规划解决，能用动规解决的问题的特点如下：</strong> </p>
+<ol>
+<li><strong>问题具有最优子结构性质</strong>。如果问题的最优解所包含的子问题的解也是最优的，我们就称该问题具有最优子结构性质。 </li>
+<li><strong>无后效性</strong>。当前的若干个状态值一旦确定，则此后过程的演变就只和这若干个状态的值有关，和之前是采取哪 种手段或经过哪条路径演变到当前的这若干个状态，没有关系。</li>
+</ol>
+<p><strong>一般情况下，问题大致了解不一定能看出是否可以用动态规划解题，解题步骤大致如下：</strong></p>
+<p>1、把原问题分解成子问题</p>
+<blockquote>
+<p>子问题和原问题相同或类似，子问题的解一旦求出就会被保存，所以只会求一次</p>
+</blockquote>
+<p>2、确定状态</p>
+<p>3、找状态转移方程</p>
+<hr>
+<h1 id="以下为刷题：洛谷-P1216"><a href="#以下为刷题：洛谷-P1216" class="headerlink" title="以下为刷题：洛谷:P1216 "></a>以下为刷题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1216">洛谷:P1216 </a></h1><p>Step1：<strong>定义数组元素的含义</strong></p>
+<p>定义 dp[i] [j]的含义为：当走到塔尖时路经数字最大和</p>
+<p>Step2：<strong>找出关系数组元素间的关系式</strong>（状态转移方程）</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Step3：<strong>找出初始值</strong></p>
+<p>初始值dp[i]（最后一行）根据输入值变化而变化</p>
+<p>题解代码如下：</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
+int dp(int m){
+	vector&lt;vector&lt;int&gt;&gt; dp(m, vector&lt;int&gt;(m));
+	for (int i = 0; i &lt; m; ++i) {
+		for (int j = 0; j &lt;= i; ++j) {
+	    	cin&gt;&gt;dp[i][j];
+		}
+	}	
+
+	for (int i = m-2; i &gt;= 0; --i) {
+	    for (int j = 0; j &lt;= i; ++j) {
+	        dp[i][j] += max(dp[i+1][j],dp[i+1][j+1]);
+	    }
+	}
+	return dp[0][0];
+}
+
+int main(void){
+	int r,sum;
+	cin&gt;&gt;r;
+	sum=dp(r);
+	cout&lt;&lt;sum;
+	return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="一维DP：青蛙跳台阶"><a href="#一维DP：青蛙跳台阶" class="headerlink" title="一维DP：青蛙跳台阶"></a>一维DP：青蛙跳台阶</h1><p>问题描述：一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
 <h3 id="步骤一、定义数组元素的含义"><a href="#步骤一、定义数组元素的含义" class="headerlink" title="步骤一、定义数组元素的含义"></a>步骤一、定义数组元素的含义</h3><p>定义 dp[i] 的含义为：<strong>跳上一个 i 级的台阶总共有 dp[i] 种跳法</strong></p>
 <h3 id="步骤二、找出数组元素间的关系式"><a href="#步骤二、找出数组元素间的关系式" class="headerlink" title="步骤二、找出数组元素间的关系式"></a>步骤二、找出数组元素间的关系式</h3><p> dp[n] = dp[n-1] + dp[n-2]</p>
 <h3 id="步骤三、找出初始条件"><a href="#步骤三、找出初始条件" class="headerlink" title="步骤三、找出初始条件"></a>步骤三、找出初始条件</h3><p>dp[0] = 0、dp[1] = 1、dp[2] = 1</p>
@@ -455,7 +687,9 @@ int f( int n ){
     return dp[n];
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="二维数组DP：最多路径数"><a href="#二维数组DP：最多路径数" class="headerlink" title="二维数组DP：最多路径数"></a>二维数组DP：最多路径数</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>一个机器人位于一个 m x n 网格的左上角</p>
+
+
+<h1 id="二维数组DP：最多路径数"><a href="#二维数组DP：最多路径数" class="headerlink" title="二维数组DP：最多路径数"></a>二维数组DP：最多路径数</h1><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>一个机器人位于一个 m x n 网格的左上角</p>
 <p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角</p>
 <p>问总共有多少条不同的路径？</p>
 <h3 id="步骤一、定义数组元素的含义-1"><a href="#步骤一、定义数组元素的含义-1" class="headerlink" title="步骤一、定义数组元素的含义"></a>步骤一、定义数组元素的含义</h3><p>由于我们的目的是从左上角到右下角一共有多少种路径，那我们就定义 dp[i] [j]的含义为：<strong>当机器人从左上角走到(i, j) 这个位置时，一共有 dp[i] [j] 种路径</strong>。     </p>
@@ -547,7 +781,7 @@ public static int uniquePaths(int m, int n) {
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>最后要求的答案就是：dp[n-1]</p>
-<h2 id="二维数组DP：最小路径和"><a href="#二维数组DP：最小路径和" class="headerlink" title="二维数组DP：最小路径和"></a>二维数组DP：最小路径和</h2><p>给定一个包含非负整数的 <em>m</em> x <em>n</em> 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。</p>
+<h1 id="二维数组DP：最小路径和"><a href="#二维数组DP：最小路径和" class="headerlink" title="二维数组DP：最小路径和"></a>二维数组DP：最小路径和</h1><p>给定一个包含非负整数的 <em>m</em> x <em>n</em> 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。</p>
 <p><strong>说明：</strong>每次只能向下或者向右移动一步。</p>
 <h3 id="步骤一、定义数组元素的含义-2"><a href="#步骤一、定义数组元素的含义-2" class="headerlink" title="步骤一、定义数组元素的含义"></a>步骤一、定义数组元素的含义</h3><p>由于我们的目的是从左上角到右下角，最小路径和是多少，那我们就定义 dp[i] [j]的含义为：**当机器人从左上角走到(i, j) 这个位置时，最下的路径和是 dp[i] [j]**。那么，dp[m-1] [n-1] 就是我们要的答案了。</p>
 <p>不过这次不是计算所有可能路径，而是<strong>计算哪一个路径和是最小的</strong>，那么我们要从这两种方式中，选择一种，使得dp[i] [j] 的值是最小的，显然有</p>
@@ -586,7 +820,7 @@ public static int uniquePaths(int m, int n) {
 <blockquote>
 <p>O(n*m) 的空间复杂度可以优化成 O(min(n, m)) 的空间复杂度的，不过这里先不讲</p>
 </blockquote>
-<h2 id="hard-题目"><a href="#hard-题目" class="headerlink" title="hard 题目"></a>hard 题目</h2><p><strong>问题描述</strong>：</p>
+<h1 id="hard-题目"><a href="#hard-题目" class="headerlink" title="hard 题目"></a>hard 题目</h1><p><strong>问题描述</strong>：</p>
 <p>给定两个单词 word1 和 word2，计算出将 word1 转换成 word2 所使用的最少操作数 。</p>
 <p>你可以对一个单词进行如下三种操作：</p>
 <p>插入一个字符 删除一个字符 替换一个字符</p>
@@ -597,6 +831,16 @@ public static int uniquePaths(int m, int n) {
 horse <span class="token operator">-&gt;</span> rorse <span class="token punctuation">(</span>将 <span class="token string">'h'</span> 替换为 <span class="token string">'r'</span><span class="token punctuation">)</span>
 rorse <span class="token operator">-&gt;</span> rose <span class="token punctuation">(</span>删除 <span class="token string">'r'</span><span class="token punctuation">)</span>
 rose <span class="token operator">-&gt;</span> ros <span class="token punctuation">(</span>删除 <span class="token string">'e'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1049,7 +1293,7 @@ rose <span class="token operator">-&gt;</span> ros <span class="token punctuatio
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.4k</span>&nbsp;字
+                class="white-color">58.8k</span>&nbsp;字
             
             
             

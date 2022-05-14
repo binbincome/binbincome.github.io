@@ -398,7 +398,7 @@ if (windowWidth > 768) {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    625
+                    660
                 </div>
                 
 
@@ -428,34 +428,49 @@ if (windowWidth > 768) {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>拼博到无能为力，努力到感动自己</p>
+                <h1 id="一、项目介绍"><a href="#一、项目介绍" class="headerlink" title="一、项目介绍"></a>一、项目介绍</h1><blockquote>
+<p>拼博到无能为力，努力到感动自己<br><strong>本次项目为B2C电商平台</strong>，电商平台分类：</p>
+<ul>
+<li>B2C（平台运营⽅即商品的卖家比如⼩⽶商城）</li>
+<li>C2B2C（类似一条街上有多家店铺比如淘宝）</li>
+</ul>
 </blockquote>
-<h1 id="电商项目"><a href="#电商项目" class="headerlink" title="电商项目"></a>电商项目</h1><p>一个tomcat大概是200-300的并发</p>
-<p>nginx可以达到万级并发（大概5w，前端用的）</p>
-<h2 id="一、技术选型"><a href="#一、技术选型" class="headerlink" title="一、技术选型"></a>一、技术选型</h2><p>jQuery比较久了，工匠型框架，逐渐发现一些缺点，于是出来vue，react，angluar，但jQuery都可以做，比较笨重，</p>
+<p>Java应用领域广，但主要用于Web的项目开发，Web项目分两种：</p>
+<ul>
+<li>一种是企业级开发（专供某个组织使用的比如学校的学生管理系统）</li>
+<li>一种是互联网开发（提供给互联网用户使用的系统比如电商、短视频）</li>
+</ul>
+<p><strong>技术选型</strong></p>
 <ul>
 <li><p>项目架构：前后端分离</p>
 </li>
-<li><p>前端技术：vue（只做渲染）、axios（只做通信）、meiziUI和bootstap（做UI界面）</p>
+<li><p>前端技术：vue、axios、meiziUI以及layui和bootstap（做UI界面）</p>
 </li>
 <li><p>后端技术：SpringBoot+Mybatis、Restful、swagger</p>
 </li>
 <li><p>服务器搭建：Linux、nginx</p>
 </li>
 </ul>
-<h2 id="二、项目架构的演进"><a href="#二、项目架构的演进" class="headerlink" title="二、项目架构的演进"></a>二、项目架构的演进</h2><h3 id="2-1单体项目"><a href="#2-1单体项目" class="headerlink" title="2.1单体项目"></a>2.1单体项目</h3><p>前后端项目部署在同一台服务器上（前后端代码耦合性很高）</p>
+<h2 id="二、项目架构的演进"><a href="#二、项目架构的演进" class="headerlink" title="二、项目架构的演进"></a>二、项目架构的演进</h2><h3 id="2-1单体架构"><a href="#2-1单体架构" class="headerlink" title="2.1单体架构"></a>2.1单体架构</h3><blockquote>
+<p>前后端项目部署在同一台服务器上</p>
+</blockquote>
+<p>一个tomcat后端服务器大概是200-300的并发，一个nginx前端服务器大概5w</p>
 <p>缺点：对静态资源的访问也会落到Tomcat上</p>
-<h3 id="2-2前后端分离"><a href="#2-2前后端分离" class="headerlink" title="2.2前后端分离"></a>2.2前后端分离</h3><p>前后端分开开发和部署，对静态资源的访问和对接口的访问进行分离，静态资源的访问用Nginx，tomcat只负责对接口的访问</p>
-<h3 id="2-3集群搭建"><a href="#2-3集群搭建" class="headerlink" title="2.3集群搭建"></a>2.3集群搭建</h3><p>前后端分离只能在一定程度上解决并发问题</p>
+<h3 id="2-2前后端分离"><a href="#2-2前后端分离" class="headerlink" title="2.2前后端分离"></a>2.2前后端分离</h3><blockquote>
+<p>前端和后端分开开发和部署</p>
+</blockquote>
+<p>优点：对静态资源的访问和对接口的访问进行分离，静态资源的访问用Nginx，tomcat只负责对接口的访问</p>
+<h3 id="2-3集群搭建"><a href="#2-3集群搭建" class="headerlink" title="2.3集群搭建"></a>2.3集群搭建</h3><p><img src="/%E5%86%B0%E5%86%B0%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE-%E9%A1%B9%E7%9B%AE%E8%BF%9B%E5%BA%A6%E8%AE%B0%E5%BD%95/image-20220514094240724.png" alt="image-20220514094240724"></p>
+<p>前后端分离只能在一定程度上解决并发问题</p>
 <ul>
 <li>服务器集群：多台服务器构成的一个整体，</li>
 <li>服务器节点：集群中的某台服务器就是一个节点</li>
 <li>负载均衡：将对集群的并发请求按需分配到不同的服务器节点上</li>
 </ul>
-<p>2020双11淘宝1s的50多万是目前的记录</p>
+<p>2020双11淘宝1s的50多万并发是目前的记录</p>
 <p>优点：提供了并发能力、高可用性</p>
-<h3 id="2-4分布式"><a href="#2-4分布式" class="headerlink" title="2.4分布式"></a>2.4分布式</h3><p>mysql默认最大连接151</p>
+<h3 id="2-4分布式"><a href="#2-4分布式" class="headerlink" title="2.4分布式"></a>2.4分布式</h3><p><img src="/%E5%86%B0%E5%86%B0%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE-%E9%A1%B9%E7%9B%AE%E8%BF%9B%E5%BA%A6%E8%AE%B0%E5%BD%95/image-20220514094356577.png" alt="image-20220514094356577"></p>
+<p>mysql默认最大连接151</p>
 <ul>
 <li><p>基于redis实现分布式锁</p>
 </li>
@@ -465,7 +480,7 @@ if (windowWidth > 768) {
 </li>
 <li><p>数据库中间件：ElasticSearch或MQ做搜索优化</p>
 </li>
-<li><p>消息队列中间件：</p>
+<li><p>消息队列中间件</p>
 </li>
 </ul>
 <h3 id="2-4微服务架构"><a href="#2-4微服务架构" class="headerlink" title="2.4微服务架构"></a>2.4微服务架构</h3><p>互联网项目三高：</p>
@@ -482,18 +497,13 @@ if (windowWidth > 768) {
 <li>服务间的通信问题</li>
 </ul>
 <h2 id="三、项目搭建"><a href="#三、项目搭建" class="headerlink" title="三、项目搭建"></a>三、项目搭建</h2><blockquote>
-<p>基于maven的聚合工程搭建后端，前端采用vue和axios，后端使用springboot整合</p>
+<p>maven的聚合工程搭建后端，前端采用vue和axios，后端使用springboot整合</p>
 </blockquote>
 <h3 id="3-1技术储备"><a href="#3-1技术储备" class="headerlink" title="3.1技术储备"></a>3.1技术储备</h3><ul>
-<li>实现无配置的ssm整合</li>
-<li>基于maven实现模块的复用</li>
+<li>SpringBoot：实现无配置的ssm整合 </li>
+<li>Maven聚合工程：实现模块的复用 </li>
 </ul>
-<p><strong>SpringBoot的缺点</strong></p>
-<ul>
-<li>配置都是内置的，报错时定位比较困难</li>
-<li>版本迭代速度比较快，有些版本的改动比较大（增加学习成本）</li>
-</ul>
-<p>—————————————–分割线2022-5-14——————————————————-</p>
+<p>—————————————–分割线2022-5-14——————————————————</p>
 
                 
             </div>
@@ -603,9 +613,60 @@ if (windowWidth > 768) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/05/13/bing-bing-shang-cheng-xiang-mu-xiang-mu-jin-du-ji-lu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="冰冰商城项目_项目进度记录">
+                        
+                        <span class="card-title">冰冰商城项目_项目进度记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2022/05/13/bing-bing-shang-cheng-xiang-mu-springboot/">
                     <div class="card-image">
@@ -623,9 +684,9 @@ if (windowWidth > 768) {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -643,55 +704,6 @@ if (windowWidth > 768) {
                     
                     <a href="/tags/SpringBoot/">
                         <span class="chip bg-color">SpringBoot</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/02/05/git-bi-zhi-bi-hui/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="git必知必会">
-                        
-                        <span class="card-title">git必知必会</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-05
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/git/" class="post-category">
-                                    git
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>
@@ -926,7 +938,7 @@ if (windowWidth > 768) {
 			
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.8k</span>&nbsp;字
+                class="white-color">60k</span>&nbsp;字
             
             
             

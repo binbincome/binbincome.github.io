@@ -1,0 +1,1763 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="电子钢琴项目, 冰冰的小屋">
+    <meta name="description" content="博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>电子钢琴项目 | 冰冰的小屋</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">冰冰的小屋</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">冰冰的小屋</div>
+        <div class="logo-desc">
+            
+            博客就像是一个个孤岛，在这个信息爆炸的年代，很少有人会来这个孤岛留下足迹，但是我想在这个孤岛上建一个小屋，记录所思所想，倘若有人路过也可以驻足休息片刻，如此便好。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">电子钢琴项目</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">
+                                <span class="chip bg-color">嵌入式</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/C-C/" class="post-category">
+                                C/C++
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-05-14
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    23 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="电子钢琴项目"><a href="#电子钢琴项目" class="headerlink" title="电子钢琴项目"></a>电子钢琴项目</h1><h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>​    复盘一下最近做的一个小项目，温习一下c语言和Linux的知识，唔，就是这样子。</p>
+<h2 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h2><p>所用软件以及工具如下：</p>
+<p>1、VMware-workstation-full搭配Ubuntu18.04的Linux操作系统，VMware是桌面虚拟计算机软件，提供用户可在单一的桌面上同时运行不同的操作系统和进行开发、测试 、部署新的应用程序。<br>2、Vsode代码编写软件，配置c语言开发环境</p>
+<p>3、CH341/340和PL2303 串口驱动软件</p>
+<p>4、SecureCRT串口调试软件</p>
+<p>5、GEC6818开发板如下图</p>
+<p><img src="/%E7%94%B5%E5%AD%90%E9%92%A2%E7%90%B4%E9%A1%B9%E7%9B%AE/image-20220501095931315.png" alt="image-20220501095931315"></p>
+<p>上述环境搭建百度一下就有很多很多教程，这里不在赘述。真的要说配置环境，那得拉老长的文章了。</p>
+<h2 id="二、开发板的使用与Linux文件IO"><a href="#二、开发板的使用与Linux文件IO" class="headerlink" title="二、开发板的使用与Linux文件IO"></a>二、开发板的使用与Linux文件IO</h2><p><strong>开发流程如下：</strong></p>
+<ol>
+<li>通过Vscode中进行代码编辑，进行开发后放入共享文件夹</li>
+<li>Ubantu中切换到共享目录，使用交叉编译器出可执行文件</li>
+<li>打开SecureCRT将可执行文件上传开发板</li>
+<li>在开发板上调试运行</li>
+</ol>
+<p><strong>联通开发板与电脑：</strong></p>
+<ol>
+<li><p>接通电源，插上开发板后，安装CH341/340和PL2303串口驱动，</p>
+</li>
+<li><p>在计算机右键点击计算机管理中的设备管理器查看对应<strong>端口</strong></p>
+</li>
+<li><p>打开SecureCRT串口调试软件，点击<strong>快速连接</strong></p>
+</li>
+<li><p>设置SSH为serial，端口为查看的端口，波特率115200，流控全部关闭，点击连接即可</p>
+</li>
+</ol>
+<p><strong>文件上传开发板</strong>：</p>
+<ul>
+<li>可执行文件（小）：rx demo命令后点击传输选择文件上传，百k以下</li>
+<li>程序运行资源（大）：如音频、图像文件等，通过U盘上传，在 /mnt/udisk目录下cp -r demo  /就行；</li>
+</ul>
+<p><strong>Linux文件IO</strong></p>
+<p><img src="/%E7%94%B5%E5%AD%90%E9%92%A2%E7%90%B4%E9%A1%B9%E7%9B%AE/image-20220501104423510.png" alt="image-20220501104423510"></p>
+<ol>
+<li>open函数打开文件</li>
+<li>定义数据缓冲区，write函数写入数据</li>
+<li>lseek函数调整文件位置偏移量</li>
+<li>定义数据缓冲区，read函数存放读到的数据</li>
+<li>打印出读到的数据</li>
+<li>关闭对应文件</li>
+</ol>
+<p><strong>小练习：德国国旗的显示</strong></p>
+<p>终于简单的归纳了一下部分内容到这里，可以开始做个小Demo练习一下熟练知识点啦！显示德国国旗在开发板上。(不要在意条条的颜色这些细节，问就是酱样紫)</p>
+<p><img src="/%E7%94%B5%E5%AD%90%E9%92%A2%E7%90%B4%E9%A1%B9%E7%9B%AE/%E5%9B%BD%E6%97%97.jpg" alt="国旗"></p>
+<p>在开发板上显示德国国旗代码如下：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// 1.打开lcd驱动</span>
+	<span class="token keyword">int</span> lcd_fd<span class="token punctuation">;</span>
+	lcd_fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"/dev/fb0"</span><span class="token punctuation">,</span> O_RDWR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> lcd_fd<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"open lcd failed!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">// 2.处理颜色数据</span>
+	<span class="token comment">// 定义颜色数据缓冲区</span>
+	<span class="token keyword">int</span> col_buf<span class="token punctuation">[</span><span class="token number">800</span><span class="token operator">*</span><span class="token number">480</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> x<span class="token punctuation">,</span>y<span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span>y<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> y<span class="token operator">&lt;</span><span class="token number">160</span><span class="token punctuation">;</span> y<span class="token operator">++</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> x<span class="token operator">&lt;</span><span class="token number">800</span><span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span>
+			col_buf<span class="token punctuation">[</span><span class="token number">800</span><span class="token operator">*</span>y<span class="token operator">+</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0x000000</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span>y<span class="token operator">=</span><span class="token number">160</span><span class="token punctuation">;</span> y<span class="token operator">&lt;</span><span class="token number">320</span><span class="token punctuation">;</span> y<span class="token operator">++</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> x<span class="token operator">&lt;</span><span class="token number">800</span><span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span>
+			col_buf<span class="token punctuation">[</span><span class="token number">800</span><span class="token operator">*</span>y<span class="token operator">+</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0xff0000</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span>y<span class="token operator">=</span><span class="token number">320</span><span class="token punctuation">;</span> y<span class="token operator">&lt;</span><span class="token number">480</span><span class="token punctuation">;</span> y<span class="token operator">++</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> x<span class="token operator">&lt;</span><span class="token number">800</span><span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span>
+			col_buf<span class="token punctuation">[</span><span class="token number">800</span><span class="token operator">*</span>y<span class="token operator">+</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0xffff00</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">//	3.将颜色数据写入lcd</span>
+	<span class="token function">write</span><span class="token punctuation">(</span>lcd_fd<span class="token punctuation">,</span> col_buf<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>col_buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">// 4.关闭lcd</span>
+	<span class="token function">close</span><span class="token punctuation">(</span>lcd_fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="三、项目界面显示"><a href="#三、项目界面显示" class="headerlink" title="三、项目界面显示"></a>三、项目界面显示</h2><blockquote>
+<p>tips：猜猜界面中的背景图是谁鸭</p>
+</blockquote>
+<p>最终电子钢琴界面效果如下图：</p>
+<p><img src="/%E7%94%B5%E5%AD%90%E9%92%A2%E7%90%B4%E9%A1%B9%E7%9B%AE/%E7%95%8C%E9%9D%A2.png" alt="界面"></p>
+<p>​    不同的图片格式有着不同的压缩算法，所以需要将对应格式的图片文件压缩算法库引入项目，这里为了简单一点使用通用的24位图格式BMP文件存储图片，当然在GEC6818开发板的LCD显示屏却是32位图，为了在开发板的系统上正常显示需要进行原色移位即24转32位。</p>
+<p>​    开发板系统的图片像素点是A、R、G、B共<strong>4个字节32位</strong>，BMP格式的图片像素点是B、G、R共<strong>3个字节24位</strong>，以B为基准，一个字节是八位，所以将R左移16位，G左移8位，B不动，A可以左移24事实上不管也行默认就可以，然后通过C语言的按位或，配合左移，实现数据的拼接大功告成啦！</p>
+<p><img src="/%E7%94%B5%E5%AD%90%E9%92%A2%E7%90%B4%E9%A1%B9%E7%9B%AE/image-20220501115239809.png" alt="image-20220501115239809"></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">例         二进制：  <span class="token number">1101</span> <span class="token number">0101</span>
+                   <span class="token number">1010</span> <span class="token number">1101</span><span class="token operator">&lt;&lt;</span><span class="token number">8</span> 
+                   <span class="token number">1101</span> <span class="token number">1010</span><span class="token operator">&lt;&lt;</span><span class="token number">16</span>
+                   <span class="token number">0000</span> <span class="token number">0000</span><span class="token operator">&lt;&lt;</span><span class="token number">24</span>
+      结果 <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">1101</span> <span class="token number">1010</span> <span class="token number">1010</span> <span class="token number">1101</span> <span class="token number">1101</span> <span class="token number">0101</span> 
+<span class="token comment">//int  4字节                   buf是char 1字节         透明度是0不管</span>
+bmp_buf<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> buf<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">*</span>i<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token number">16</span> <span class="token operator">|</span> buf<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">*</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token number">8</span> <span class="token operator">|</span> buf<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">*</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//其实写成代码也就一行搞定     </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注意：</p>
+<ul>
+<li><strong>边界显示</strong>：bmp图片的宽所占的字节数如果不能被4整除，windows在保存的时候，会在每一行的后面添加垃圾数凑够4整除</li>
+<li><strong>图像偏移</strong>：BMP图片有54字节的头文件存储图片的bmp格式图片的长度和宽度，色深，大小……，所以需要用lseek进行偏移</li>
+<li><strong>图形翻转</strong>：因为BMP独特的编码方式：它的像素点的编码方式是上下颠倒的，我们在开发板的屏幕上显示需要从最下面一行开始向上进行显示，如下图方便理解，左图显示的开发板，右图缓冲区的图片</li>
+</ul>
+<p><img src="/%E7%94%B5%E5%AD%90%E9%92%A2%E7%90%B4%E9%A1%B9%E7%9B%AE/image-20220501115317386.png" alt="image-20220501115317386"></p>
+<p>图片显示代码如下：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// 1.打开lcd驱动</span>
+	<span class="token keyword">int</span> lcd_fd<span class="token punctuation">;</span>
+	lcd_fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"/dev/fb0"</span><span class="token punctuation">,</span> O_RDWR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> lcd_fd<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"open lcd failed！\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 2.打开图片</span>
+	<span class="token keyword">int</span> bmp_fd<span class="token punctuation">;</span>
+	bmp_fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"/LeiMu.bmp"</span><span class="token punctuation">,</span> O_RDONLY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> bmp_fd<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"open bmp failed!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">char</span> head<span class="token punctuation">[</span><span class="token number">54</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token function">read</span><span class="token punctuation">(</span>bmp_fd<span class="token punctuation">,</span> head<span class="token punctuation">,</span> <span class="token number">54</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> w <span class="token operator">=</span> <span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>head<span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> h <span class="token operator">=</span> <span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>head<span class="token punctuation">[</span><span class="token number">22</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"w=%d, h=%d\n"</span><span class="token punctuation">,</span> w<span class="token punctuation">,</span>h<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// 补齐4字节</span>
+	<span class="token keyword">int</span> n_add<span class="token punctuation">;</span> <span class="token comment">// 需要补的字节数</span>
+	<span class="token keyword">int</span> add_a<span class="token punctuation">;</span> <span class="token comment">// 补齐后的字节数</span>
+	n_add <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">4</span><span class="token operator">-</span>w<span class="token operator">*</span><span class="token number">3</span><span class="token operator">%</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">4</span><span class="token punctuation">;</span>
+	add_a <span class="token operator">=</span> w<span class="token operator">*</span><span class="token number">3</span><span class="token operator">+</span>n_add<span class="token punctuation">;</span>
+	<span class="token keyword">char</span> bmp_add<span class="token punctuation">[</span>add_a<span class="token operator">*</span>h<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token function">lseek</span><span class="token punctuation">(</span>bmp_fd<span class="token punctuation">,</span> <span class="token number">54</span><span class="token punctuation">,</span> <span class="token constant">SEEK_SET</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">read</span><span class="token punctuation">(</span>bmp_fd<span class="token punctuation">,</span> bmp_add<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>bmp_add<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">// 3.读取图片像素数据</span>
+	<span class="token keyword">char</span> bmp_buf<span class="token punctuation">[</span>w<span class="token operator">*</span>h<span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span>h<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+		<span class="token function">memcpy</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>bmp_buf<span class="token punctuation">[</span>w<span class="token operator">*</span><span class="token number">3</span><span class="token operator">*</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>bmp_add<span class="token punctuation">[</span>add_a<span class="token operator">*</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> w<span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// 3.1 24---&gt;32</span>
+	<span class="token keyword">int</span> bmp_32<span class="token punctuation">[</span>w<span class="token operator">*</span>h<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>w<span class="token operator">*</span>h<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span><span class="token comment">//                b         g        r        a</span>
+		bmp_32<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> bmp_buf<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">*</span>i<span class="token operator">+</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token number">0</span> <span class="token operator">|</span> bmp_buf<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">*</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token number">8</span> <span class="token operator">|</span> bmp_buf<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">*</span>i<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token number">16</span> <span class="token operator">|</span> <span class="token number">0x00</span><span class="token operator">&lt;&lt;</span><span class="token number">24</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 3.2 翻转</span>
+	<span class="token keyword">int</span> buffz<span class="token punctuation">[</span><span class="token number">800</span><span class="token operator">*</span><span class="token number">480</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> x0<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> y0<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> y<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> y<span class="token operator">&lt;</span>h<span class="token punctuation">;</span> y<span class="token operator">++</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> x<span class="token operator">&lt;</span>w<span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			buffz<span class="token punctuation">[</span><span class="token number">800</span><span class="token operator">*</span><span class="token punctuation">(</span>y<span class="token operator">+</span>y0<span class="token punctuation">)</span><span class="token operator">+</span>x<span class="token operator">+</span>x0<span class="token punctuation">]</span> <span class="token operator">=</span> bmp_32<span class="token punctuation">[</span>w<span class="token operator">*</span><span class="token punctuation">(</span>h<span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span>y<span class="token punctuation">)</span><span class="token operator">+</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 4.把图片像素数据写入lcd</span>
+	<span class="token function">write</span><span class="token punctuation">(</span>lcd_fd<span class="token punctuation">,</span> buffz<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>bmp_32<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// 5.关闭lcd，关闭图片</span>
+	<span class="token function">close</span><span class="token punctuation">(</span>lcd_fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">close</span><span class="token punctuation">(</span>bmp_fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>图片显示效果如下：</p>
+<p><img src="/%E7%94%B5%E5%AD%90%E9%92%A2%E7%90%B4%E9%A1%B9%E7%9B%AE/LeiMu.png" alt="LeiMu"></p>
+<p>​    猜到背景板上的人物了吗？OK，现在背景搞定了，接下来就是把按键以及头部和底部添上去了，和之前操作差不多其实，无非就是改了改参数而已（正常开发中，这些界面参数都会由UI设计师给出），难道我们要copy这些代码一个个费劲儿的调参吗？不，这里可以封装一下显示的函数，将需要显示的图片长宽以及起始点位置x、y和图片文件路径传给它就好了。</p>
+<p>​    除了需要封装显示函数，这里我们采用效率更高的mmap映射的方式来实现用户空间和内核空间的数据直接交互从而省去了空间不同数据不通的繁琐过程。</p>
+<p><strong>mmap介绍</strong>：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h&gt;</span></span>
+
+FB <span class="token operator">=</span> <span class="token function">mmap</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token number">800</span><span class="token operator">*</span><span class="token number">480</span><span class="token operator">*</span><span class="token number">4</span><span class="token punctuation">,</span> PROT_READ <span class="token operator">|</span> PROT_WRITE<span class="token punctuation">,</span> MAP_SHARED<span class="token punctuation">,</span> lcd_fd<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>返回值为void型万能指针，可以和浮点型、整型等兼容。关键看定义的存储数据数组是什么类型就用什么类型；</p>
+<p>共有6个参数：</p>
+<ul>
+<li>第一个  映射内存的起始地址，我们一般用NULL，系统会自动寻找一个合适的起始地址。</li>
+<li>第二个  映射内存的大小，就是我们要把一个多大的文件映射到内存中，mmap映射后，会返回 给我们一个内存映射的起始地址，这个len就是我们文件的大小，800<em>480</em>4。</li>
+<li>第三个  映射内存的保护权限，一般给可读可写就行。</li>
+<li>第四个  我们要选共享也就是map-shared。</li>
+<li>第五个   文件描述符，把lcd文件描述符给他就可以。</li>
+<li>第六个   文件映射的开始区域偏移量，那么在屏幕上来说，要从左上角，也就是0开始。</li>
+</ul>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token function">munmap</span><span class="token punctuation">(</span>FB<span class="token punctuation">,</span> <span class="token number">800</span><span class="token operator">*</span><span class="token number">480</span><span class="token operator">*</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//释放虚例内存函数</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>第一个参数   释放内存地址</li>
+<li>第二个参数    释放内存长度</li>
+</ul>
+<p>封装的显示图片函数代码如下：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h&gt;</span>	</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;signal.h&gt;</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LCD_PATH</span> <span class="token string">"/dev/fb0"</span></span>
+
+<span class="token keyword">int</span> lcd_fd<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span>FB<span class="token punctuation">;</span>
+
+<span class="token comment">//1,LCD初始化函数</span>
+<span class="token keyword">void</span> <span class="token function">Lcd_Init</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">//1,打开LCD文件</span>
+	lcd_fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>LCD_PATH<span class="token punctuation">,</span> O_RDWR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> lcd_fd<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"open lcd failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment">//2,lcd映射到用户空间</span>
+	FB <span class="token operator">=</span> <span class="token function">mmap</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token number">800</span><span class="token operator">*</span><span class="token number">480</span><span class="token operator">*</span><span class="token number">4</span><span class="token punctuation">,</span> PROT_READ <span class="token operator">|</span> PROT_WRITE<span class="token punctuation">,</span> MAP_SHARED<span class="token punctuation">,</span> lcd_fd<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>MAP_FAILED <span class="token operator">==</span> FB<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"mmap lcd failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//2,LCD释放函数</span>
+<span class="token keyword">void</span> <span class="token function">Lcd_Uninit</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">//4,解除映射，关闭文件</span>
+	<span class="token function">munmap</span><span class="token punctuation">(</span>FB<span class="token punctuation">,</span> <span class="token number">800</span><span class="token operator">*</span><span class="token number">480</span><span class="token operator">*</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">close</span><span class="token punctuation">(</span>lcd_fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//3,显示宽度为win,高度为high的bmp图片  在起点坐标为(x_s, y_s)这个点开始显示图片</span>
+<span class="token keyword">void</span> <span class="token function">Show_Bmp</span><span class="token punctuation">(</span><span class="token keyword">int</span> win<span class="token punctuation">,</span> <span class="token keyword">int</span> high<span class="token punctuation">,</span> <span class="token keyword">int</span> x_s<span class="token punctuation">,</span> <span class="token keyword">int</span> y_s<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>picname<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">int</span> i<span class="token punctuation">,</span> j<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> tmp<span class="token punctuation">;</span>
+	<span class="token keyword">char</span> buf<span class="token punctuation">[</span>win<span class="token operator">*</span>high<span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>		<span class="token comment">//存放图片的原始数据</span>
+	<span class="token keyword">int</span> bmp_buf<span class="token punctuation">[</span>win<span class="token operator">*</span>high<span class="token punctuation">]</span><span class="token punctuation">;</span>		<span class="token comment">//存放转码之后的ARGB数据</span>
+	
+	<span class="token comment">//1,lcd初始化</span>
+	<span class="token function">Lcd_Init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">//2,读取图片数据，并且进行转码 RGB -&gt; ARGB</span>
+		<span class="token comment">//打开图片</span>
+		FILE <span class="token operator">*</span>fp <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span>picname<span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token constant">NULL</span> <span class="token operator">==</span> fp<span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			<span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"fopen failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">return</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		
+		<span class="token comment">//读取图片像素点原始数据</span>
+		<span class="token function">fseek</span><span class="token punctuation">(</span>fp<span class="token punctuation">,</span> <span class="token number">54</span><span class="token punctuation">,</span> <span class="token constant">SEEK_SET</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">fread</span><span class="token punctuation">(</span>buf<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> win<span class="token operator">*</span>high<span class="token punctuation">,</span> fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		
+		<span class="token comment">//将读取的数据进行转码 24--&gt;32</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>win<span class="token operator">*</span>high<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>	
+			<span class="token comment">//ARGB			R					G			B</span>
+			bmp_buf<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> buf<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">*</span>i<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token number">16</span> <span class="token operator">|</span> buf<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">*</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token number">8</span> <span class="token operator">|</span> buf<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">*</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token comment">//将转码的数据进行倒转 把第i行，第j列的点跟第479-i行，第j列的点进行交换</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>high<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>	<span class="token comment">//0~239行</span>
+		<span class="token punctuation">{</span>
+			<span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span>win<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> 	<span class="token comment">//0~799列</span>
+			<span class="token punctuation">{</span>
+				<span class="token comment">//第i行，第j列的点跟第479-i行，第j列的点进行交换</span>
+				tmp <span class="token operator">=</span> bmp_buf<span class="token punctuation">[</span>win<span class="token operator">*</span>i<span class="token operator">+</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+				bmp_buf<span class="token punctuation">[</span>win<span class="token operator">*</span>i<span class="token operator">+</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> bmp_buf<span class="token punctuation">[</span>win<span class="token operator">*</span><span class="token punctuation">(</span>high<span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span>i<span class="token punctuation">)</span><span class="token operator">+</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+				bmp_buf<span class="token punctuation">[</span>win<span class="token operator">*</span><span class="token punctuation">(</span>high<span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span>i<span class="token punctuation">)</span><span class="token operator">+</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+	<span class="token comment">//3,将转码之后的数据写入LCD (写入到LCD的区域由 (0,0) --&gt; (100, 20))</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span>y_s<span class="token punctuation">;</span> i<span class="token operator">&lt;</span>high<span class="token operator">+</span>y_s <span class="token operator">&amp;&amp;</span> i<span class="token operator">&lt;</span><span class="token number">480</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>		<span class="token comment">// 0 ~ high-1行   20 ~ high+20-1</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span>x_s<span class="token punctuation">;</span> j<span class="token operator">&lt;</span>win<span class="token operator">+</span>x_s <span class="token operator">&amp;&amp;</span> j<span class="token operator">&lt;</span><span class="token number">800</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>	<span class="token comment">// 0~win-1列	  100 ~ win+100-1	</span>
+		<span class="token punctuation">{</span>
+			<span class="token comment">//FB[800*i+j] = bmp_buf[win*i+j];(图片的数组中第i行，第j列的点)</span>
+			FB<span class="token punctuation">[</span><span class="token number">800</span><span class="token operator">*</span>i<span class="token operator">+</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> bmp_buf<span class="token punctuation">[</span>win<span class="token operator">*</span><span class="token punctuation">(</span>i<span class="token operator">-</span>y_s<span class="token punctuation">)</span><span class="token operator">+</span>j<span class="token operator">-</span>x_s<span class="token punctuation">]</span><span class="token punctuation">;</span>			
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>		
+	<span class="token comment">//4,lcd资源销毁,关闭图片</span>
+	<span class="token function">fclose</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">Lcd_Uninit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">Show_Bmp</span><span class="token punctuation">(</span><span class="token number">800</span><span class="token punctuation">,</span><span class="token number">480</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"LeiMu.bmp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Show_Bmp</span><span class="token punctuation">(</span><span class="token number">800</span><span class="token punctuation">,</span><span class="token number">80</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">"logo.bmp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//top部图片</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">12</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token function">Show_Bmp</span><span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">,</span><span class="token number">280</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token operator">+</span><span class="token number">60</span><span class="token operator">*</span>i<span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token string">"key_off.bmp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Show_Bmp</span><span class="token punctuation">(</span><span class="token number">800</span><span class="token punctuation">,</span><span class="token number">80</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">400</span><span class="token punctuation">,</span><span class="token string">"bar.bmp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//bootom部图片</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>到这里，以上代码就可以实现，钢琴界面的显示啦！效果见最开始的图哦。目前只是静态的显示，接下来要做的是获取点击的位置，判断区域，播放对应音乐，按键换图。</p>
+<h2 id="四、触摸屏应用"><a href="#四、触摸屏应用" class="headerlink" title="四、触摸屏应用"></a>四、触摸屏应用</h2><p>使用Linux中的输入子系统，可以轻松获取触摸屏的被触摸的坐标，引入#include &lt;linux/input.h&gt;即可开始使用，其实它是定义了一个结构体，如下所示</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">struct</span> <span class="token class-name">input_event</span>
+<span class="token punctuation">{</span>
+        <span class="token keyword">struct</span> <span class="token class-name">timeval</span> time<span class="token punctuation">;</span>时间戳，精确到微秒
+        _u16 type<span class="token punctuation">;</span>输入事件类型
+        _u16 code<span class="token punctuation">;</span>具体事件描述<span class="token punctuation">,</span>比如触摸屏的EV_ABS中的ABS_X和ABS_Y<span class="token punctuation">;</span>
+        _u16 value<span class="token punctuation">;</span>具体动作描述
+<span class="token punctuation">}</span>
+    EV_SYN<span class="token operator">:</span>事件分割标志
+    EV_ABS<span class="token operator">:</span>发生了触摸屏事件，触摸屏坐标值ABS_X<span class="token punctuation">,</span>ABS_Y；
+    EV_REL<span class="token operator">:</span>发生了鼠标事件
+    EV_KEY<span class="token operator">:</span>发生了键盘事件，设备的状态发生变化
+    BTN_TOUCH：点击事件   
+<span class="token keyword">struct</span> <span class="token class-name">timeval</span><span class="token punctuation">{</span>
+        _time_t tv_sec<span class="token punctuation">;</span>秒
+        <span class="token keyword">long</span> <span class="token keyword">int</span> tv_usec<span class="token punctuation">;</span>微秒
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/%E7%94%B5%E5%AD%90%E9%92%A2%E7%90%B4%E9%A1%B9%E7%9B%AE/image-20220501123234753.png" alt="image-20220501123234753"></p>
+<p>当用户点击时，只需要根据输入事件类型为触摸屏，就可以去具体事件描述里获取EV_ABS，这也就是触摸屏坐标值ABS_X,ABS_Y,废话不多说，直接上代码！</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h&gt;</span>	</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;signal.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;linux/input.h&gt;</span>	<span class="token comment">//输入子系统的头文件</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LCD_PATH</span> <span class="token string">"/dev/fb0"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">TS_PATH</span>  <span class="token string">"/dev/input/event0"</span></span>
+
+<span class="token keyword">int</span> lcd_fd<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span>FB<span class="token punctuation">;</span>
+<span class="token keyword">int</span> ts_x<span class="token punctuation">,</span> ts_y<span class="token punctuation">;</span>		<span class="token comment">//存放点击屏幕的横纵坐标</span>
+
+
+<span class="token comment">//获取一次点击触摸屏的坐标信息，存入ts_x,ts_y</span>
+<span class="token keyword">int</span> <span class="token function">get_ts</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">//1,打开触摸屏文件</span>
+	<span class="token keyword">int</span> fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>TS_PATH<span class="token punctuation">,</span> O_RDWR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> fd<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"open ts failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment">//2,读取触摸屏文件数据</span>
+	<span class="token keyword">struct</span> <span class="token class-name">input_event</span> xy<span class="token punctuation">;</span>		
+	<span class="token keyword">int</span> flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>		<span class="token comment">//记录当前获取坐标的信息</span>
+	
+	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">read</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> <span class="token operator">&amp;</span>xy<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>xy<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>xy<span class="token punctuation">.</span>type <span class="token operator">==</span> EV_ABS <span class="token operator">&amp;&amp;</span> xy<span class="token punctuation">.</span>code <span class="token operator">==</span> ABS_X <span class="token operator">&amp;&amp;</span> flag <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			ts_x <span class="token operator">=</span> xy<span class="token punctuation">.</span>value <span class="token operator">*</span> <span class="token number">800</span> <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">;</span>		<span class="token comment">//获取点击的时候X轴坐标的值 （0~1024）--&gt; (0~800)</span>
+			flag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>xy<span class="token punctuation">.</span>type <span class="token operator">==</span> EV_ABS <span class="token operator">&amp;&amp;</span> xy<span class="token punctuation">.</span>code <span class="token operator">==</span> ABS_Y <span class="token operator">&amp;&amp;</span> flag <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			ts_y <span class="token operator">=</span> xy<span class="token punctuation">.</span>value <span class="token operator">*</span> <span class="token number">480</span> <span class="token operator">/</span> <span class="token number">600</span><span class="token punctuation">;</span>		<span class="token comment">//获取点击的时候Y轴坐标的值 （0~600）--&gt;(0~480)</span>
+			flag <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token comment">//设置条件：每读取一次完整的坐标，就打印一次坐标</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>flag <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+			<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"(%d,%d)\n"</span><span class="token punctuation">,</span> ts_x<span class="token punctuation">,</span> ts_y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">break</span><span class="token punctuation">;</span>	<span class="token comment">//获取一次坐标就跳出循环</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">//3,关闭触摸屏文件</span>
+	<span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里qmy_lhl博主的一个比较好的地方，定义一个flag来控制获取函数的结束，同时需要注意获取点击时候坐标的值，注意一个细节，ts_x,ts_y是定义的全局变量便于拿到主函数里去用。</p>
+<p>最后，再坚持一下下，这个项目接近实现啦！</p>
+<p>现在我们有了用户按压了琴键，这时候需要播放对应的声音，我们借助Alsa（Advanced Linux Sound Architecture）库（官方去下载即可，搜一下就有）来实现播放，这里记得复制libasound.so.2加上混响并配置一下全局变量就好了</p>
+<p>现在，我们在代码中执行下面的代码即可播放对应路径的声音！</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token function">execlp</span><span class="token punctuation">(</span><span class="token string">"aplay"</span><span class="token punctuation">,</span><span class="token string">"aplay"</span><span class="token punctuation">,</span>”<span class="token punctuation">.</span><span class="token operator">/</span>mp3<span class="token operator">/</span>d1<span class="token punctuation">.</span>wav”<span class="token punctuation">,</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>琴键那么多声音，难道我们要一个个手戳重复的代码来播放吗？不，这里封装一下下播放函数，只需要传一个编号就能播放一个MP3目录下对应的声音；</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">play</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">char</span> str<span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">sprintf</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span><span class="token string">"./mp3/d%d.wav"</span><span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//打印字符到str中</span>
+    <span class="token function">execlp</span><span class="token punctuation">(</span><span class="token string">"aplay"</span><span class="token punctuation">,</span><span class="token string">"aplay"</span><span class="token punctuation">,</span>str<span class="token punctuation">,</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​        秋豆麻袋，目前用户点击一下就会播放一次对应编号的声音，这是一个线程，多点多放对应着多线程的问题，下面是一个很形象的比喻：</p>
+<ul>
+<li>单进程单线程：一个人在一个桌子上吃菜。</li>
+<li>单进程多线程：多个人在同一个桌子上一起吃菜。</li>
+<li>多进程单线程：多个人每个人在自己的桌子上吃菜。</li>
+</ul>
+<p>​        多线程的问题是多个人同时吃一道菜的时候容易发生争抢，例如两个人同时夹一个菜，一个人刚伸出筷子，结果伸到的时候已经被夹走菜了。。。此时就必须等一个人夹一口之后，在还给另外一个人夹菜，也就是说资源共享就会发生冲突争抢。</p>
+<p>1、对于 Windows 系统来说，【开桌子】的开销很大，因此 Windows 鼓励大家在一个桌子上吃菜。因此 Windows 多线程学习重点是要大量面对资源争抢与同步方面的问题。</p>
+<p>2、对于 Linux 系统来说，【开桌子】的开销很小，因此 Linux 鼓励大家尽量每个人都开自己的桌子吃菜。这带来新的问题是：坐在两张不同的桌子上，说话不方便。因此，Linux 下的学习重点大家要学习进程间通讯的方法。</p>
+<p>这里，我们用fork（）函数执行子进程实现播放多个声音，解决这个问题。</p>
+<p>下面放上完整代码：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h&gt;</span>	</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;signal.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;linux/input.h&gt;</span>	<span class="token comment">//输入子系统的头文件</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LCD_PATH</span> <span class="token string">"/dev/fb0"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">TS_PATH</span>  <span class="token string">"/dev/input/event0"</span></span>
+
+<span class="token keyword">int</span> lcd_fd<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span>FB<span class="token punctuation">;</span>
+<span class="token keyword">int</span> ts_x<span class="token punctuation">,</span> ts_y<span class="token punctuation">;</span>		<span class="token comment">//存放点击屏幕的横纵坐标</span>
+
+<span class="token comment">//1,LCD初始化函数</span>
+<span class="token keyword">void</span> <span class="token function">Lcd_Init</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">//1,打开LCD文件</span>
+	lcd_fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>LCD_PATH<span class="token punctuation">,</span> O_RDWR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> lcd_fd<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"open lcd failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment">//2,lcd映射到用户空间</span>
+	FB <span class="token operator">=</span> <span class="token function">mmap</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token number">800</span><span class="token operator">*</span><span class="token number">480</span><span class="token operator">*</span><span class="token number">4</span><span class="token punctuation">,</span> PROT_READ <span class="token operator">|</span> PROT_WRITE<span class="token punctuation">,</span> MAP_SHARED<span class="token punctuation">,</span> lcd_fd<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>MAP_FAILED <span class="token operator">==</span> FB<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"mmap lcd failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//2,LCD释放函数</span>
+<span class="token keyword">void</span> <span class="token function">Lcd_Uninit</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">//4,解除映射，关闭文件</span>
+	<span class="token function">munmap</span><span class="token punctuation">(</span>FB<span class="token punctuation">,</span> <span class="token number">800</span><span class="token operator">*</span><span class="token number">480</span><span class="token operator">*</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">close</span><span class="token punctuation">(</span>lcd_fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//3,显示宽度为win,高度为high的bmp图片  在起点坐标为(x_s, y_s)这个点开始显示图片</span>
+<span class="token keyword">void</span> <span class="token function">Show_Bmp</span><span class="token punctuation">(</span><span class="token keyword">int</span> win<span class="token punctuation">,</span> <span class="token keyword">int</span> high<span class="token punctuation">,</span> <span class="token keyword">int</span> x_s<span class="token punctuation">,</span> <span class="token keyword">int</span> y_s<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>picname<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">int</span> i<span class="token punctuation">,</span> j<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> tmp<span class="token punctuation">;</span>
+	<span class="token keyword">char</span> buf<span class="token punctuation">[</span>win<span class="token operator">*</span>high<span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>		<span class="token comment">//存放图片的原始数据</span>
+	<span class="token keyword">int</span> bmp_buf<span class="token punctuation">[</span>win<span class="token operator">*</span>high<span class="token punctuation">]</span><span class="token punctuation">;</span>		<span class="token comment">//存放转码之后的ARGB数据</span>
+	
+	<span class="token comment">//1,lcd初始化</span>
+	<span class="token function">Lcd_Init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">//2,读取图片数据，并且进行转码 RGB -&gt; ARGB</span>
+		<span class="token comment">//打开图片</span>
+		FILE <span class="token operator">*</span>fp <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span>picname<span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token constant">NULL</span> <span class="token operator">==</span> fp<span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			<span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"fopen failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">return</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		
+		<span class="token comment">//读取图片像素点原始数据</span>
+		<span class="token function">fseek</span><span class="token punctuation">(</span>fp<span class="token punctuation">,</span> <span class="token number">54</span><span class="token punctuation">,</span> <span class="token constant">SEEK_SET</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">fread</span><span class="token punctuation">(</span>buf<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> win<span class="token operator">*</span>high<span class="token punctuation">,</span> fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		
+		<span class="token comment">//将读取的数据进行转码 24--&gt;32</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>win<span class="token operator">*</span>high<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>	
+			<span class="token comment">//ARGB			R					G			B</span>
+			bmp_buf<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> buf<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">*</span>i<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token number">16</span> <span class="token operator">|</span> buf<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">*</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token number">8</span> <span class="token operator">|</span> buf<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">*</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token comment">//将转码的数据进行倒转 把第i行，第j列的点跟第479-i行，第j列的点进行交换</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>high<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>	<span class="token comment">//0~239行</span>
+		<span class="token punctuation">{</span>
+			<span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span>win<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> 	<span class="token comment">//0~799列</span>
+			<span class="token punctuation">{</span>
+				<span class="token comment">//第i行，第j列的点跟第479-i行，第j列的点进行交换</span>
+				tmp <span class="token operator">=</span> bmp_buf<span class="token punctuation">[</span>win<span class="token operator">*</span>i<span class="token operator">+</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+				bmp_buf<span class="token punctuation">[</span>win<span class="token operator">*</span>i<span class="token operator">+</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> bmp_buf<span class="token punctuation">[</span>win<span class="token operator">*</span><span class="token punctuation">(</span>high<span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span>i<span class="token punctuation">)</span><span class="token operator">+</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+				bmp_buf<span class="token punctuation">[</span>win<span class="token operator">*</span><span class="token punctuation">(</span>high<span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span>i<span class="token punctuation">)</span><span class="token operator">+</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+	<span class="token comment">//3,将转码之后的数据写入LCD (写入到LCD的区域由 (0,0) --&gt; (100, 20))</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span>y_s<span class="token punctuation">;</span> i<span class="token operator">&lt;</span>high<span class="token operator">+</span>y_s <span class="token operator">&amp;&amp;</span> i<span class="token operator">&lt;</span><span class="token number">480</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>		<span class="token comment">// 0 ~ high-1行   20 ~ high+20-1</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span>x_s<span class="token punctuation">;</span> j<span class="token operator">&lt;</span>win<span class="token operator">+</span>x_s <span class="token operator">&amp;&amp;</span> j<span class="token operator">&lt;</span><span class="token number">800</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>	<span class="token comment">// 0~win-1列	  100 ~ win+100-1	</span>
+		<span class="token punctuation">{</span>
+			<span class="token comment">//FB[800*i+j] = bmp_buf[win*i+j];(图片的数组中第i行，第j列的点)</span>
+			FB<span class="token punctuation">[</span><span class="token number">800</span><span class="token operator">*</span>i<span class="token operator">+</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> bmp_buf<span class="token punctuation">[</span>win<span class="token operator">*</span><span class="token punctuation">(</span>i<span class="token operator">-</span>y_s<span class="token punctuation">)</span><span class="token operator">+</span>j<span class="token operator">-</span>x_s<span class="token punctuation">]</span><span class="token punctuation">;</span>			
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>		
+	<span class="token comment">//4,lcd资源销毁,关闭图片</span>
+	<span class="token function">fclose</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">Lcd_Uninit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//4,获取一次点击触摸屏的坐标信息，存入ts_x,ts_y</span>
+<span class="token keyword">int</span> <span class="token function">get_ts</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">//1,打开触摸屏文件</span>
+	<span class="token keyword">int</span> fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>TS_PATH<span class="token punctuation">,</span> O_RDWR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> fd<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"open ts failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment">//2,读取触摸屏文件数据</span>
+	<span class="token keyword">struct</span> <span class="token class-name">input_event</span> xy<span class="token punctuation">;</span>		
+	<span class="token keyword">int</span> flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>		<span class="token comment">//记录当前获取坐标的信息</span>
+	
+	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token function">read</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> <span class="token operator">&amp;</span>xy<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>xy<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>xy<span class="token punctuation">.</span>type <span class="token operator">==</span> EV_ABS <span class="token operator">&amp;&amp;</span> xy<span class="token punctuation">.</span>code <span class="token operator">==</span> ABS_X <span class="token operator">&amp;&amp;</span> flag <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			ts_x <span class="token operator">=</span> xy<span class="token punctuation">.</span>value <span class="token operator">*</span> <span class="token number">800</span> <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">;</span>		<span class="token comment">//获取点击的时候X轴坐标的值 （0~1024）--&gt; (0~800)</span>
+			flag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>xy<span class="token punctuation">.</span>type <span class="token operator">==</span> EV_ABS <span class="token operator">&amp;&amp;</span> xy<span class="token punctuation">.</span>code <span class="token operator">==</span> ABS_Y <span class="token operator">&amp;&amp;</span> flag <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			ts_y <span class="token operator">=</span> xy<span class="token punctuation">.</span>value <span class="token operator">*</span> <span class="token number">480</span> <span class="token operator">/</span> <span class="token number">600</span><span class="token punctuation">;</span>		<span class="token comment">//获取点击的时候Y轴坐标的值 （0~600）--&gt;(0~480)</span>
+			flag <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token comment">//设置条件：每读取一次完整的坐标，就打印一次坐标</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>flag <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+			<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"(%d,%d)\n"</span><span class="token punctuation">,</span> ts_x<span class="token punctuation">,</span> ts_y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">break</span><span class="token punctuation">;</span>	<span class="token comment">//获取一次坐标就跳出循环</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">//3,关闭触摸屏文件</span>
+	<span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">play</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">char</span> str<span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">sprintf</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span><span class="token string">"./mp3/d%d.wav"</span><span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//打印字符到str中</span>
+    <span class="token function">execlp</span><span class="token punctuation">(</span><span class="token string">"aplay"</span><span class="token punctuation">,</span><span class="token string">"aplay"</span><span class="token punctuation">,</span>str<span class="token punctuation">,</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">Show_Bmp</span><span class="token punctuation">(</span><span class="token number">800</span><span class="token punctuation">,</span><span class="token number">480</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"LeiMu.bmp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Show_Bmp</span><span class="token punctuation">(</span><span class="token number">800</span><span class="token punctuation">,</span><span class="token number">80</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">"logo.bmp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//top</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">12</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token function">Show_Bmp</span><span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">,</span><span class="token number">280</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token operator">+</span><span class="token number">60</span><span class="token operator">*</span>i<span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token string">"key_off.bmp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Show_Bmp</span><span class="token punctuation">(</span><span class="token number">800</span><span class="token punctuation">,</span><span class="token number">80</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">400</span><span class="token punctuation">,</span><span class="token string">"bar.bmp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//bootom</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">get_ts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> num<span class="token punctuation">;</span><span class="token keyword">long</span> stime<span class="token punctuation">;</span>
+        num <span class="token operator">=</span> <span class="token punctuation">(</span>ts_x<span class="token operator">-</span><span class="token number">40</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">60</span><span class="token punctuation">;</span> 
+        <span class="token keyword">if</span><span class="token punctuation">(</span>ts_y <span class="token operator">&gt;</span> <span class="token number">100</span> <span class="token operator">&amp;&amp;</span> ts_y <span class="token operator">&lt;</span> <span class="token number">380</span> <span class="token operator">&amp;&amp;</span> ts_x <span class="token operator">&gt;</span> <span class="token number">40</span><span class="token operator">+</span>num<span class="token operator">*</span><span class="token number">60</span> <span class="token operator">&amp;&amp;</span> ts_x <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token operator">+</span>num<span class="token operator">*</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token comment">//如果点击对应区域就创建一条子进程播放音乐 </span>
+		<span class="token punctuation">{</span>
+            <span class="token function">Show_Bmp</span><span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">,</span><span class="token number">280</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token operator">+</span>num<span class="token operator">*</span><span class="token number">60</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token string">"key_on.bmp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//改变按下的键</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">==</span> <span class="token function">fork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>             
+                <span class="token function">play</span><span class="token punctuation">(</span>num<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            
+            <span class="token punctuation">}</span> 
+            stime <span class="token operator">=</span> <span class="token number">200000</span><span class="token punctuation">;</span>
+            <span class="token function">usleep</span><span class="token punctuation">(</span>stime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">Show_Bmp</span><span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">,</span><span class="token number">280</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token operator">+</span>num<span class="token operator">*</span><span class="token number">60</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token string">"key_off.bmp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//恢复按下的键</span>
+        <span class="token punctuation">}</span>          
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="五、收工躺平"><a href="#五、收工躺平" class="headerlink" title="五、收工躺平"></a>五、收工躺平</h2><p>弄了个《小星星》代码播放的，毫无感情，全是技巧，播放即社死，千万别轻易尝试！</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">Playstar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> star<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">}</span> <span class="token comment">//一闪一闪亮晶晶</span>
+                <span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span>    <span class="token comment">//满天都是小星星</span>
+                <span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span>    <span class="token comment">//挂在天空放光明，</span>
+                <span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment">//好像许多小眼睛</span>
+    <span class="token keyword">int</span> stime<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">4</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span><span class="token number">7</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">==</span> <span class="token function">fork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">play</span><span class="token punctuation">(</span>star<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                
+            <span class="token punctuation">}</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\t"</span><span class="token punctuation">,</span>star<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            stime <span class="token operator">=</span> <span class="token number">200000</span><span class="token punctuation">;</span>
+            <span class="token function">usleep</span><span class="token punctuation">(</span>stime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    	<span class="token punctuation">}</span>
+        stime <span class="token operator">=</span> <span class="token number">500000</span><span class="token punctuation">;</span>
+        <span class="token function">usleep</span><span class="token punctuation">(</span>stime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>文章中省略了一些细节，但基本上完整复盘了该项目过程，如有错漏，欢迎指出哦！</p>
+<p>参考文章：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/158467162">交叉编译器arm-linux-gcc - 知乎 (zhihu.com)</a></li>
+<li>[认真分析mmap：是什么 为什么 怎么用 - 胡潇 - 博客园 (cnblogs.com)](<a target="_blank" rel="noopener" href="https://www.cnblogs.com/huxiao-tee/p/4660352.html#:~:text=">https://www.cnblogs.com/huxiao-tee/p/4660352.html#:~:text=</a> mmap是一种内存映射文件的方法，即将一个文件或者其它对象映射到进程的地址空间，实现文件磁盘地址和进程虚拟地址空间中一段虚拟地址的一一对映关系。 实现这样的映射关系后，进程就可以采用指针的方式读写操作这一段内存，而系统会自动回写脏页面到对应的文件磁盘上，即完成了对文件的操作而不必再调用read%2Cwrite等系统调用函数。 相反，内核空间对这段区域的修改也直接反映用户空间，从而可以实现不同进程间的文件共享。,如下图所示： 由上图可以看出，进程的虚拟地址空间，由多个虚拟内存区域构成。 虚拟内存区域是进程的虚拟地址空间中的一个同质区间，即具有同样特性的连续地址范围。 上图中所示的text数据段（代码段）、初始数据段、BSS数据段、堆、栈和内存映射，都是一个独立的虚拟内存区域。)</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/lianggoch/article/details/119202947">(28条消息) GEC6818开发板上音乐播放器_qmy_lhl的博客-CSDN博客_6818开发板</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/linuxAndMcu/p/11064916.html">多进程和多线程的概念 - fengMisaka - 博客园 (cnblogs.com)</a></li>
+</ul>
+<p>一些GEC6818的小项目链接：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://max.book118.com/html/2020/0119/6113014202002135.shtm">《粤嵌开发板电子相册嵌入式课程设计》.doc (book118.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_53403301/article/details/118577597">(28条消息) 基于Cortex-A53内核Linux系统粤嵌GEC6818开发板的电子乐队程序设计（四种模式：和弦模式、键盘模式、鼓点模式、编曲模式）_网易独家音乐人Mike Zhou的博客-CSDN博客_粤嵌6818开发板项目代码</a></li>
+<li><a target="_blank" rel="noopener" href="https://gitee.com/joker_cuiwei/C_pianogame">ARM_钢琴游戏_LinuxC: 在GEC6818开发板中，实现一个模拟的钢琴游戏，通过手指弹奏发出相应的琴声。 (gitee.com)</a></li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">冰冰的小屋</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://binbincome.github.io/2022/05/14/dian-zi-gang-qin-xiang-mu/">https://binbincome.github.io/2022/05/14/dian-zi-gang-qin-xiang-mu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">冰冰的小屋</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">
+                                    <span class="chip bg-color">嵌入式</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/05/20/vue/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Vue">
+                        
+                        <span class="card-title">Vue</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/05/13/bing-bing-shang-cheng-xiang-mu-springboot/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="冰冰商城项目_SpringBoot">
+                        
+                        <span class="card-title">冰冰商城项目_SpringBoot</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SpringBoot/">
+                        <span class="chip bg-color">SpringBoot</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 冰冰的小屋<br />'
+            + '文章作者: Binbin<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            
+                <span id="year">2021-2023</span>
+            
+			
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">65.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "11";
+                    var startDate = "22";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/binbincome/binbincome.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:811404668@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+
+</html>
